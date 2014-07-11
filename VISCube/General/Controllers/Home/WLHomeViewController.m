@@ -11,6 +11,7 @@
 
 
 #define kChangeableOriginalY 320
+#define kAutoScrollAnchor 160
 
 @interface WLHomeViewController ()
 {
@@ -19,6 +20,7 @@
     UIView *_changeableContentView;
     CGRect _changeableContentFrame;
     CGRect _changeableBackgroundFrame;
+    
 
 }
 
@@ -58,7 +60,7 @@
     
     CGFloat y = 30;
     
-    for (NSInteger i = 0; i <7; i++) {
+    for (NSInteger i = 0; i <15; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 200, 30)];
         label.text = @"test";
         label.textColor = [UIColor whiteColor];
@@ -68,13 +70,11 @@
     }
     
     
-    
-    
-    
     CGSize size = self.contentScrollView.bounds.size;
     size.height = y;
     self.contentScrollView.contentSize = size;
     self.contentScrollView.delegate = self;
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
@@ -138,6 +138,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    
     CGFloat offset = scrollView.contentOffset.y;
     CGRect frame = _changeableContentFrame;
     frame.origin.y -= offset;
@@ -147,10 +148,31 @@
     if (offset >= (kChangeableOriginalY - self.viewMaxHeight)) {
         _changeableContentView.frame = frame;
         frame = _changeableBackgroundFrame;
-        frame.origin.y  += offset;
+        frame.origin.y += offset;
         _changeableBackground.frame = frame;
     }
 
 }
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (decelerate) {
+        return;
+    }
+    
+    CGFloat offset = scrollView.contentOffset.y;
+    if (offset >0 && offset <= kAutoScrollAnchor) {
+        CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
+        [scrollView scrollRectToVisible:rect animated:YES];
+    }
+    else if (offset > kAutoScrollAnchor && offset <= kChangeableOriginalY) {
+        CGRect rect = CGRectMake(0, kChangeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
+        [scrollView scrollRectToVisible:rect animated:YES];
+        
+    }
+    
+}
+
+
 
 @end
