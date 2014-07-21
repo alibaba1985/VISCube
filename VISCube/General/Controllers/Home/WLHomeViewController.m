@@ -8,9 +8,10 @@
 
 #import "WLHomeViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "UPDeviceInfo.h"
+#import "PNBarChart.h"
 
 
-#define kChangeableOriginalY 320
 #define kAutoScrollAnchor 160
 
 @interface WLHomeViewController ()
@@ -21,12 +22,17 @@
     CGRect _changeableContentFrame;
     CGRect _changeableBackgroundFrame;
     
+    CGFloat _changeableOriginalY;
+    
+    PNBarChart *_barChart;
 
 }
 
 - (void)addFixedBackground;
 
 - (void)addChangeableBackground;
+
+- (void)addWeekKWH;
 
 @end
 
@@ -55,10 +61,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _changeableOriginalY = [UPDeviceInfo screenSize].width;
     [self addFixedBackground];
     [self addChangeableBackground];
     
-    CGFloat y = 30;
+    [self addWeekKWH];
+    
+    CGFloat y = _changeableOriginalY;
     
     for (NSInteger i = 0; i <15; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 200, 30)];
@@ -105,6 +114,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - add Week Chart
+
+- (void)addWeekKWH
+{
+    CGRect frame = CGRectMake(20, 320, 280, 200);
+    
+    NSArray *yValues = @[@"50",@"100",@"20",@"60",@"30",@"70"];
+    NSArray *xValues = @[@"1月",@"2月",@"3月",@"4月",@"5月",@"6月"];
+    
+    _barChart = [[PNBarChart alloc] initWithFrame:frame bars:yValues];
+    _barChart.backgroundColor = [UIColor clearColor];
+    [self.contentScrollView addSubview:_barChart];
+    [_barChart setYValues:yValues];
+    [_barChart setXLabels:xValues];
+    [_barChart strokeChart];
+}
+
 #pragma mark- Background ImageView
 
 - (void)addFixedBackground
@@ -118,9 +145,9 @@
 
 - (void)addChangeableBackground
 {
-    CGFloat contentHeight = self.viewMaxHeight - kChangeableOriginalY;
-    _changeableContentFrame = CGRectMake(0, kChangeableOriginalY, self.viewMaxWidth, contentHeight);
-    _changeableBackgroundFrame = CGRectMake(0, -kChangeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
+    CGFloat contentHeight = self.viewMaxHeight - _changeableOriginalY;
+    _changeableContentFrame = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, contentHeight);
+    _changeableBackgroundFrame = CGRectMake(0, -_changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
 
     UIImage *bgImage = [UIImage imageNamed:@"HomeBG.jpg"];//
     _changeableBackground = [self imageViewWithImage:[bgImage applyDarkEffect] frame:_changeableBackgroundFrame];
@@ -145,7 +172,7 @@
     frame.size.height += offset;
     
     // 最多到顶，但是scrollView的contentOffset是跳跃的不是连续的。
-    if (offset >= (kChangeableOriginalY - self.viewMaxHeight)) {
+    if (offset >= (_changeableOriginalY - self.viewMaxHeight)) {
         _changeableContentView.frame = frame;
         frame = _changeableBackgroundFrame;
         frame.origin.y += offset;
@@ -165,14 +192,26 @@
         CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
     }
-    else if (offset > kAutoScrollAnchor && offset <= kChangeableOriginalY) {
-        CGRect rect = CGRectMake(0, kChangeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
+    else if (offset > kAutoScrollAnchor && offset <= _changeableOriginalY) {
+        CGRect rect = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
         
     }
     
 }
 
-
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat offset = scrollView.contentOffset.y;
+    if (offset >0 && offset <= kAutoScrollAnchor) {
+        CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
+        [scrollView scrollRectToVisible:rect animated:YES];
+    }
+    else if (offset > kAutoScrollAnchor && offset <= _changeableOriginalY) {
+        CGRect rect = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
+        [scrollView scrollRectToVisible:rect animated:YES];
+        
+    }
+}
 
 @end

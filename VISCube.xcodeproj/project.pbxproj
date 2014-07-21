@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F162197239A900217BE2 /* IconCalendar@2x.png */; };
+		0F54F169197239A900217BE2 /* IconEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F163197239A900217BE2 /* IconEmpty@2x.png */; };
+		0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F164197239A900217BE2 /* IconHome@2x.png */; };
+		0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F165197239A900217BE2 /* IconProfile@2x.png */; };
+		0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F166197239A900217BE2 /* IconSettings@2x.png */; };
+		0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F167197239A900217BE2 /* MenuBackground@2x.png */; };
+		0F84EDE2197D3991001B336B /* RedAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE0197D3991001B336B /* RedAlert.png */; };
+		0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE1197D3991001B336B /* YellowAlert.png */; };
+		0F84EDE6197D39E5001B336B /* WLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* WLDevice.m */; };
 		0FA42530196A689700D85399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4252F196A689700D85399 /* Foundation.framework */; };
 		0FA42532196A689700D85399 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42531196A689700D85399 /* CoreGraphics.framework */; };
 		0FA42534196A689700D85399 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42533196A689700D85399 /* UIKit.framework */; };
@@ -35,6 +44,11 @@
 		0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA425C8196C149300D85399 /* HomeBG.jpg */; };
 		0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */; };
 		0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A8196F7A84005127E1 /* UPMacros.m */; };
+		0FAB2A46197692E40077DBFD /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3B197692E40077DBFD /* PNBar.m */; };
+		0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3D197692E40077DBFD /* PNBarChart.m */; };
+		0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A41197692E40077DBFD /* PNChartLabel.m */; };
+		0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A43197692E40077DBFD /* PNColor.m */; };
+		0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A45197692E40077DBFD /* PNLineChart.m */; };
 		0FAFC013196D1C890075AB71 /* WLLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC012196D1C890075AB71 /* WLLeftMenuViewController.m */; };
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
 		0FAFC01A196D1E440075AB71 /* WLSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* WLSourceManager.m */; };
@@ -52,6 +66,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F54F162197239A900217BE2 /* IconCalendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconCalendar@2x.png"; sourceTree = "<group>"; };
+		0F54F163197239A900217BE2 /* IconEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconEmpty@2x.png"; sourceTree = "<group>"; };
+		0F54F164197239A900217BE2 /* IconHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconHome@2x.png"; sourceTree = "<group>"; };
+		0F54F165197239A900217BE2 /* IconProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconProfile@2x.png"; sourceTree = "<group>"; };
+		0F54F166197239A900217BE2 /* IconSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconSettings@2x.png"; sourceTree = "<group>"; };
+		0F54F167197239A900217BE2 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuBackground@2x.png"; sourceTree = "<group>"; };
+		0F84EDDC197D3630001B336B /* WLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLColors.h; sourceTree = "<group>"; };
+		0F84EDE0197D3991001B336B /* RedAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedAlert.png; sourceTree = "<group>"; };
+		0F84EDE1197D3991001B336B /* YellowAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowAlert.png; sourceTree = "<group>"; };
+		0F84EDE4197D39E5001B336B /* WLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLDevice.h; sourceTree = "<group>"; };
+		0F84EDE5197D39E5001B336B /* WLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLDevice.m; sourceTree = "<group>"; };
+		0F84EDE7197D3BDB001B336B /* WLDeviceConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLDeviceConsts.h; sourceTree = "<group>"; };
 		0FA4252C196A689700D85399 /* VISCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA4252F196A689700D85399 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FA42531196A689700D85399 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +126,16 @@
 		0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDeviceInfo.m; sourceTree = "<group>"; };
 		0FA6C7A7196F7A84005127E1 /* UPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
 		0FA6C7A8196F7A84005127E1 /* UPMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMacros.m; sourceTree = "<group>"; };
+		0FAB2A3A197692E40077DBFD /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
+		0FAB2A3B197692E40077DBFD /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
+		0FAB2A3C197692E40077DBFD /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
+		0FAB2A3D197692E40077DBFD /* PNBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBarChart.m; sourceTree = "<group>"; };
+		0FAB2A40197692E40077DBFD /* PNChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNChartLabel.h; sourceTree = "<group>"; };
+		0FAB2A41197692E40077DBFD /* PNChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNChartLabel.m; sourceTree = "<group>"; };
+		0FAB2A42197692E40077DBFD /* PNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNColor.h; sourceTree = "<group>"; };
+		0FAB2A43197692E40077DBFD /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNColor.m; sourceTree = "<group>"; };
+		0FAB2A44197692E40077DBFD /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChart.h; sourceTree = "<group>"; };
+		0FAB2A45197692E40077DBFD /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChart.m; sourceTree = "<group>"; };
 		0FAFC011196D1C890075AB71 /* WLLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLeftMenuViewController.h; sourceTree = "<group>"; };
 		0FAFC012196D1C890075AB71 /* WLLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLeftMenuViewController.m; sourceTree = "<group>"; };
 		0FAFC015196D1DC60075AB71 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
@@ -132,6 +168,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F84EDDF197D3991001B336B /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				0F84EDE0197D3991001B336B /* RedAlert.png */,
+				0F84EDE1197D3991001B336B /* YellowAlert.png */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		0FA42523196A689700D85399 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +275,7 @@
 		0FA42566196A6BE900D85399 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0FAB2A39197692E40077DBFD /* PNChart */,
 				0FA425BB196C090600D85399 /* FrostedGlass */,
 				0FA425A7196BF58B00D85399 /* RESideMenu */,
 				0FA42567196A6BE900D85399 /* MKNetworkKit */,
@@ -289,6 +335,8 @@
 		0FA42591196A6F7300D85399 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F84EDE4197D39E5001B336B /* WLDevice.h */,
+				0F84EDE5197D39E5001B336B /* WLDevice.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +422,7 @@
 		0FA425C6196C149300D85399 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0F84EDDF197D3991001B336B /* Alert */,
 				0FAFC014196D1DC60075AB71 /* Menu */,
 				0FA425C7196C149300D85399 /* Home */,
 			);
@@ -403,13 +452,38 @@
 			children = (
 				0FA6C7A7196F7A84005127E1 /* UPMacros.h */,
 				0FA6C7A8196F7A84005127E1 /* UPMacros.m */,
+				0F84EDDC197D3630001B336B /* WLColors.h */,
+				0F84EDE7197D3BDB001B336B /* WLDeviceConsts.h */,
 			);
 			path = Macros;
+			sourceTree = "<group>";
+		};
+		0FAB2A39197692E40077DBFD /* PNChart */ = {
+			isa = PBXGroup;
+			children = (
+				0FAB2A3A197692E40077DBFD /* PNBar.h */,
+				0FAB2A3B197692E40077DBFD /* PNBar.m */,
+				0FAB2A3C197692E40077DBFD /* PNBarChart.h */,
+				0FAB2A3D197692E40077DBFD /* PNBarChart.m */,
+				0FAB2A40197692E40077DBFD /* PNChartLabel.h */,
+				0FAB2A41197692E40077DBFD /* PNChartLabel.m */,
+				0FAB2A42197692E40077DBFD /* PNColor.h */,
+				0FAB2A43197692E40077DBFD /* PNColor.m */,
+				0FAB2A44197692E40077DBFD /* PNLineChart.h */,
+				0FAB2A45197692E40077DBFD /* PNLineChart.m */,
+			);
+			path = PNChart;
 			sourceTree = "<group>";
 		};
 		0FAFC014196D1DC60075AB71 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0F54F162197239A900217BE2 /* IconCalendar@2x.png */,
+				0F54F163197239A900217BE2 /* IconEmpty@2x.png */,
+				0F54F164197239A900217BE2 /* IconHome@2x.png */,
+				0F54F165197239A900217BE2 /* IconProfile@2x.png */,
+				0F54F166197239A900217BE2 /* IconSettings@2x.png */,
+				0F54F167197239A900217BE2 /* MenuBackground@2x.png */,
 				0FAFC015196D1DC60075AB71 /* Stars@2x.png */,
 			);
 			path = Menu;
@@ -502,8 +576,16 @@
 			files = (
 				0FA4253A196A689700D85399 /* InfoPlist.strings in Resources */,
 				0FA42542196A689700D85399 /* Images.xcassets in Resources */,
+				0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */,
 				0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */,
+				0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */,
+				0F54F169197239A900217BE2 /* IconEmpty@2x.png in Resources */,
+				0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */,
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
+				0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */,
+				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
+				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,
+				0F84EDE2197D3991001B336B /* RedAlert.png in Resources */,
 				0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,15 +606,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA425B0196BF58B00D85399 /* UIViewController+RESideMenu.m in Sources */,
+				0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */,
+				0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */,
 				0FAFC01A196D1E440075AB71 /* WLSourceManager.m in Sources */,
 				0FA4253C196A689700D85399 /* main.m in Sources */,
 				0FA425C4196C12BA00D85399 /* WLRootViewController.m in Sources */,
 				0FA425B8196BFE5500D85399 /* WLHomeViewController.m in Sources */,
+				0FAB2A46197692E40077DBFD /* PNBar.m in Sources */,
+				0F84EDE6197D39E5001B336B /* WLDevice.m in Sources */,
 				0FA4258C196A6BE900D85399 /* MKNetworkEngine.m in Sources */,
 				0FA4258D196A6BE900D85399 /* MKNetworkOperation.m in Sources */,
 				0FA42597196A71CC00D85399 /* WLNavigationBar.m in Sources */,
+				0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */,
 				0FA425A1196A79E000D85399 /* WLLoginViewController.m in Sources */,
 				0FA4258E196A6BE900D85399 /* Reachability.m in Sources */,
+				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
 				0FA42594196A71A600D85399 /* WLNavigationController.m in Sources */,
 				0FAFC013196D1C890075AB71 /* WLLeftMenuViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "UPMacros.h"
 #import "UPDeviceInfo.h"
 #import "RESideMenu.h"
+#import "WLColors.h"
 
 @interface WLBaseViewController : UIViewController
 
