@@ -10,7 +10,8 @@
 #import "UPMacros.h"
 #import "UPDeviceInfo.h"
 #import "RESideMenu.h"
-#import "WLColors.h"
+#import "VISColors.h"
+#import "VISViewCreator.h"
 
 @interface VISBaseViewController : UIViewController
 

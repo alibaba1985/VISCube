@@ -10,6 +10,8 @@
 #import "UIImage+ImageEffects.h"
 #import "UPDeviceInfo.h"
 #import "PNBarChart.h"
+#import "CPKenburnsView.h"
+#import "UPLineView.h"
 
 
 #define kAutoScrollAnchor 160
@@ -23,14 +25,19 @@
     CGRect _changeableBackgroundFrame;
     
     CGFloat _changeableOriginalY;
+    CGFloat _yOffset;
     
     PNBarChart *_barChart;
-
+    CPKenburnsView *_kenburnsView;
 }
 
 - (void)addFixedBackground;
 
 - (void)addChangeableBackground;
+
+- (void)addManagerImage;
+
+- (void)addMainInfo;
 
 - (void)addWeekKWH;
 
@@ -62,25 +69,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _changeableOriginalY = [UPDeviceInfo screenSize].width;
+    _yOffset = _changeableOriginalY;
     [self addFixedBackground];
     [self addChangeableBackground];
-    
+    [self addMainInfo];
     [self addWeekKWH];
-    
-    CGFloat y = _changeableOriginalY;
-    
-    for (NSInteger i = 0; i <15; i++) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, y, 200, 30)];
-        label.text = @"test";
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor clearColor];
-        [self.contentScrollView addSubview:label];
-        y += 70 ;
-    }
     
     
     CGSize size = self.contentScrollView.bounds.size;
-    size.height = y;
+    size.height = _yOffset;
     self.contentScrollView.contentSize = size;
     self.contentScrollView.delegate = self;
     
@@ -95,7 +92,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //self.navigationController.navigationBarHidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,32 +112,137 @@
 }
 */
 
+- (void)strokeAnimation
+{
+    [self addFixedBackground];
+}
+
+- (void)addManagerImage
+{
+    UIImage *manager = [UIImage imageNamed:@"Manager.jpg"];
+    UIImageView *managerView = [[UIImageView alloc] initWithImage:manager];
+    managerView.frame = CGRectMake(100, 160, 160, 160);
+    managerView.contentMode = UIViewContentModeScaleAspectFill;
+    managerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.contentScrollView addSubview:managerView];
+    
+    
+}
+
+- (void)addText1:(NSString *)text1
+           text2:(NSString *)text2
+           text3:(NSString *)text3
+          onView:(UIView *)view
+          offset:(CGFloat)offset
+{
+    CGFloat lMargin = 5;
+    CGFloat y = offset;
+    CGFloat x = lMargin;
+    
+    CGSize size = [text1 sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]}];
+    CGRect frame = CGRectMake(x, y, size.width, 50);
+    
+    VISLabel *tag1 = [VISViewCreator
+                      wrapLabelWithFrame:frame
+                      text:text1
+                      font:[UIFont systemFontOfSize:14]
+                      textColor:[UIColor whiteColor]];
+    [view addSubview:tag1];
+    
+    x += size.width;
+    
+    size = [text2 sizeWithAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:30]}];
+    
+    frame = CGRectMake(x, y, size.width, 50);
+    VISLabel *monthPower = [VISViewCreator
+                            wrapLabelWithFrame:frame
+                            text:text2
+                            font:[UIFont systemFontOfSize:30]
+                            textColor:[UIColor whiteColor]];
+    [view addSubview:monthPower];
+    
+    x += size.width + lMargin;
+    frame = CGRectMake(x, y, 50, 50);
+    
+    VISLabel *unit = [VISViewCreator
+                      wrapLabelWithFrame:frame
+                      text:text3
+                      font:[UIFont systemFontOfSize:14]
+                      textColor:[UIColor whiteColor]];
+    [view addSubview:unit];
+    
+    
+}
+
+- (void)addMainInfo
+{
+    CGRect frame = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight - _changeableOriginalY);
+    UIView *mainInfoView = [[UIView alloc] initWithFrame:frame];
+    mainInfoView.backgroundColor = [UIColor clearColor];
+    [self.contentScrollView addSubview:mainInfoView];
+    
+    [self addText1:@"本月用电" text2:@"158.68" text3:@"KWH" onView:mainInfoView offset:0];
+    [self addText1:@"本月电费" text2:@"79.34" text3:@"元" onView:mainInfoView offset:60];
+    CGRect lineFrame = CGRectMake(0, 120, self.viewMaxWidth, 1);
+    UPLineView *line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.6 alpha:1]];
+    [mainInfoView addSubview:line];
+    
+    [self addText1:@"卫仕魔方本月为您节省了" text2:@"11.22" text3:@"元" onView:mainInfoView offset:120];
+    
+    _yOffset += self.viewMaxHeight - self.viewMaxWidth;
+    
+}
+
 #pragma mark - add Week Chart
 
 - (void)addWeekKWH
 {
-    CGRect frame = CGRectMake(20, 320, 280, 200);
+    CGFloat labelHeight = 30;
+    CGRect labelFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, labelHeight);
+    VISLabel *label = [VISViewCreator wrapLabelWithFrame:labelFrame text:@"年度用电统计  " font:[UIFont systemFontOfSize:16] textColor:[UIColor whiteColor]];
+    label.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    label.verticalAlignment = VISVerticalAlignmentMiddle;
+    label.textAlignment = NSTextAlignmentRight;
+    [self.contentScrollView addSubview:label];
     
+    CGRect lineFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, 0.5);
+    UPLineView *line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
+    [self.contentScrollView addSubview:line];
+    
+    _yOffset += labelHeight;
+   
     NSArray *yValues = @[@"50",@"100",@"20",@"60",@"30",@"70"];
     NSArray *xValues = @[@"1月",@"2月",@"3月",@"4月",@"5月",@"6月"];
     
-    _barChart = [[PNBarChart alloc] initWithFrame:frame bars:yValues];
-    _barChart.backgroundColor = [UIColor clearColor];
+    CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, 200);
+    _barChart = [[PNBarChart alloc] initWithFrame:barFrame bars:yValues];
+    _barChart.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
     [self.contentScrollView addSubview:_barChart];
     [_barChart setYValues:yValues];
     [_barChart setXLabels:xValues];
     [_barChart strokeChart];
+    
+    _yOffset += 200;
+    
+    lineFrame = CGRectMake(0, _yOffset-0.5, self.viewMaxWidth, 0.5);
+    line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
+    [self.contentScrollView addSubview:line];
+    
 }
 
 #pragma mark- Background ImageView
 
 - (void)addFixedBackground
 {
+    if (_kenburnsView != nil) {
+        [_kenburnsView removeFromSuperview];
+        _kenburnsView = nil;
+    }
     CGRect frame = [UIScreen mainScreen].bounds;
     frame.size.height -= 64;
-    UIImage *bgImage = [UIImage imageNamed:@"HomeBG.jpg"];//
-    _fixedBackground = [self imageViewWithImage:bgImage frame:frame];
-    [self.view insertSubview:_fixedBackground atIndex:0];
+    _kenburnsView = [[CPKenburnsView alloc] initWithFrame:frame];
+    _kenburnsView.image = [UIImage imageNamed:@"1.jpg"];
+    [self.view insertSubview:_kenburnsView atIndex:0];
 }
 
 - (void)addChangeableBackground
@@ -149,14 +251,15 @@
     _changeableContentFrame = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, contentHeight);
     _changeableBackgroundFrame = CGRectMake(0, -_changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
 
-    UIImage *bgImage = [UIImage imageNamed:@"HomeBG.jpg"];//
-    _changeableBackground = [self imageViewWithImage:[bgImage applyDarkEffect] frame:_changeableBackgroundFrame];
+    UIImage *bgImage = [UIImage imageNamed:@"AlphaBG.jpg"];//
+    UIImage *newImage = [bgImage applyDarkEffect];
+    _changeableBackground = [self imageViewWithImage:newImage frame:_changeableBackgroundFrame];
     
     _changeableContentView = [[UIView alloc] initWithFrame:_changeableContentFrame];
     _changeableContentView.clipsToBounds = YES;
     
     [_changeableContentView addSubview:_changeableBackground];
-    [self.view insertSubview:_changeableContentView aboveSubview:_fixedBackground];
+    [self.view insertSubview:_changeableContentView aboveSubview:_kenburnsView];
 }
 
 

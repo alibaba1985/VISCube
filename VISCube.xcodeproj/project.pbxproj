@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0A9BC5197E0CE500E3C0E1 /* Manager.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A9BC4197E0CE500E3C0E1 /* Manager.jpg */; };
+		0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A9BC8197E2CD000E3C0E1 /* CPKenburnsView.m */; };
+		0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A9BCA197E2DB300E3C0E1 /* 1.jpg */; };
+		0F0A9BD1197E454C00E3C0E1 /* AlphaBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A9BD0197E454C00E3C0E1 /* AlphaBG.jpg */; };
+		0F0A9BD4197E561E00E3C0E1 /* VISViewCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A9BD3197E561E00E3C0E1 /* VISViewCreator.m */; };
+		0F0A9BD7197E786200E3C0E1 /* VISLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A9BD6197E786200E3C0E1 /* VISLabel.m */; };
+		0F0A9BDA197E808600E3C0E1 /* UPLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A9BD9197E808600E3C0E1 /* UPLineView.m */; };
 		0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F162197239A900217BE2 /* IconCalendar@2x.png */; };
 		0F54F169197239A900217BE2 /* IconEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F163197239A900217BE2 /* IconEmpty@2x.png */; };
 		0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F164197239A900217BE2 /* IconHome@2x.png */; };
@@ -66,6 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0A9BC4197E0CE500E3C0E1 /* Manager.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Manager.jpg; sourceTree = "<group>"; };
+		0F0A9BC7197E2CD000E3C0E1 /* CPKenburnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPKenburnsView.h; sourceTree = "<group>"; };
+		0F0A9BC8197E2CD000E3C0E1 /* CPKenburnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPKenburnsView.m; sourceTree = "<group>"; };
+		0F0A9BCA197E2DB300E3C0E1 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		0F0A9BD0197E454C00E3C0E1 /* AlphaBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AlphaBG.jpg; sourceTree = "<group>"; };
+		0F0A9BD2197E561E00E3C0E1 /* VISViewCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISViewCreator.h; sourceTree = "<group>"; };
+		0F0A9BD3197E561E00E3C0E1 /* VISViewCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISViewCreator.m; sourceTree = "<group>"; };
+		0F0A9BD5197E786200E3C0E1 /* VISLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISLabel.h; sourceTree = "<group>"; };
+		0F0A9BD6197E786200E3C0E1 /* VISLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISLabel.m; sourceTree = "<group>"; };
+		0F0A9BD8197E808600E3C0E1 /* UPLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPLineView.h; sourceTree = "<group>"; };
+		0F0A9BD9197E808600E3C0E1 /* UPLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPLineView.m; sourceTree = "<group>"; };
 		0F54F162197239A900217BE2 /* IconCalendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconCalendar@2x.png"; sourceTree = "<group>"; };
 		0F54F163197239A900217BE2 /* IconEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconEmpty@2x.png"; sourceTree = "<group>"; };
 		0F54F164197239A900217BE2 /* IconHome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconHome@2x.png"; sourceTree = "<group>"; };
@@ -168,6 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0A9BC6197E2CD000E3C0E1 /* CPKenburnsView */ = {
+			isa = PBXGroup;
+			children = (
+				0F0A9BC7197E2CD000E3C0E1 /* CPKenburnsView.h */,
+				0F0A9BC8197E2CD000E3C0E1 /* CPKenburnsView.m */,
+			);
+			path = CPKenburnsView;
+			sourceTree = "<group>";
+		};
 		0F84EDDF197D3991001B336B /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +302,7 @@
 		0FA42566196A6BE900D85399 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A9BC6197E2CD000E3C0E1 /* CPKenburnsView */,
 				0FAB2A39197692E40077DBFD /* PNChart */,
 				0FA425BB196C090600D85399 /* FrostedGlass */,
 				0FA425A7196BF58B00D85399 /* RESideMenu */,
@@ -335,8 +363,12 @@
 		0FA42591196A6F7300D85399 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A9BD8197E808600E3C0E1 /* UPLineView.h */,
+				0F0A9BD9197E808600E3C0E1 /* UPLineView.m */,
 				0F84EDE4197D39E5001B336B /* VISDevice.h */,
 				0F84EDE5197D39E5001B336B /* VISDevice.m */,
+				0F0A9BD5197E786200E3C0E1 /* VISLabel.h */,
+				0F0A9BD6197E786200E3C0E1 /* VISLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +464,9 @@
 		0FA425C7196C149300D85399 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A9BD0197E454C00E3C0E1 /* AlphaBG.jpg */,
+				0F0A9BCA197E2DB300E3C0E1 /* 1.jpg */,
+				0F0A9BC4197E0CE500E3C0E1 /* Manager.jpg */,
 				0FAFC01B196D53730075AB71 /* Balloon@2x.png */,
 				0FA425C8196C149300D85399 /* HomeBG.jpg */,
 			);
@@ -443,6 +478,8 @@
 			children = (
 				0FA6C7A0196F784D005127E1 /* UPDeviceInfo.h */,
 				0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */,
+				0F0A9BD2197E561E00E3C0E1 /* VISViewCreator.h */,
+				0F0A9BD3197E561E00E3C0E1 /* VISViewCreator.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -583,8 +620,11 @@
 				0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */,
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
 				0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */,
+				0F0A9BD1197E454C00E3C0E1 /* AlphaBG.jpg in Resources */,
+				0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
 				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,
+				0F0A9BC5197E0CE500E3C0E1 /* Manager.jpg in Resources */,
 				0F84EDE2197D3991001B336B /* RedAlert.png in Resources */,
 				0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */,
 			);
@@ -608,6 +648,7 @@
 				0FA425B0196BF58B00D85399 /* UIViewController+RESideMenu.m in Sources */,
 				0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */,
 				0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */,
+				0F0A9BD4197E561E00E3C0E1 /* VISViewCreator.m in Sources */,
 				0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */,
 				0FA4253C196A689700D85399 /* main.m in Sources */,
 				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
@@ -619,13 +660,16 @@
 				0FA42597196A71CC00D85399 /* VISNavigationBar.m in Sources */,
 				0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */,
 				0FA425A1196A79E000D85399 /* VISLoginViewController.m in Sources */,
+				0F0A9BD7197E786200E3C0E1 /* VISLabel.m in Sources */,
 				0FA4258E196A6BE900D85399 /* Reachability.m in Sources */,
+				0F0A9BDA197E808600E3C0E1 /* UPLineView.m in Sources */,
 				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
 				0FA42594196A71A600D85399 /* VISNavigationController.m in Sources */,
 				0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */,
 				0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */,
 				0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */,
+				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
 				0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */,

@@ -21,7 +21,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.rootViewControler = [[VISRootViewController alloc] init];
+    
     
     //
     [self createMenuViewControllers];
@@ -48,6 +48,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self.rootViewControler strokeAnimation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -66,7 +67,8 @@
 {
     NSMutableArray *array = [NSMutableArray array];
     VISNavigationController *home = [[VISNavigationController alloc] initWithNavigationBarClass:[VISNavigationBar class] toolbarClass:nil];
-    home.viewControllers = [[NSArray alloc] initWithObjects:[[VISHomeViewController alloc] init], nil];
+    self.rootViewControler = [[VISHomeViewController alloc] init];
+    home.viewControllers = [[NSArray alloc] initWithObjects:self.rootViewControler, nil];
     [array addObject:home];
     [VISSourceManager currentSource].menuViewControllers = [NSArray arrayWithArray:array];
 }

@@ -10,4 +10,6 @@
 
 @interface VISHomeViewController : VISBaseViewController<UIScrollViewDelegate>
 
+- (void)strokeAnimation;
+
 @end

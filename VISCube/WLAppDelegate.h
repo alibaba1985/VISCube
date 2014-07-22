@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
 
-@class VISRootViewController;
+@class VISHomeViewController;
 @interface WLAppDelegate : UIResponder <UIApplicationDelegate,RESideMenuDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) VISRootViewController *rootViewControler;
+@property (strong, nonatomic) VISHomeViewController *rootViewControler;
 
 - (void)createMenuViewControllers;
 

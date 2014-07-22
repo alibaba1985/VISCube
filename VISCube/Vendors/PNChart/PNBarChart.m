@@ -34,7 +34,6 @@
         _scrollView.backgroundColor = [UIColor clearColor];
         [self addSubview:_scrollView];
         _chartMarginAndWidth = CGRectGetWidth(frame) / (2*_bars.count + 1);
-        
     }
     
     return self;
