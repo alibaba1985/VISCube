@@ -1,16 +1,16 @@
 //
-//  WLLoginViewController.m
+//  VISLoginViewController.m
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLLoginViewController.h"
+#import "VISLoginViewController.h"
 #import "RESideMenu.h"
 
 
-@interface WLLoginViewController ()
+@interface VISLoginViewController ()
 {
     
 }
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation WLLoginViewController
+@implementation VISLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

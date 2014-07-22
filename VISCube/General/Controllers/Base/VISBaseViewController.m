@@ -1,14 +1,14 @@
 //
-//  WLBaseViewController.m
+//  VISBaseViewController.m
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLBaseViewController.h"
+#import "VISBaseViewController.h"
 
-@interface WLBaseViewController ()
+@interface VISBaseViewController ()
 {
     CGFloat _viewMaxWidth;
     CGFloat _viewMaxHeight;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation WLBaseViewController
+@implementation VISBaseViewController
 @synthesize contentScrollView;
 @synthesize viewMaxWidth = _viewMaxWidth;
 @synthesize viewMaxHeight = _viewMaxHeight;

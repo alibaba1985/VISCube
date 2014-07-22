@@ -1,12 +1,12 @@
 //
-//  WLHomeViewController.m
+//  VISHomeViewController.m
 //  VISCube
 //
 //  Created by liwang on 14-7-8.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLHomeViewController.h"
+#import "VISHomeViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "UPDeviceInfo.h"
 #import "PNBarChart.h"
@@ -14,7 +14,7 @@
 
 #define kAutoScrollAnchor 160
 
-@interface WLHomeViewController ()
+@interface VISHomeViewController ()
 {
     UIImageView *_fixedBackground;
     UIImageView *_changeableBackground;
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation WLHomeViewController
+@implementation VISHomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

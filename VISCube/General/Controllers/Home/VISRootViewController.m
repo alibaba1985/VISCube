@@ -1,18 +1,18 @@
 //
-//  WLRootViewController.m
+//  VISRootViewController.m
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLRootViewController.h"
-#import "WLLoginViewController.h"
-#import "WLHomeViewController.h"
+#import "VISRootViewController.h"
+#import "VISLoginViewController.h"
+#import "VISHomeViewController.h"
 
-@interface WLRootViewController ()
+@interface VISRootViewController ()
 {
-    WLLoginViewController *_loginVC;
+    VISLoginViewController *_loginVC;
 }
 
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation WLRootViewController
+@implementation VISRootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    _loginVC = [[WLLoginViewController alloc] init];
+    _loginVC = [[VISLoginViewController alloc] init];
     //[self.view addSubview:_loginVC.view];
     
     [self createScrolls];
@@ -79,7 +79,7 @@
 
 - (void)showLoginAction:(id)sender
 {
-    WLHomeViewController *home = [[WLHomeViewController alloc] init];
+    VISHomeViewController *home = [[VISHomeViewController alloc] init];
     [self presentViewController:home animated:YES completion:nil];
 
 }

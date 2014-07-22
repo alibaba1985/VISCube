@@ -1,5 +1,5 @@
 //
-//  WLColors.h
+//  VISColors.h
 //  VISCube
 //
 //  Created by liwang on 14-7-21.

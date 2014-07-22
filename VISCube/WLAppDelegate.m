@@ -7,12 +7,12 @@
 //
 
 #import "WLAppDelegate.h"
-#import "WLRootViewController.h"
-#import "WLNavigationController.h"
-#import "WLHomeViewController.h"
-#import "WLLeftMenuViewController.h"
-#import "WLNavigationBar.h"
-#import "WLSourceManager.h"
+#import "VISRootViewController.h"
+#import "VISNavigationController.h"
+#import "VISHomeViewController.h"
+#import "VISLeftMenuViewController.h"
+#import "VISNavigationBar.h"
+#import "VISSourceManager.h"
 
 @implementation WLAppDelegate
 @synthesize rootViewControler;
@@ -21,7 +21,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.rootViewControler = [[WLRootViewController alloc] init];
+    self.rootViewControler = [[VISRootViewController alloc] init];
     
     //
     [self createMenuViewControllers];
@@ -65,16 +65,16 @@
 - (void)createMenuViewControllers
 {
     NSMutableArray *array = [NSMutableArray array];
-    WLNavigationController *home = [[WLNavigationController alloc] initWithNavigationBarClass:[WLNavigationBar class] toolbarClass:nil];
-    home.viewControllers = [[NSArray alloc] initWithObjects:[[WLHomeViewController alloc] init], nil];
+    VISNavigationController *home = [[VISNavigationController alloc] initWithNavigationBarClass:[VISNavigationBar class] toolbarClass:nil];
+    home.viewControllers = [[NSArray alloc] initWithObjects:[[VISHomeViewController alloc] init], nil];
     [array addObject:home];
-    [WLSourceManager currentSource].menuViewControllers = [NSArray arrayWithArray:array];
+    [VISSourceManager currentSource].menuViewControllers = [NSArray arrayWithArray:array];
 }
 
 - (void)createMenu
 {
-    UIViewController *home = [[WLSourceManager currentSource].menuViewControllers objectAtIndex:0];
-    WLLeftMenuViewController *left = [[WLLeftMenuViewController alloc] init];
+    UIViewController *home = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:0];
+    VISLeftMenuViewController *left = [[VISLeftMenuViewController alloc] init];
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:home leftMenuViewController:left rightMenuViewController:nil];
     self.window.rootViewController = sideMenuViewController;
     

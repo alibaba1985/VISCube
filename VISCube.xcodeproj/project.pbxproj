@@ -15,7 +15,7 @@
 		0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F167197239A900217BE2 /* MenuBackground@2x.png */; };
 		0F84EDE2197D3991001B336B /* RedAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE0197D3991001B336B /* RedAlert.png */; };
 		0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE1197D3991001B336B /* YellowAlert.png */; };
-		0F84EDE6197D39E5001B336B /* WLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* WLDevice.m */; };
+		0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* VISDevice.m */; };
 		0FA42530196A689700D85399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4252F196A689700D85399 /* Foundation.framework */; };
 		0FA42532196A689700D85399 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42531196A689700D85399 /* CoreGraphics.framework */; };
 		0FA42534196A689700D85399 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42533196A689700D85399 /* UIKit.framework */; };
@@ -31,16 +31,16 @@
 		0FA4258C196A6BE900D85399 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4257A196A6BE900D85399 /* MKNetworkEngine.m */; };
 		0FA4258D196A6BE900D85399 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4257D196A6BE900D85399 /* MKNetworkOperation.m */; };
 		0FA4258E196A6BE900D85399 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42580196A6BE900D85399 /* Reachability.m */; };
-		0FA42594196A71A600D85399 /* WLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42593196A71A600D85399 /* WLNavigationController.m */; };
-		0FA42597196A71CC00D85399 /* WLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42596196A71CC00D85399 /* WLNavigationBar.m */; };
-		0FA4259A196A71E300D85399 /* WLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42599196A71E300D85399 /* WLBaseViewController.m */; };
-		0FA425A1196A79E000D85399 /* WLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425A0196A79E000D85399 /* WLLoginViewController.m */; };
+		0FA42594196A71A600D85399 /* VISNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42593196A71A600D85399 /* VISNavigationController.m */; };
+		0FA42597196A71CC00D85399 /* VISNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42596196A71CC00D85399 /* VISNavigationBar.m */; };
+		0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA42599196A71E300D85399 /* VISBaseViewController.m */; };
+		0FA425A1196A79E000D85399 /* VISLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425A0196A79E000D85399 /* VISLoginViewController.m */; };
 		0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425A9196BF58B00D85399 /* RECommonFunctions.m */; };
 		0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425AB196BF58B00D85399 /* RESideMenu.m */; };
 		0FA425B0196BF58B00D85399 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425AD196BF58B00D85399 /* UIViewController+RESideMenu.m */; };
-		0FA425B8196BFE5500D85399 /* WLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425B7196BFE5500D85399 /* WLHomeViewController.m */; };
+		0FA425B8196BFE5500D85399 /* VISHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425B7196BFE5500D85399 /* VISHomeViewController.m */; };
 		0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425BD196C090600D85399 /* UIImage+ImageEffects.m */; };
-		0FA425C4196C12BA00D85399 /* WLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425C3196C12BA00D85399 /* WLRootViewController.m */; };
+		0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425C3196C12BA00D85399 /* VISRootViewController.m */; };
 		0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA425C8196C149300D85399 /* HomeBG.jpg */; };
 		0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */; };
 		0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A8196F7A84005127E1 /* UPMacros.m */; };
@@ -49,9 +49,9 @@
 		0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A41197692E40077DBFD /* PNChartLabel.m */; };
 		0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A43197692E40077DBFD /* PNColor.m */; };
 		0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A45197692E40077DBFD /* PNLineChart.m */; };
-		0FAFC013196D1C890075AB71 /* WLLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC012196D1C890075AB71 /* WLLeftMenuViewController.m */; };
+		0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */; };
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
-		0FAFC01A196D1E440075AB71 /* WLSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* WLSourceManager.m */; };
+		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
 		0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC01B196D53730075AB71 /* Balloon@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -72,12 +72,12 @@
 		0F54F165197239A900217BE2 /* IconProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconProfile@2x.png"; sourceTree = "<group>"; };
 		0F54F166197239A900217BE2 /* IconSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconSettings@2x.png"; sourceTree = "<group>"; };
 		0F54F167197239A900217BE2 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuBackground@2x.png"; sourceTree = "<group>"; };
-		0F84EDDC197D3630001B336B /* WLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLColors.h; sourceTree = "<group>"; };
+		0F84EDDC197D3630001B336B /* VISColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISColors.h; sourceTree = "<group>"; };
 		0F84EDE0197D3991001B336B /* RedAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedAlert.png; sourceTree = "<group>"; };
 		0F84EDE1197D3991001B336B /* YellowAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowAlert.png; sourceTree = "<group>"; };
-		0F84EDE4197D39E5001B336B /* WLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLDevice.h; sourceTree = "<group>"; };
-		0F84EDE5197D39E5001B336B /* WLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLDevice.m; sourceTree = "<group>"; };
-		0F84EDE7197D3BDB001B336B /* WLDeviceConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLDeviceConsts.h; sourceTree = "<group>"; };
+		0F84EDE4197D39E5001B336B /* VISDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDevice.h; sourceTree = "<group>"; };
+		0F84EDE5197D39E5001B336B /* VISDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDevice.m; sourceTree = "<group>"; };
+		0F84EDE7197D3BDB001B336B /* VISDeviceConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceConsts.h; sourceTree = "<group>"; };
 		0FA4252C196A689700D85399 /* VISCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA4252F196A689700D85399 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FA42531196A689700D85399 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,26 +101,26 @@
 		0FA4257D196A6BE900D85399 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
 		0FA4257F196A6BE900D85399 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		0FA42580196A6BE900D85399 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		0FA42592196A71A600D85399 /* WLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLNavigationController.h; sourceTree = "<group>"; };
-		0FA42593196A71A600D85399 /* WLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLNavigationController.m; sourceTree = "<group>"; };
-		0FA42595196A71CC00D85399 /* WLNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLNavigationBar.h; sourceTree = "<group>"; };
-		0FA42596196A71CC00D85399 /* WLNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLNavigationBar.m; sourceTree = "<group>"; };
-		0FA42598196A71E300D85399 /* WLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBaseViewController.h; sourceTree = "<group>"; };
-		0FA42599196A71E300D85399 /* WLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBaseViewController.m; sourceTree = "<group>"; };
-		0FA4259F196A79E000D85399 /* WLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLoginViewController.h; sourceTree = "<group>"; };
-		0FA425A0196A79E000D85399 /* WLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLoginViewController.m; sourceTree = "<group>"; };
+		0FA42592196A71A600D85399 /* VISNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISNavigationController.h; sourceTree = "<group>"; };
+		0FA42593196A71A600D85399 /* VISNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISNavigationController.m; sourceTree = "<group>"; };
+		0FA42595196A71CC00D85399 /* VISNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISNavigationBar.h; sourceTree = "<group>"; };
+		0FA42596196A71CC00D85399 /* VISNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISNavigationBar.m; sourceTree = "<group>"; };
+		0FA42598196A71E300D85399 /* VISBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISBaseViewController.h; sourceTree = "<group>"; };
+		0FA42599196A71E300D85399 /* VISBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISBaseViewController.m; sourceTree = "<group>"; };
+		0FA4259F196A79E000D85399 /* VISLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISLoginViewController.h; sourceTree = "<group>"; };
+		0FA425A0196A79E000D85399 /* VISLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISLoginViewController.m; sourceTree = "<group>"; };
 		0FA425A8196BF58B00D85399 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		0FA425A9196BF58B00D85399 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		0FA425AA196BF58B00D85399 /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
 		0FA425AB196BF58B00D85399 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		0FA425AC196BF58B00D85399 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		0FA425AD196BF58B00D85399 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		0FA425B6196BFE5500D85399 /* WLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLHomeViewController.h; sourceTree = "<group>"; };
-		0FA425B7196BFE5500D85399 /* WLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLHomeViewController.m; sourceTree = "<group>"; };
+		0FA425B6196BFE5500D85399 /* VISHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISHomeViewController.h; sourceTree = "<group>"; };
+		0FA425B7196BFE5500D85399 /* VISHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISHomeViewController.m; sourceTree = "<group>"; };
 		0FA425BC196C090600D85399 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		0FA425BD196C090600D85399 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		0FA425C2196C12BA00D85399 /* WLRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLRootViewController.h; sourceTree = "<group>"; };
-		0FA425C3196C12BA00D85399 /* WLRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLRootViewController.m; sourceTree = "<group>"; };
+		0FA425C2196C12BA00D85399 /* VISRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISRootViewController.h; sourceTree = "<group>"; };
+		0FA425C3196C12BA00D85399 /* VISRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISRootViewController.m; sourceTree = "<group>"; };
 		0FA425C8196C149300D85399 /* HomeBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HomeBG.jpg; sourceTree = "<group>"; };
 		0FA6C7A0196F784D005127E1 /* UPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPDeviceInfo.h; sourceTree = "<group>"; };
 		0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDeviceInfo.m; sourceTree = "<group>"; };
@@ -136,11 +136,11 @@
 		0FAB2A43197692E40077DBFD /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNColor.m; sourceTree = "<group>"; };
 		0FAB2A44197692E40077DBFD /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChart.h; sourceTree = "<group>"; };
 		0FAB2A45197692E40077DBFD /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChart.m; sourceTree = "<group>"; };
-		0FAFC011196D1C890075AB71 /* WLLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLLeftMenuViewController.h; sourceTree = "<group>"; };
-		0FAFC012196D1C890075AB71 /* WLLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLLeftMenuViewController.m; sourceTree = "<group>"; };
+		0FAFC011196D1C890075AB71 /* VISLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISLeftMenuViewController.h; sourceTree = "<group>"; };
+		0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISLeftMenuViewController.m; sourceTree = "<group>"; };
 		0FAFC015196D1DC60075AB71 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
-		0FAFC018196D1E440075AB71 /* WLSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLSourceManager.h; sourceTree = "<group>"; };
-		0FAFC019196D1E440075AB71 /* WLSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLSourceManager.m; sourceTree = "<group>"; };
+		0FAFC018196D1E440075AB71 /* VISSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISSourceManager.h; sourceTree = "<group>"; };
+		0FAFC019196D1E440075AB71 /* VISSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISSourceManager.m; sourceTree = "<group>"; };
 		0FAFC01B196D53730075AB71 /* Balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,8 +266,8 @@
 		0FA4255F196A6BE900D85399 /* menu */ = {
 			isa = PBXGroup;
 			children = (
-				0FAFC011196D1C890075AB71 /* WLLeftMenuViewController.h */,
-				0FAFC012196D1C890075AB71 /* WLLeftMenuViewController.m */,
+				0FAFC011196D1C890075AB71 /* VISLeftMenuViewController.h */,
+				0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -322,12 +322,12 @@
 		0FA42590196A6F7300D85399 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				0FA42592196A71A600D85399 /* WLNavigationController.h */,
-				0FA42593196A71A600D85399 /* WLNavigationController.m */,
-				0FA42595196A71CC00D85399 /* WLNavigationBar.h */,
-				0FA42596196A71CC00D85399 /* WLNavigationBar.m */,
-				0FA42598196A71E300D85399 /* WLBaseViewController.h */,
-				0FA42599196A71E300D85399 /* WLBaseViewController.m */,
+				0FA42592196A71A600D85399 /* VISNavigationController.h */,
+				0FA42593196A71A600D85399 /* VISNavigationController.m */,
+				0FA42595196A71CC00D85399 /* VISNavigationBar.h */,
+				0FA42596196A71CC00D85399 /* VISNavigationBar.m */,
+				0FA42598196A71E300D85399 /* VISBaseViewController.h */,
+				0FA42599196A71E300D85399 /* VISBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -335,8 +335,8 @@
 		0FA42591196A6F7300D85399 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0F84EDE4197D39E5001B336B /* WLDevice.h */,
-				0F84EDE5197D39E5001B336B /* WLDevice.m */,
+				0F84EDE4197D39E5001B336B /* VISDevice.h */,
+				0F84EDE5197D39E5001B336B /* VISDevice.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 		0FA4259E196A78D100D85399 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				0FA4259F196A79E000D85399 /* WLLoginViewController.h */,
-				0FA425A0196A79E000D85399 /* WLLoginViewController.m */,
+				0FA4259F196A79E000D85399 /* VISLoginViewController.h */,
+				0FA425A0196A79E000D85399 /* VISLoginViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -380,10 +380,10 @@
 		0FA425B3196BFE0A00D85399 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0FA425C2196C12BA00D85399 /* WLRootViewController.h */,
-				0FA425C3196C12BA00D85399 /* WLRootViewController.m */,
-				0FA425B6196BFE5500D85399 /* WLHomeViewController.h */,
-				0FA425B7196BFE5500D85399 /* WLHomeViewController.m */,
+				0FA425C2196C12BA00D85399 /* VISRootViewController.h */,
+				0FA425C3196C12BA00D85399 /* VISRootViewController.m */,
+				0FA425B6196BFE5500D85399 /* VISHomeViewController.h */,
+				0FA425B7196BFE5500D85399 /* VISHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -452,8 +452,8 @@
 			children = (
 				0FA6C7A7196F7A84005127E1 /* UPMacros.h */,
 				0FA6C7A8196F7A84005127E1 /* UPMacros.m */,
-				0F84EDDC197D3630001B336B /* WLColors.h */,
-				0F84EDE7197D3BDB001B336B /* WLDeviceConsts.h */,
+				0F84EDDC197D3630001B336B /* VISColors.h */,
+				0F84EDE7197D3BDB001B336B /* VISDeviceConsts.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -492,8 +492,8 @@
 		0FAFC017196D1E140075AB71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0FAFC018196D1E440075AB71 /* WLSourceManager.h */,
-				0FAFC019196D1E440075AB71 /* WLSourceManager.m */,
+				0FAFC018196D1E440075AB71 /* VISSourceManager.h */,
+				0FAFC019196D1E440075AB71 /* VISSourceManager.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,25 +608,25 @@
 				0FA425B0196BF58B00D85399 /* UIViewController+RESideMenu.m in Sources */,
 				0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */,
 				0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */,
-				0FAFC01A196D1E440075AB71 /* WLSourceManager.m in Sources */,
+				0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */,
 				0FA4253C196A689700D85399 /* main.m in Sources */,
-				0FA425C4196C12BA00D85399 /* WLRootViewController.m in Sources */,
-				0FA425B8196BFE5500D85399 /* WLHomeViewController.m in Sources */,
+				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
+				0FA425B8196BFE5500D85399 /* VISHomeViewController.m in Sources */,
 				0FAB2A46197692E40077DBFD /* PNBar.m in Sources */,
-				0F84EDE6197D39E5001B336B /* WLDevice.m in Sources */,
+				0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */,
 				0FA4258C196A6BE900D85399 /* MKNetworkEngine.m in Sources */,
 				0FA4258D196A6BE900D85399 /* MKNetworkOperation.m in Sources */,
-				0FA42597196A71CC00D85399 /* WLNavigationBar.m in Sources */,
+				0FA42597196A71CC00D85399 /* VISNavigationBar.m in Sources */,
 				0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */,
-				0FA425A1196A79E000D85399 /* WLLoginViewController.m in Sources */,
+				0FA425A1196A79E000D85399 /* VISLoginViewController.m in Sources */,
 				0FA4258E196A6BE900D85399 /* Reachability.m in Sources */,
 				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
-				0FA42594196A71A600D85399 /* WLNavigationController.m in Sources */,
-				0FAFC013196D1C890075AB71 /* WLLeftMenuViewController.m in Sources */,
+				0FA42594196A71A600D85399 /* VISNavigationController.m in Sources */,
+				0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */,
 				0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */,
 				0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */,
-				0FA4259A196A71E300D85399 /* WLBaseViewController.m in Sources */,
+				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
 				0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */,
 				0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  WLBaseViewController.h
+//  VISBaseViewController.h
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
@@ -12,7 +12,7 @@
 #import "RESideMenu.h"
 #import "WLColors.h"
 
-@interface WLBaseViewController : UIViewController
+@interface VISBaseViewController : UIViewController
 
 @property (strong, nonatomic) UIScrollView *contentScrollView;
 @property (nonatomic, readonly) CGFloat viewMaxWidth;

@@ -1,5 +1,5 @@
 //
-//  WLNavigationController.h
+//  VISNavigationController.h
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLNavigationController : UINavigationController
+@interface VISNavigationController : UINavigationController
 
 @end

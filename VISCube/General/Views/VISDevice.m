@@ -1,16 +1,22 @@
 //
-//  WLNavigationBar.m
+//  WLDevice.m
 //  VISCube
 //
-//  Created by liwang on 14-7-7.
+//  Created by liwang on 14-7-21.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLNavigationBar.h"
+#import "VISDevice.h"
 
-@implementation WLNavigationBar
+@interface VISDevice ()
+{
+    
+}
+@end
 
-- (id)initWithFrame:(CGRect)frame
+@implementation VISDevice
+
+- (id)initWithFrame:(CGRect)frame info:(NSDictionary *)info
 {
     self = [super initWithFrame:frame];
     if (self) {

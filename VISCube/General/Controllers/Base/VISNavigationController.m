@@ -1,18 +1,18 @@
 //
-//  WLNavigationController.m
+//  VISNavigationController.m
 //  VISCube
 //
 //  Created by liwang on 14-7-7.
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "WLNavigationController.h"
+#import "VISNavigationController.h"
 
-@interface WLNavigationController ()
+@interface VISNavigationController ()
 
 @end
 
-@implementation WLNavigationController
+@implementation VISNavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

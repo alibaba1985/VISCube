@@ -1,5 +1,5 @@
 //
-//  WLDevice.h
+//  VISDevice.h
 //  VISCube
 //
 //  Created by liwang on 14-7-21.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLDevice : UIView
+@interface VISDevice : UIView
 
 - (id)initWithFrame:(CGRect)frame info:(NSDictionary *)info;
 

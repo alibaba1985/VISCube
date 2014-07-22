@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Roman Efimov. All rights reserved.
 //
 
-#import "WLLeftMenuViewController.h"
-#import "WLSourceManager.h"
+#import "VISLeftMenuViewController.h"
+#import "VISSourceManager.h"
 
 
-@interface WLLeftMenuViewController ()
+@interface VISLeftMenuViewController ()
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 
 @end
 
-@implementation WLLeftMenuViewController
+@implementation VISLeftMenuViewController
 
 - (void)viewDidLoad
 {
@@ -45,7 +45,7 @@
     switch (indexPath.row) {
         case 0:
         {
-            UIViewController *home = [[WLSourceManager currentSource].menuViewControllers objectAtIndex:0];
+            UIViewController *home = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:0];
             [self.sideMenuViewController setContentViewController:home
                                                          animated:YES];
             [self.sideMenuViewController hideMenuViewController];

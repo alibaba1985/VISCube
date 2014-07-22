@@ -1,5 +1,5 @@
 //
-//  WLSourceManager.h
+//  VISSourceManager.h
 //  VISCube
 //
 //  Created by liwang on 14-7-9.
@@ -18,7 +18,7 @@
  *
  *
  */
-@interface WLSourceManager : NSObject
+@interface VISSourceManager : NSObject
 /** 侧边栏content viewControllers **/
 @property (nonatomic, strong) NSArray *menuViewControllers;
 

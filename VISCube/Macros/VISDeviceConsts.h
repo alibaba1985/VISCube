@@ -1,5 +1,5 @@
 //
-//  WLDeviceConsts.h
+//  VISDeviceConsts.h
 //  VISCube
 //
 //  Created by liwang on 14-7-21.
