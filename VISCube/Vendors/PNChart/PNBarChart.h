@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-#define kLabelHeight 20
+
+
+
 
 @interface PNBarChart : UIView
 
@@ -18,22 +21,15 @@
 
 -(void)strokeChart;
 
-@property (strong, nonatomic) NSArray * xLabels;
-
-@property (strong, nonatomic) NSArray * yLabels;
-
-@property (strong, nonatomic) NSArray * yValues;
-
-@property (nonatomic) CGFloat xLabelWidth;
-
-@property (nonatomic) int yValueMax;
-
-
+@property (nonatomic) CGFloat yValueMax;
 
 @property (nonatomic, strong) UIColor * strokeColor;
 
 
 - (id)initWithFrame:(CGRect)frame bars:(NSArray *)bars;
 
+- (void)stokeChartAnimation;
+
+- (void)hideAllBars;
 
 @end

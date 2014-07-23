@@ -27,6 +27,8 @@
     CGFloat _changeableOriginalY;
     CGFloat _yOffset;
     
+    BOOL _barChartHasShown;
+    
     PNBarChart *_barChart;
     CPKenburnsView *_kenburnsView;
 }
@@ -40,6 +42,8 @@
 - (void)addMainInfo;
 
 - (void)addWeekKWH;
+
+- (void)handleBarChartAnimationWithOffset:(CGFloat)offset;
 
 @end
 
@@ -195,11 +199,27 @@
 
 #pragma mark - add Week Chart
 
+- (NSArray *)createBars
+{
+    NSDictionary *dic1 = @{kLabel : @"1月", kValue : @"110"};
+    NSDictionary *dic2 = @{kLabel : @"2月", kValue : @"70"};
+    NSDictionary *dic3 = @{kLabel : @"3月", kValue : @"140"};
+    NSDictionary *dic4 = @{kLabel : @"4月", kValue : @"10.00"};
+    NSDictionary *dic5 = @{kLabel : @"5月", kValue : @"90"};
+    NSDictionary *dic6 = @{kLabel : @"6月", kValue : @"180"};
+    
+    
+    NSArray *array = @[dic1, dic2, dic3, dic4, dic5, dic6];
+    
+    return array;
+}
+
 - (void)addWeekKWH
 {
     CGFloat labelHeight = 30;
     CGRect labelFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, labelHeight);
-    VISLabel *label = [VISViewCreator wrapLabelWithFrame:labelFrame text:@"年度用电统计  " font:[UIFont systemFontOfSize:16] textColor:[UIColor whiteColor]];
+    // add title
+    VISLabel *label = [VISViewCreator wrapLabelWithFrame:labelFrame text:@"月度用电统计(单位：元)  " font:[UIFont systemFontOfSize:16] textColor:[UIColor whiteColor]];
     label.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
     label.verticalAlignment = VISVerticalAlignmentMiddle;
     label.textAlignment = NSTextAlignmentRight;
@@ -211,15 +231,13 @@
     
     _yOffset += labelHeight;
    
-    NSArray *yValues = @[@"50",@"100",@"20",@"60",@"30",@"70"];
-    NSArray *xValues = @[@"1月",@"2月",@"3月",@"4月",@"5月",@"6月"];
-    
+
+    NSArray *bars = [self createBars];
+    // add barchart
     CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, 200);
-    _barChart = [[PNBarChart alloc] initWithFrame:barFrame bars:yValues];
+    _barChart = [[PNBarChart alloc] initWithFrame:barFrame bars:bars];
     _barChart.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
     [self.contentScrollView addSubview:_barChart];
-    [_barChart setYValues:yValues];
-    [_barChart setXLabels:xValues];
     [_barChart strokeChart];
     
     _yOffset += 200;
@@ -251,10 +269,10 @@
     _changeableContentFrame = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, contentHeight);
     _changeableBackgroundFrame = CGRectMake(0, -_changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
 
-    UIImage *bgImage = [UIImage imageNamed:@"AlphaBG.jpg"];//
+    UIImage *bgImage = [UIImage imageNamed:@"01bg_image"];//
     UIImage *newImage = [bgImage applyDarkEffect];
     _changeableBackground = [self imageViewWithImage:newImage frame:_changeableBackgroundFrame];
-    
+    _changeableBackground.alpha = 0.99;
     _changeableContentView = [[UIView alloc] initWithFrame:_changeableContentFrame];
     _changeableContentView.clipsToBounds = YES;
     
@@ -265,6 +283,28 @@
 
 
 #pragma mark- ScrollViewDelegate
+
+- (void)handleBarChartAnimationWithOffset:(CGFloat)offset
+{
+    // control barChart Animation when showing
+    CGFloat bottomOffset = CGRectGetMaxY(_barChart.frame) - CGRectGetHeight(self.contentScrollView.frame);
+    CGFloat topOffset = bottomOffset + CGRectGetHeight(self.contentScrollView.frame) - CGRectGetHeight(_barChart.frame);
+    
+    if (offset >= bottomOffset && offset <= topOffset && !_barChartHasShown) {
+        _barChartHasShown = YES;
+        [_barChart stokeChartAnimation];
+    }
+    
+    // control barChart Animation when hidding
+    bottomOffset = bottomOffset - CGRectGetHeight(_barChart.frame);
+    topOffset += CGRectGetHeight(_barChart.frame);
+    
+    if (offset  <= bottomOffset || offset >= topOffset) {
+        _barChartHasShown = NO;
+        [_barChart hideAllBars];
+    }
+
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -298,13 +338,13 @@
     else if (offset > kAutoScrollAnchor && offset <= _changeableOriginalY) {
         CGRect rect = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
-        
     }
     
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    // control glassBG visible
     CGFloat offset = scrollView.contentOffset.y;
     if (offset >0 && offset <= kAutoScrollAnchor) {
         CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
@@ -315,6 +355,14 @@
         [scrollView scrollRectToVisible:rect animated:YES];
         
     }
+    
+    [self handleBarChartAnimationWithOffset:offset];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    CGFloat offset = scrollView.contentOffset.y;
+    [self handleBarChartAnimationWithOffset:offset];
 }
 
 @end

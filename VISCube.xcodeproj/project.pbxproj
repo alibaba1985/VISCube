@@ -23,6 +23,8 @@
 		0F84EDE2197D3991001B336B /* RedAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE0197D3991001B336B /* RedAlert.png */; };
 		0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE1197D3991001B336B /* YellowAlert.png */; };
 		0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* VISDevice.m */; };
+		0F8B71B2197F827E008D0C23 /* 01bg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8B71B1197F827E008D0C23 /* 01bg_image.png */; };
+		0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F8B71BD197F8DB3008D0C23 /* 06.jpg */; };
 		0FA42530196A689700D85399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA4252F196A689700D85399 /* Foundation.framework */; };
 		0FA42532196A689700D85399 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42531196A689700D85399 /* CoreGraphics.framework */; };
 		0FA42534196A689700D85399 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA42533196A689700D85399 /* UIKit.framework */; };
@@ -50,7 +52,6 @@
 		0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425C3196C12BA00D85399 /* VISRootViewController.m */; };
 		0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA425C8196C149300D85399 /* HomeBG.jpg */; };
 		0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */; };
-		0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A8196F7A84005127E1 /* UPMacros.m */; };
 		0FAB2A46197692E40077DBFD /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3B197692E40077DBFD /* PNBar.m */; };
 		0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3D197692E40077DBFD /* PNBarChart.m */; };
 		0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A41197692E40077DBFD /* PNChartLabel.m */; };
@@ -95,7 +96,9 @@
 		0F84EDE1197D3991001B336B /* YellowAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowAlert.png; sourceTree = "<group>"; };
 		0F84EDE4197D39E5001B336B /* VISDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDevice.h; sourceTree = "<group>"; };
 		0F84EDE5197D39E5001B336B /* VISDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDevice.m; sourceTree = "<group>"; };
-		0F84EDE7197D3BDB001B336B /* VISDeviceConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceConsts.h; sourceTree = "<group>"; };
+		0F84EDE7197D3BDB001B336B /* VISConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISConsts.h; sourceTree = "<group>"; };
+		0F8B71B1197F827E008D0C23 /* 01bg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01bg_image.png; sourceTree = "<group>"; };
+		0F8B71BD197F8DB3008D0C23 /* 06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 06.jpg; sourceTree = "<group>"; };
 		0FA4252C196A689700D85399 /* VISCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA4252F196A689700D85399 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FA42531196A689700D85399 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,7 +146,6 @@
 		0FA6C7A0196F784D005127E1 /* UPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPDeviceInfo.h; sourceTree = "<group>"; };
 		0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDeviceInfo.m; sourceTree = "<group>"; };
 		0FA6C7A7196F7A84005127E1 /* UPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
-		0FA6C7A8196F7A84005127E1 /* UPMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMacros.m; sourceTree = "<group>"; };
 		0FAB2A3A197692E40077DBFD /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		0FAB2A3B197692E40077DBFD /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		0FAB2A3C197692E40077DBFD /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -464,6 +466,8 @@
 		0FA425C7196C149300D85399 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F8B71BD197F8DB3008D0C23 /* 06.jpg */,
+				0F8B71B1197F827E008D0C23 /* 01bg_image.png */,
 				0F0A9BD0197E454C00E3C0E1 /* AlphaBG.jpg */,
 				0F0A9BCA197E2DB300E3C0E1 /* 1.jpg */,
 				0F0A9BC4197E0CE500E3C0E1 /* Manager.jpg */,
@@ -488,9 +492,8 @@
 			isa = PBXGroup;
 			children = (
 				0FA6C7A7196F7A84005127E1 /* UPMacros.h */,
-				0FA6C7A8196F7A84005127E1 /* UPMacros.m */,
 				0F84EDDC197D3630001B336B /* VISColors.h */,
-				0F84EDE7197D3BDB001B336B /* VISDeviceConsts.h */,
+				0F84EDE7197D3BDB001B336B /* VISConsts.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA4253A196A689700D85399 /* InfoPlist.strings in Resources */,
+				0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */,
 				0FA42542196A689700D85399 /* Images.xcassets in Resources */,
 				0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */,
 				0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */,
@@ -620,6 +624,7 @@
 				0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */,
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
 				0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */,
+				0F8B71B2197F827E008D0C23 /* 01bg_image.png in Resources */,
 				0F0A9BD1197E454C00E3C0E1 /* AlphaBG.jpg in Resources */,
 				0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
@@ -668,7 +673,6 @@
 				0FA42594196A71A600D85399 /* VISNavigationController.m in Sources */,
 				0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */,
 				0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */,
-				0FA6C7A9196F7A84005127E1 /* UPMacros.m in Sources */,
 				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,

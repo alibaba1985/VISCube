@@ -12,6 +12,7 @@
 #import "RESideMenu.h"
 #import "VISColors.h"
 #import "VISViewCreator.h"
+#import "VISConsts.h"
 
 @interface VISBaseViewController : UIViewController
 

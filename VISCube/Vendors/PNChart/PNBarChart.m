@@ -8,15 +8,18 @@
 
 #import "PNBarChart.h"
 #import "PNColor.h"
-#import "PNChartLabel.h"
+
 #import "PNBar.h"
 
 @interface PNBarChart ()
 {
-    UIScrollView *_scrollView;
     NSArray *_bars;
+    NSMutableArray *_barCharts;
     CGFloat _chartMarginAndWidth;
 }
+
+- (void)findMaxValue;
+
 @end
 
 @implementation PNBarChart
@@ -29,50 +32,42 @@
         self.backgroundColor = [UIColor whiteColor];
         self.clipsToBounds = YES;
         _bars = [NSArray arrayWithArray:bars];
-        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
-        _scrollView.showsHorizontalScrollIndicator = YES;
-        _scrollView.backgroundColor = [UIColor clearColor];
-        [self addSubview:_scrollView];
         _chartMarginAndWidth = CGRectGetWidth(frame) / (2*_bars.count + 1);
+        [self findMaxValue];
     }
     
     return self;
 }
 
--(void)setYValues:(NSArray *)yValues
+
+- (void)stokeChartAnimation
 {
-    _yValues = yValues;
-    [self setYLabels:yValues];
+    for (PNBar *bar in _barCharts) {
+        [bar showBar];
+    }
 }
 
--(void)setYLabels:(NSArray *)yLabels
+- (void)hideAllBars
 {
-    NSInteger max = 0;
-    for (NSString * valueString in yLabels) {
-        NSInteger value = [valueString integerValue];
+    for (PNBar *bar in _barCharts) {
+        [bar hideBar];
+    }
+}
+
+- (void)findMaxValue
+{
+    CGFloat max = 0;
+    
+    for (NSDictionary *bar in _bars) {
+        CGFloat value = [[bar objectForKey:kValue] floatValue];
         if (value > max) {
             max = value;
         }
-        
     }
     
-    _yValueMax = (int)max;
+    _yValueMax = max;
 }
 
--(void)setXLabels:(NSArray *)xLabels
-{
-    _xLabels = xLabels;
-    _xLabelWidth = _chartMarginAndWidth * 2;
-    
-    for (NSInteger index = 0; index < _xLabels.count; index++) {
-        NSString *labelText = [_xLabels objectAtIndex:index];
-        PNChartLabel * label = [[PNChartLabel alloc] initWithFrame:CGRectMake(_chartMarginAndWidth/2 + _xLabelWidth*index, self.frame.size.height - kLabelHeight, _xLabelWidth, kLabelHeight)];
-        [label setTextAlignment:NSTextAlignmentCenter];
-        label.text = labelText;
-        [self addSubview:label];
-    }
-    
-}
 
 -(void)setStrokeColor:(UIColor *)strokeColor
 {
@@ -81,20 +76,21 @@
 
 -(void)strokeChart
 {
-    
-    CGFloat chartCavanHeight = self.frame.size.height - kLabelHeight*2;
+    _barCharts = [[NSMutableArray alloc] init];
     
     PNBar *bar = nil;
-	for (NSInteger index = 0; index < _yValues.count; index++)
+	for (NSInteger index = 0; index < _bars.count; index++)
     {
-        NSString *valueString = [_yValues objectAtIndex:index];
-        CGFloat value = [valueString floatValue];
+        NSDictionary *content = [_bars objectAtIndex:index];
+        CGFloat value = [[content objectForKey:kValue] floatValue];
         CGFloat grade = value / _yValueMax;
         
-        bar = [[PNBar alloc] initWithFrame:CGRectMake(_chartMarginAndWidth*(index+1)+_chartMarginAndWidth*index, kLabelHeight, _chartMarginAndWidth, chartCavanHeight)];
+        CGRect barFrame = CGRectMake(_chartMarginAndWidth/2+_chartMarginAndWidth*2*index, 0, _chartMarginAndWidth*2, CGRectGetHeight(self.frame));
+        bar = [[PNBar alloc] initWithFrame:barFrame content:content];
 		bar.barColor = _strokeColor;
-		bar.grade = grade;
+		bar.absoluteGrade = grade;
 		[self addSubview:bar];
+        [_barCharts addObject:bar];
     }
     
 }
