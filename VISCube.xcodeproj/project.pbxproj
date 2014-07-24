@@ -61,6 +61,22 @@
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
 		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
 		0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC01B196D53730075AB71 /* Balloon@2x.png */; };
+		0FCB81C61980A5C7000962A4 /* VISPartnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */; };
+		0FCB81CA1980B021000962A4 /* XLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C91980B021000962A4 /* XLCycleScrollView.m */; };
+		0FCB81D21980D2D0000962A4 /* Switch_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81CC1980D2D0000962A4 /* Switch_01.png */; };
+		0FCB81D31980D2D0000962A4 /* Switch_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81CD1980D2D0000962A4 /* Switch_02.png */; };
+		0FCB81D41980D2D0000962A4 /* Switch_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81CE1980D2D0000962A4 /* Switch_03.png */; };
+		0FCB81D51980D2D0000962A4 /* Switch_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81CF1980D2D0000962A4 /* Switch_04.png */; };
+		0FCB81D61980D2D0000962A4 /* Switch_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81D01980D2D0000962A4 /* Switch_05.png */; };
+		0FCB81D71980D2D0000962A4 /* Switch_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81D11980D2D0000962A4 /* Switch_06.png */; };
+		0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81D91980D51D000962A4 /* VISAdverCell.m */; };
+		0FCB81E21980DE92000962A4 /* ad01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81DC1980DE92000962A4 /* ad01.jpg */; };
+		0FCB81E31980DE92000962A4 /* ad02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81DD1980DE92000962A4 /* ad02.jpg */; };
+		0FCB81E41980DE92000962A4 /* ad03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81DE1980DE92000962A4 /* ad03.jpg */; };
+		0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81DF1980DE92000962A4 /* ad04.jpg */; };
+		0FCB81E61980DE92000962A4 /* ad05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81E01980DE92000962A4 /* ad05.jpg */; };
+		0FCB81E71980DE92000962A4 /* ad06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81E11980DE92000962A4 /* ad06.jpg */; };
+		0FCB81EA1980E626000962A4 /* VISWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81E91980E626000962A4 /* VISWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +178,26 @@
 		0FAFC018196D1E440075AB71 /* VISSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISSourceManager.h; sourceTree = "<group>"; };
 		0FAFC019196D1E440075AB71 /* VISSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISSourceManager.m; sourceTree = "<group>"; };
 		0FAFC01B196D53730075AB71 /* Balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon@2x.png"; sourceTree = "<group>"; };
+		0FCB81C41980A5C7000962A4 /* VISPartnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISPartnerCell.h; sourceTree = "<group>"; };
+		0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISPartnerCell.m; sourceTree = "<group>"; };
+		0FCB81C81980B021000962A4 /* XLCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCycleScrollView.h; sourceTree = "<group>"; };
+		0FCB81C91980B021000962A4 /* XLCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCycleScrollView.m; sourceTree = "<group>"; };
+		0FCB81CC1980D2D0000962A4 /* Switch_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_01.png; sourceTree = "<group>"; };
+		0FCB81CD1980D2D0000962A4 /* Switch_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_02.png; sourceTree = "<group>"; };
+		0FCB81CE1980D2D0000962A4 /* Switch_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_03.png; sourceTree = "<group>"; };
+		0FCB81CF1980D2D0000962A4 /* Switch_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_04.png; sourceTree = "<group>"; };
+		0FCB81D01980D2D0000962A4 /* Switch_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_05.png; sourceTree = "<group>"; };
+		0FCB81D11980D2D0000962A4 /* Switch_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_06.png; sourceTree = "<group>"; };
+		0FCB81D81980D51D000962A4 /* VISAdverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAdverCell.h; sourceTree = "<group>"; };
+		0FCB81D91980D51D000962A4 /* VISAdverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAdverCell.m; sourceTree = "<group>"; };
+		0FCB81DC1980DE92000962A4 /* ad01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad01.jpg; sourceTree = "<group>"; };
+		0FCB81DD1980DE92000962A4 /* ad02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad02.jpg; sourceTree = "<group>"; };
+		0FCB81DE1980DE92000962A4 /* ad03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad03.jpg; sourceTree = "<group>"; };
+		0FCB81DF1980DE92000962A4 /* ad04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad04.jpg; sourceTree = "<group>"; };
+		0FCB81E01980DE92000962A4 /* ad05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad05.jpg; sourceTree = "<group>"; };
+		0FCB81E11980DE92000962A4 /* ad06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ad06.jpg; sourceTree = "<group>"; };
+		0FCB81E81980E626000962A4 /* VISWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISWebViewController.h; sourceTree = "<group>"; };
+		0FCB81E91980E626000962A4 /* VISWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +340,7 @@
 		0FA42566196A6BE900D85399 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB81C71980B021000962A4 /* XLCycleScrollView */,
 				0F0A9BC6197E2CD000E3C0E1 /* CPKenburnsView */,
 				0FAB2A39197692E40077DBFD /* PNChart */,
 				0FA425BB196C090600D85399 /* FrostedGlass */,
@@ -352,6 +389,8 @@
 		0FA42590196A6F7300D85399 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB81E81980E626000962A4 /* VISWebViewController.h */,
+				0FCB81E91980E626000962A4 /* VISWebViewController.m */,
 				0FA42592196A71A600D85399 /* VISNavigationController.h */,
 				0FA42593196A71A600D85399 /* VISNavigationController.m */,
 				0FA42595196A71CC00D85399 /* VISNavigationBar.h */,
@@ -365,6 +404,7 @@
 		0FA42591196A6F7300D85399 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB81C01980A4FC000962A4 /* Home */,
 				0F0A9BD8197E808600E3C0E1 /* UPLineView.h */,
 				0F0A9BD9197E808600E3C0E1 /* UPLineView.m */,
 				0F84EDE4197D39E5001B336B /* VISDevice.h */,
@@ -456,6 +496,8 @@
 		0FA425C6196C149300D85399 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0FCB81DB1980DE92000962A4 /* Adver */,
+				0FCB81CB1980D2D0000962A4 /* Device */,
 				0F84EDDF197D3991001B336B /* Alert */,
 				0FAFC014196D1DC60075AB71 /* Menu */,
 				0FA425C7196C149300D85399 /* Home */,
@@ -538,6 +580,52 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0FCB81C01980A4FC000962A4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FCB81C41980A5C7000962A4 /* VISPartnerCell.h */,
+				0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */,
+				0FCB81D81980D51D000962A4 /* VISAdverCell.h */,
+				0FCB81D91980D51D000962A4 /* VISAdverCell.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0FCB81C71980B021000962A4 /* XLCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				0FCB81C81980B021000962A4 /* XLCycleScrollView.h */,
+				0FCB81C91980B021000962A4 /* XLCycleScrollView.m */,
+			);
+			path = XLCycleScrollView;
+			sourceTree = "<group>";
+		};
+		0FCB81CB1980D2D0000962A4 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				0FCB81CC1980D2D0000962A4 /* Switch_01.png */,
+				0FCB81CD1980D2D0000962A4 /* Switch_02.png */,
+				0FCB81CE1980D2D0000962A4 /* Switch_03.png */,
+				0FCB81CF1980D2D0000962A4 /* Switch_04.png */,
+				0FCB81D01980D2D0000962A4 /* Switch_05.png */,
+				0FCB81D11980D2D0000962A4 /* Switch_06.png */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		0FCB81DB1980DE92000962A4 /* Adver */ = {
+			isa = PBXGroup;
+			children = (
+				0FCB81DC1980DE92000962A4 /* ad01.jpg */,
+				0FCB81DD1980DE92000962A4 /* ad02.jpg */,
+				0FCB81DE1980DE92000962A4 /* ad03.jpg */,
+				0FCB81DF1980DE92000962A4 /* ad04.jpg */,
+				0FCB81E01980DE92000962A4 /* ad05.jpg */,
+				0FCB81E11980DE92000962A4 /* ad06.jpg */,
+			);
+			path = Adver;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -614,7 +702,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCB81E31980DE92000962A4 /* ad02.jpg in Resources */,
 				0FA4253A196A689700D85399 /* InfoPlist.strings in Resources */,
+				0FCB81D61980D2D0000962A4 /* Switch_05.png in Resources */,
 				0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */,
 				0FA42542196A689700D85399 /* Images.xcassets in Resources */,
 				0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */,
@@ -625,13 +715,23 @@
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
 				0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */,
 				0F8B71B2197F827E008D0C23 /* 01bg_image.png in Resources */,
+				0FCB81D51980D2D0000962A4 /* Switch_04.png in Resources */,
+				0FCB81D41980D2D0000962A4 /* Switch_03.png in Resources */,
+				0FCB81E61980DE92000962A4 /* ad05.jpg in Resources */,
+				0FCB81E71980DE92000962A4 /* ad06.jpg in Resources */,
 				0F0A9BD1197E454C00E3C0E1 /* AlphaBG.jpg in Resources */,
 				0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */,
+				0FCB81E21980DE92000962A4 /* ad01.jpg in Resources */,
+				0FCB81D21980D2D0000962A4 /* Switch_01.png in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
+				0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */,
 				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,
 				0F0A9BC5197E0CE500E3C0E1 /* Manager.jpg in Resources */,
+				0FCB81E41980DE92000962A4 /* ad03.jpg in Resources */,
 				0F84EDE2197D3991001B336B /* RedAlert.png in Resources */,
 				0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */,
+				0FCB81D31980D2D0000962A4 /* Switch_02.png in Resources */,
+				0FCB81D71980D2D0000962A4 /* Switch_06.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +754,7 @@
 				0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */,
 				0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */,
 				0F0A9BD4197E561E00E3C0E1 /* VISViewCreator.m in Sources */,
+				0FCB81C61980A5C7000962A4 /* VISPartnerCell.m in Sources */,
 				0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */,
 				0FA4253C196A689700D85399 /* main.m in Sources */,
 				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
@@ -667,6 +768,8 @@
 				0FA425A1196A79E000D85399 /* VISLoginViewController.m in Sources */,
 				0F0A9BD7197E786200E3C0E1 /* VISLabel.m in Sources */,
 				0FA4258E196A6BE900D85399 /* Reachability.m in Sources */,
+				0FCB81EA1980E626000962A4 /* VISWebViewController.m in Sources */,
+				0FCB81CA1980B021000962A4 /* XLCycleScrollView.m in Sources */,
 				0F0A9BDA197E808600E3C0E1 /* UPLineView.m in Sources */,
 				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
@@ -676,6 +779,7 @@
 				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
+				0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */,
 				0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */,
 				0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */,
 			);

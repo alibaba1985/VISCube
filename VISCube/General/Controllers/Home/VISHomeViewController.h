@@ -7,8 +7,9 @@
 //
 
 #import "VISBaseViewController.h"
+#import "XLCycleScrollView.h"
 
-@interface VISHomeViewController : VISBaseViewController<UIScrollViewDelegate>
+@interface VISHomeViewController : VISBaseViewController<UIScrollViewDelegate,XLCycleScrollViewDatasource,XLCycleScrollViewDelegate>
 
 - (void)strokeAnimation;
 

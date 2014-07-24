@@ -12,9 +12,12 @@
 #import "PNBarChart.h"
 #import "CPKenburnsView.h"
 #import "UPLineView.h"
+#import "VISWebViewController.h"
 
 
 #define kAutoScrollAnchor 160
+#define kCommonHeight 200
+#define kLabelHeight 30
 
 @interface VISHomeViewController ()
 {
@@ -31,6 +34,8 @@
     
     PNBarChart *_barChart;
     CPKenburnsView *_kenburnsView;
+    UIScrollView *_adverScrollView;
+    UIView *_barChartView;
 }
 
 - (void)addFixedBackground;
@@ -41,9 +46,14 @@
 
 - (void)addMainInfo;
 
+
 - (void)addWeekKWH;
 
 - (void)handleBarChartAnimationWithOffset:(CGFloat)offset;
+
+- (void)addAdvertismentView;
+
+- (void)addPartnerView;
 
 @end
 
@@ -78,7 +88,7 @@
     [self addChangeableBackground];
     [self addMainInfo];
     [self addWeekKWH];
-    
+    [self addAdvertismentView];
     
     CGSize size = self.contentScrollView.bounds.size;
     size.height = _yOffset;
@@ -214,37 +224,78 @@
     return array;
 }
 
+- (UIView *)commonBGViewWithFrame:(CGRect)frame
+{
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    
+    // add top line
+    CGRect lineFrame = CGRectMake(0, 0, frame.size.width, 0.5);
+    UPLineView *line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
+    [view addSubview:line];
+    
+    
+    // add bottom line
+    lineFrame = CGRectMake(0, CGRectGetHeight(frame) - 0.5, frame.size.width, 0.5);
+    line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
+    [view addSubview:line];
+    
+    return view;
+}
+
+
 - (void)addWeekKWH
 {
-    CGFloat labelHeight = 30;
-    CGRect labelFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, labelHeight);
+    // add bar view
+    CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, kCommonHeight + kLabelHeight);
+    _barChartView = [self commonBGViewWithFrame:barFrame];
+    [self.contentScrollView addSubview:_barChartView];
+    _yOffset += kCommonHeight + kLabelHeight;
+    
     // add title
+    CGRect labelFrame = CGRectMake(0, 0, self.viewMaxWidth - 20, kLabelHeight);
     VISLabel *label = [VISViewCreator wrapLabelWithFrame:labelFrame text:@"月度用电统计(单位：元)  " font:[UIFont systemFontOfSize:16] textColor:[UIColor whiteColor]];
-    label.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    label.backgroundColor = [UIColor clearColor];
     label.verticalAlignment = VISVerticalAlignmentMiddle;
     label.textAlignment = NSTextAlignmentRight;
+    [_barChartView addSubview:label];
+    
+    // add charts
+    NSArray *bars = [self createBars];
+    CGRect chartFrame = CGRectMake(0, kLabelHeight, self.viewMaxWidth, kCommonHeight);
+    _barChart = [[PNBarChart alloc] initWithFrame:chartFrame bars:bars];
+    _barChart.backgroundColor = [UIColor clearColor];
+    [_barChartView addSubview:_barChart];
+    [_barChart strokeChart];
+}
+
+- (void)addAdvertismentView
+{
+    // add title
+    CGRect labelFrame = CGRectMake(10, _yOffset, self.viewMaxWidth, kLabelHeight);
+    VISLabel *label = [VISViewCreator wrapLabelWithFrame:labelFrame text:@"为您推荐" font:[UIFont systemFontOfSize:16] textColor:[UIColor whiteColor]];
+    label.backgroundColor = [UIColor clearColor];
+    label.verticalAlignment = VISVerticalAlignmentMiddle;
     [self.contentScrollView addSubview:label];
     
-    CGRect lineFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, 0.5);
-    UPLineView *line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
-    [self.contentScrollView addSubview:line];
+    _yOffset += kLabelHeight;
     
-    _yOffset += labelHeight;
-   
+    CGRect adFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, kCommonHeight);
+    UIView *adView = [self commonBGViewWithFrame:adFrame];
+    [self.contentScrollView addSubview:adView];
+    _yOffset += kCommonHeight;
+    
+    CGRect adContentFrame = CGRectMake(0, 0.5, self.viewMaxWidth, kCommonHeight -1);
+    XLCycleScrollView *csView = [[XLCycleScrollView alloc] initWithFrame:adContentFrame];
+    csView.backgroundColor = [UIColor clearColor];
+    csView.delegate = self;
+    csView.datasource = self;
+    [adView addSubview:csView];
 
-    NSArray *bars = [self createBars];
-    // add barchart
-    CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, 200);
-    _barChart = [[PNBarChart alloc] initWithFrame:barFrame bars:bars];
-    _barChart.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
-    [self.contentScrollView addSubview:_barChart];
-    [_barChart strokeChart];
-    
-    _yOffset += 200;
-    
-    lineFrame = CGRectMake(0, _yOffset-0.5, self.viewMaxWidth, 0.5);
-    line = [[UPLineView alloc] initWithFrame:lineFrame color:[UIColor colorWithWhite:0.3 alpha:0.8]];
-    [self.contentScrollView addSubview:line];
+}
+
+- (void)addPartnerView
+{
     
 }
 
@@ -287,8 +338,8 @@
 - (void)handleBarChartAnimationWithOffset:(CGFloat)offset
 {
     // control barChart Animation when showing
-    CGFloat bottomOffset = CGRectGetMaxY(_barChart.frame) - CGRectGetHeight(self.contentScrollView.frame);
-    CGFloat topOffset = bottomOffset + CGRectGetHeight(self.contentScrollView.frame) - CGRectGetHeight(_barChart.frame);
+    CGFloat bottomOffset = CGRectGetMaxY(_barChartView.frame) - CGRectGetHeight(self.contentScrollView.frame);
+    CGFloat topOffset = bottomOffset + CGRectGetHeight(self.contentScrollView.frame) - CGRectGetHeight(_barChartView.frame);
     
     if (offset >= bottomOffset && offset <= topOffset && !_barChartHasShown) {
         _barChartHasShown = YES;
@@ -296,10 +347,10 @@
     }
     
     // control barChart Animation when hidding
-    bottomOffset = bottomOffset - CGRectGetHeight(_barChart.frame);
-    topOffset += CGRectGetHeight(_barChart.frame);
+    bottomOffset = bottomOffset - CGRectGetHeight(_barChartView.frame);
+    topOffset += CGRectGetHeight(_barChartView.frame);
     
-    if (offset  <= bottomOffset || offset >= topOffset) {
+    if (offset <= bottomOffset || offset >= topOffset) {
         _barChartHasShown = NO;
         [_barChart hideAllBars];
     }
@@ -364,5 +415,58 @@
     CGFloat offset = scrollView.contentOffset.y;
     [self handleBarChartAnimationWithOffset:offset];
 }
+
+#pragma mark- XLCycleScrollViewDelegate
+
+- (NSInteger)numberOfPages
+{
+    return 5;
+}
+
+- (UIView *)superView:(XLCycleScrollView *)superView pageAtIndex:(NSInteger)index
+{
+    NSString *imageName = nil;
+    
+    switch (index) {
+        case 0:
+            imageName = @"ad01.jpg";
+            break;
+        case 1:
+            imageName = @"ad02.jpg";
+            break;
+        case 2:
+            imageName = @"ad03.jpg";
+            break;
+        case 3:
+            imageName = @"ad04.jpg";
+            break;
+        case 4:
+            imageName = @"ad05.jpg";
+            break;
+        case 5:
+            imageName = @"ad06.jpg";
+            break;
+            
+        default:
+            break;
+    }
+    
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = superView.bounds;
+    imageView.backgroundColor = [UIColor clearColor];
+    
+    return imageView;
+}
+
+- (void)didClickPage:(XLCycleScrollView *)csView atIndex:(NSInteger)index
+{
+    NSString *urlString = @"http://www.163.com";
+    VISWebViewController *web = [[VISWebViewController alloc] initWithUrl:[NSURL URLWithString:urlString] barTitle:nil];
+    [self.navigationController pushViewController:web animated:YES];
+
+}
+
+
 
 @end

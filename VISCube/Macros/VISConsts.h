@@ -22,3 +22,37 @@
 
 #define kLabel @"label"
 #define kValue @"value"
+
+#pragma mark- AdverCell
+
+#define kImage @"image"
+#define kURL   @"url"
+#define kDescription @"description"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
