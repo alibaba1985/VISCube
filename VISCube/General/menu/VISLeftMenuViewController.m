@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * 6) / 2.0f, self.view.frame.size.width, 54 * 6) style:UITableViewStylePlain];
         tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -42,23 +43,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
-        case 0:
-        {
-            UIViewController *home = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:0];
-            [self.sideMenuViewController setContentViewController:home
-                                                         animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-        }
-            break;
-        case 1:
-            //[self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[DEMOSecondViewController alloc] init]]
-                                                         //animated:YES];
-            //[self.sideMenuViewController hideMenuViewController];
-            break;
-        default:
-            break;
+    
+    if (indexPath.row > 1) {
+        return;
     }
+    UIViewController *viewController = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:indexPath.row];
+    
+    [self.sideMenuViewController setContentViewController:viewController
+                                                 animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 #pragma mark -

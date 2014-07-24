@@ -12,6 +12,9 @@
 {
     
 }
+
+- (void)resetLayer;
+
 @end
 
 @implementation VISDevice
@@ -21,8 +24,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self resetLayer];
+
+        
+        
+        
+        
     }
     return self;
+}
+
+- (void)resetLayer
+{
+    self.backgroundColor = [UIColor colorWithWhite:0.4 alpha:1];
+    self.layer.cornerRadius = 5;
+    self.layer.shadowOffset = CGSizeMake(3, 3 );
+    self.layer.shadowRadius = 5;
+    self.layer.shadowOpacity = 0.7;
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
 }
 
 /*

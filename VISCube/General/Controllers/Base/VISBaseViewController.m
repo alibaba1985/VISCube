@@ -36,6 +36,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     _viewMaxWidth = [UPDeviceInfo screenSize].width;
     _viewMaxHeight = [UPDeviceInfo screenSize].height - 64;

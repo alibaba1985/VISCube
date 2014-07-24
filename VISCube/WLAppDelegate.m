@@ -11,6 +11,7 @@
 #import "VISNavigationController.h"
 #import "VISHomeViewController.h"
 #import "VISLeftMenuViewController.h"
+#import "VISButlerViewController.h"
 #import "VISNavigationBar.h"
 #import "VISSourceManager.h"
 
@@ -65,11 +66,21 @@
 
 - (void)createMenuViewControllers
 {
+    // add home
     NSMutableArray *array = [NSMutableArray array];
     VISNavigationController *home = [[VISNavigationController alloc] initWithNavigationBarClass:[VISNavigationBar class] toolbarClass:nil];
     self.rootViewControler = [[VISHomeViewController alloc] init];
     home.viewControllers = [[NSArray alloc] initWithObjects:self.rootViewControler, nil];
     [array addObject:home];
+    
+    // add butler.
+    VISButlerViewController *root = [[VISButlerViewController alloc] init];
+    VISNavigationController *butler = [[VISNavigationController alloc] initWithNavigationBarClass:[VISNavigationBar class] toolbarClass:nil];
+    butler.viewControllers = [[NSArray alloc] initWithObjects:root, nil];
+    [array addObject:butler];
+    
+    //
+    
     [VISSourceManager currentSource].menuViewControllers = [NSArray arrayWithArray:array];
 }
 
