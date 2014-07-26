@@ -7,9 +7,17 @@
 //
 
 #import "VISButlerViewController.h"
-#import "VISDevice.h"
+#import "VISDeviceDetailViewController.h"
+#import "UPDeviceInfo.h"
+#import "UPFile.h"
+
+#define kPadMargin 64
+#define kPhoneMaring 30
 
 @interface VISButlerViewController ()
+{
+    NSMutableArray *_deviceCollection;
+}
 
 - (void)addDevices;
 
@@ -31,10 +39,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(presentLeftMenuViewController:)];
+    self.contentScrollView.delegate = self;
     [self addDevices];
 }
 
@@ -57,13 +66,52 @@
 
 - (void)addDevices
 {
-    CGRect frame = CGRectMake(50, 50, 100, 100);
-    VISDevice *device = [[VISDevice alloc] initWithFrame:frame info:nil];
-    [self.contentScrollView addSubview:device];
+    _devices = [NSArray arrayWithArray:[UPFile readFile:kFileName byKey:@"Devices"]];
+    _deviceCollection = [NSMutableArray array];
+    NSInteger index = 0;
     
-    frame = CGRectMake(50, 200, 100, 100);
-    device = [[VISDevice alloc] initWithFrame:frame info:nil];
-    [self.contentScrollView addSubview:device];
+    CGFloat margin = [UPDeviceInfo isPad] ? kPadMargin : kPhoneMaring;
+    NSInteger numberAtRow = [UPDeviceInfo isPad] ? 3 : 2;
+    NSInteger marginNumber = [UPDeviceInfo isPad] ? 4 : 3;
+    CGFloat deviceSize = (self.viewMaxWidth-margin*marginNumber)/numberAtRow;
+    CGFloat x = 0;
+    CGFloat y = 0;
+    CGRect deviceFrame = CGRectZero;
+    VISDevice *device = nil;
+    
+    while (index < _devices.count) {
+        x = margin * (index % numberAtRow + 1) + deviceSize * (index % numberAtRow);
+        y = margin * (index / numberAtRow + 1) + deviceSize * (index / numberAtRow);
+        
+        deviceFrame = CGRectMake(x, y, deviceSize, deviceSize);
+        device = [[VISDevice alloc] initWithFrame:deviceFrame info:[_devices objectAtIndex:index]];
+        device.deviceDelegate = self;
+        [self.contentScrollView addSubview:device];
+        [_deviceCollection addObject:device];
+        
+        index ++;
+    }
+    
+    self.contentScrollView.contentSize = CGSizeMake(self.contentScrollView.frame.size.width, y + margin + deviceSize);
 }
+
+#pragma mark - UIScrollViewDelegate
+
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_deviceCollection makeObjectsPerformSelector:@selector(resume)];
+}
+
+
+#pragma mark - VISDeviceDelegate
+
+- (void)didSelectedDevice:(VISDevice *)device info:(NSDictionary *)info
+{
+    VISDeviceDetailViewController *d = [[VISDeviceDetailViewController alloc] initWithDeviceDetails:info];
+    [self.navigationController pushViewController:d animated:YES];
+}
+
 
 @end

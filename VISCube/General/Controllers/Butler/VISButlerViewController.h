@@ -7,7 +7,11 @@
 //
 
 #import "VISBaseViewController.h"
+#import "VISDevice.h"
 
-@interface VISButlerViewController : VISBaseViewController
+
+@interface VISButlerViewController : VISBaseViewController<UIScrollViewDelegate,VISDeviceDelegate>
+
+@property (nonatomic, strong) NSArray *devices;
 
 @end

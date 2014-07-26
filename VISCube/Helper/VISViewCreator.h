@@ -17,6 +17,10 @@
                       textColor:(UIColor *)color;
 
 
++ (VISLabel *)middleTruncatingLabelWithFrame:(CGRect)frame
+                                        text:(NSString *)text
+                                        font:(UIFont *)font
+                                   textColor:(UIColor *)color;
 
 
 @end

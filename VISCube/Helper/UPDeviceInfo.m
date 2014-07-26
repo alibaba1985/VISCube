@@ -373,5 +373,10 @@ static BOOL         g_isIphone5Simulator =NO;
     return strHeight;
 }
 
++ (BOOL)isPad
+{
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
 
 @end

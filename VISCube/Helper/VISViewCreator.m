@@ -30,4 +30,22 @@
     return label;
 }
 
++ (VISLabel *)middleTruncatingLabelWithFrame:(CGRect)frame
+                                        text:(NSString *)text
+                                        font:(UIFont *)font
+                                   textColor:(UIColor *)color
+{
+    VISLabel *label = [[VISLabel alloc] initWithFrame:frame];
+    label.backgroundColor = [UIColor clearColor];
+    label.lineBreakMode = NSLineBreakByTruncatingMiddle;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.verticalAlignment = VISVerticalAlignmentMiddle;
+    label.numberOfLines = 0;
+    label.font = font;
+    label.textColor = color;
+    label.text = text;
+  
+    return label;
+}
+
 @end

@@ -17,17 +17,27 @@
     return path;
 }
 
-+ (NSString *)readFile:(NSString *)file byKey:(NSString *)key
++ (id)readFile:(NSString *)file byKey:(NSString *)key
 {
+    id value = nil;
     NSString *path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        
+        NSMutableDictionary* file = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        value = ([file objectForKey:key] != nil) ? [file objectForKey:key] : nil;
     }
+    
+    return value;
 }
 
-+ (NSString *)writeFile:(NSString *)file byKey:(NSString *)key
++ (void)writeFile:(NSString *)file withValue:(id)value withKey:(NSString *)key
 {
     NSString *path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
+    BOOL fileExist = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    NSMutableDictionary *fileDictionary = fileExist ?
+        [NSMutableDictionary dictionaryWithContentsOfFile:path] :
+        [NSMutableDictionary dictionary];
+    [fileDictionary setObject:value forKey:key];
+    [fileDictionary writeToFile:path atomically:YES];
 }
 
 + (void)deleteFile:(NSString *)file

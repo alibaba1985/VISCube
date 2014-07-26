@@ -61,6 +61,7 @@
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
 		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
 		0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC01B196D53730075AB71 /* Balloon@2x.png */; };
+		0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */; };
 		0FCB81C61980A5C7000962A4 /* VISPartnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */; };
 		0FCB81CA1980B021000962A4 /* XLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C91980B021000962A4 /* XLCycleScrollView.m */; };
 		0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81D91980D51D000962A4 /* VISAdverCell.m */; };
@@ -80,9 +81,9 @@
 		0FCB82131980FC84000962A4 /* close_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82021980FC84000962A4 /* close_off.png */; };
 		0FCB82141980FC84000962A4 /* light_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82031980FC84000962A4 /* light_off.png */; };
 		0FCB82151980FC84000962A4 /* light_red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82041980FC84000962A4 /* light_red.jpg */; };
-		0FCB82161980FC84000962A4 /* light_yellow_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82051980FC84000962A4 /* light_yellow_02.jpg */; };
+		0FCB82161980FC84000962A4 /* light_yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82051980FC84000962A4 /* light_yellow.jpg */; };
 		0FCB82171980FC84000962A4 /* open_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82061980FC84000962A4 /* open_on.png */; };
-		0FCB82201980FE0C000962A4 /* LoacalDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB821F1980FE0C000962A4 /* LoacalDatas.plist */; };
+		0FCB82201980FE0C000962A4 /* LocalDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB821F1980FE0C000962A4 /* LocalDatas.plist */; };
 		0FCB822A19810097000962A4 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB822219810097000962A4 /* 11.png */; };
 		0FCB822B19810097000962A4 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB822319810097000962A4 /* 12.png */; };
 		0FCB822C19810097000962A4 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB822419810097000962A4 /* 13.png */; };
@@ -193,6 +194,8 @@
 		0FAFC018196D1E440075AB71 /* VISSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISSourceManager.h; sourceTree = "<group>"; };
 		0FAFC019196D1E440075AB71 /* VISSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISSourceManager.m; sourceTree = "<group>"; };
 		0FAFC01B196D53730075AB71 /* Balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon@2x.png"; sourceTree = "<group>"; };
+		0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceDetailViewController.h; sourceTree = "<group>"; };
+		0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDeviceDetailViewController.m; sourceTree = "<group>"; };
 		0FCB81C41980A5C7000962A4 /* VISPartnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISPartnerCell.h; sourceTree = "<group>"; };
 		0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISPartnerCell.m; sourceTree = "<group>"; };
 		0FCB81C81980B021000962A4 /* XLCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCycleScrollView.h; sourceTree = "<group>"; };
@@ -217,9 +220,9 @@
 		0FCB82021980FC84000962A4 /* close_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_off.png; sourceTree = "<group>"; };
 		0FCB82031980FC84000962A4 /* light_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_off.png; sourceTree = "<group>"; };
 		0FCB82041980FC84000962A4 /* light_red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_red.jpg; sourceTree = "<group>"; };
-		0FCB82051980FC84000962A4 /* light_yellow_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_yellow_02.jpg; sourceTree = "<group>"; };
+		0FCB82051980FC84000962A4 /* light_yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_yellow.jpg; sourceTree = "<group>"; };
 		0FCB82061980FC84000962A4 /* open_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_on.png; sourceTree = "<group>"; };
-		0FCB821F1980FE0C000962A4 /* LoacalDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LoacalDatas.plist; path = Files/LoacalDatas.plist; sourceTree = "<group>"; };
+		0FCB821F1980FE0C000962A4 /* LocalDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LocalDatas.plist; path = Files/LocalDatas.plist; sourceTree = "<group>"; };
 		0FCB822219810097000962A4 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
 		0FCB822319810097000962A4 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		0FCB822419810097000962A4 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 			children = (
 				0FCB81EE1980EC91000962A4 /* VISButlerViewController.h */,
 				0FCB81EF1980EC91000962A4 /* VISButlerViewController.m */,
+				0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */,
+				0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */,
 			);
 			path = Butler;
 			sourceTree = "<group>";
@@ -678,7 +683,7 @@
 				0FCB82021980FC84000962A4 /* close_off.png */,
 				0FCB82031980FC84000962A4 /* light_off.png */,
 				0FCB82041980FC84000962A4 /* light_red.jpg */,
-				0FCB82051980FC84000962A4 /* light_yellow_02.jpg */,
+				0FCB82051980FC84000962A4 /* light_yellow.jpg */,
 				0FCB82061980FC84000962A4 /* open_on.png */,
 			);
 			path = Status;
@@ -687,7 +692,7 @@
 		0FCB821E1980FDE2000962A4 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				0FCB821F1980FE0C000962A4 /* LoacalDatas.plist */,
+				0FCB821F1980FE0C000962A4 /* LocalDatas.plist */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -785,7 +790,7 @@
 			files = (
 				0FCB81E31980DE92000962A4 /* ad02.jpg in Resources */,
 				0FA4253A196A689700D85399 /* InfoPlist.strings in Resources */,
-				0FCB82161980FC84000962A4 /* light_yellow_02.jpg in Resources */,
+				0FCB82161980FC84000962A4 /* light_yellow.jpg in Resources */,
 				0FCB82131980FC84000962A4 /* close_off.png in Resources */,
 				0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */,
 				0FCB823119810097000962A4 /* 6.png in Resources */,
@@ -801,7 +806,7 @@
 				0F54F169197239A900217BE2 /* IconEmpty@2x.png in Resources */,
 				0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */,
 				0FCB822D19810097000962A4 /* 10.png in Resources */,
-				0FCB82201980FE0C000962A4 /* LoacalDatas.plist in Resources */,
+				0FCB82201980FE0C000962A4 /* LocalDatas.plist in Resources */,
 				0FCB823019810097000962A4 /* 7.png in Resources */,
 				0FCB82151980FC84000962A4 /* light_red.jpg in Resources */,
 				0FCB822A19810097000962A4 /* 11.png in Resources */,
@@ -855,6 +860,7 @@
 				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
 				0FA425B8196BFE5500D85399 /* VISHomeViewController.m in Sources */,
 				0FCB823419812027000962A4 /* UPFile.m in Sources */,
+				0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */,
 				0FAB2A46197692E40077DBFD /* PNBar.m in Sources */,
 				0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */,
 				0FA4258C196A6BE900D85399 /* MKNetworkEngine.m in Sources */,

@@ -92,7 +92,7 @@
 			<key>image</key>
 			<string>3.png</string>
 			<key>name</key>
-			<string>卫生间灯</string>
+			<string>卫生间照明灯</string>
 			<key>location</key>
 			<string>卫生间</string>
 			<key>status</key>
@@ -240,7 +240,7 @@
 			<key>location</key>
 			<string>客厅</string>
 			<key>status</key>
-			<string>0</string>
+			<string>1</string>
 			<key>starttime</key>
 			<string>2014/06/30</string>
 			<key>activetime</key>
@@ -258,7 +258,7 @@
 			<key>location</key>
 			<string>厨房</string>
 			<key>status</key>
-			<string>0</string>
+			<string>1</string>
 			<key>starttime</key>
 			<string>2014/06/30</string>
 			<key>activetime</key>
@@ -276,7 +276,7 @@
 			<key>location</key>
 			<string>厨房</string>
 			<key>status</key>
-			<string>0</string>
+			<string>1</string>
 			<key>starttime</key>
 			<string>2014/06/30</string>
 			<key>activetime</key>

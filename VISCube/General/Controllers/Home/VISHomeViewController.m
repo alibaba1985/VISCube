@@ -13,10 +13,10 @@
 #import "CPKenburnsView.h"
 #import "UPLineView.h"
 #import "VISWebViewController.h"
+#import "UPFile.h"
 
 
 #define kAutoScrollAnchor 160
-#define kCommonHeight 200
 #define kLabelHeight 30
 
 @interface VISHomeViewController ()
@@ -29,6 +29,7 @@
     
     CGFloat _changeableOriginalY;
     CGFloat _yOffset;
+    CGFloat _commonHeight;
     
     BOOL _barChartHasShown;
     
@@ -82,8 +83,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _changeableOriginalY = [UPDeviceInfo screenSize].width;
+    _changeableOriginalY = self.viewMaxWidth;
     _yOffset = _changeableOriginalY;
+    _commonHeight = [UPDeviceInfo isPad] ? 400 : 200;
     [self addFixedBackground];
     [self addChangeableBackground];
     [self addMainInfo];
@@ -95,7 +97,7 @@
     self.contentScrollView.contentSize = size;
     self.contentScrollView.delegate = self;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Left"
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(presentLeftMenuViewController:)];
@@ -106,7 +108,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -211,17 +213,8 @@
 
 - (NSArray *)createBars
 {
-    NSDictionary *dic1 = @{kLabel : @"1月", kValue : @"110"};
-    NSDictionary *dic2 = @{kLabel : @"2月", kValue : @"70"};
-    NSDictionary *dic3 = @{kLabel : @"3月", kValue : @"140"};
-    NSDictionary *dic4 = @{kLabel : @"4月", kValue : @"10.00"};
-    NSDictionary *dic5 = @{kLabel : @"5月", kValue : @"90"};
-    NSDictionary *dic6 = @{kLabel : @"6月", kValue : @"180"};
-    
-    
-    NSArray *array = @[dic1, dic2, dic3, dic4, dic5, dic6];
-    
-    return array;
+    NSArray *bars = [NSArray arrayWithArray:[UPFile readFile:kFileName byKey:@"MonthMoney"]];;
+    return bars;
 }
 
 - (UIView *)commonBGViewWithFrame:(CGRect)frame
@@ -247,10 +240,10 @@
 - (void)addWeekKWH
 {
     // add bar view
-    CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, kCommonHeight + kLabelHeight);
+    CGRect barFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, _commonHeight + kLabelHeight);
     _barChartView = [self commonBGViewWithFrame:barFrame];
     [self.contentScrollView addSubview:_barChartView];
-    _yOffset += kCommonHeight + kLabelHeight;
+    _yOffset += _commonHeight + kLabelHeight;
     
     // add title
     CGRect labelFrame = CGRectMake(0, 0, self.viewMaxWidth - 20, kLabelHeight);
@@ -262,7 +255,7 @@
     
     // add charts
     NSArray *bars = [self createBars];
-    CGRect chartFrame = CGRectMake(0, kLabelHeight, self.viewMaxWidth, kCommonHeight);
+    CGRect chartFrame = CGRectMake(0, kLabelHeight, self.viewMaxWidth, _commonHeight);
     _barChart = [[PNBarChart alloc] initWithFrame:chartFrame bars:bars];
     _barChart.backgroundColor = [UIColor clearColor];
     [_barChartView addSubview:_barChart];
@@ -280,12 +273,12 @@
     
     _yOffset += kLabelHeight;
     
-    CGRect adFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, kCommonHeight);
+    CGRect adFrame = CGRectMake(0, _yOffset, self.viewMaxWidth, _commonHeight);
     UIView *adView = [self commonBGViewWithFrame:adFrame];
     [self.contentScrollView addSubview:adView];
-    _yOffset += kCommonHeight;
+    _yOffset += _commonHeight;
     
-    CGRect adContentFrame = CGRectMake(0, 0.5, self.viewMaxWidth, kCommonHeight -1);
+    CGRect adContentFrame = CGRectMake(0, 0.5, self.viewMaxWidth, _commonHeight -1);
     XLCycleScrollView *csView = [[XLCycleScrollView alloc] initWithFrame:adContentFrame];
     csView.backgroundColor = [UIColor clearColor];
     csView.delegate = self;
@@ -382,11 +375,12 @@
     }
     
     CGFloat offset = scrollView.contentOffset.y;
-    if (offset >0 && offset <= kAutoScrollAnchor) {
+    CGFloat scrollAnchor = self.viewMaxWidth / 2;
+    if (offset >0 && offset <= scrollAnchor) {
         CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
     }
-    else if (offset > kAutoScrollAnchor && offset <= _changeableOriginalY) {
+    else if (offset > scrollAnchor && offset <= _changeableOriginalY) {
         CGRect rect = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
     }
@@ -397,11 +391,12 @@
 {
     // control glassBG visible
     CGFloat offset = scrollView.contentOffset.y;
-    if (offset >0 && offset <= kAutoScrollAnchor) {
+    CGFloat scrollAnchor = self.viewMaxWidth / 2;
+    if (offset >0 && offset <= scrollAnchor) {
         CGRect rect = CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
     }
-    else if (offset > kAutoScrollAnchor && offset <= _changeableOriginalY) {
+    else if (offset > scrollAnchor && offset <= _changeableOriginalY) {
         CGRect rect = CGRectMake(0, _changeableOriginalY, self.viewMaxWidth, self.viewMaxHeight);
         [scrollView scrollRectToVisible:rect animated:YES];
         

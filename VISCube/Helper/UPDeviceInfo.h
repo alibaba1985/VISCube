@@ -106,4 +106,6 @@ enum {
 + (void)keychain:(NSString *)identifier SetObject:(id)inObject forKey:(id)key;
 + (id)keychain:(NSString *)identifier ObjectForKey:(id)key;
 
++ (BOOL)isPad;
+
 @end

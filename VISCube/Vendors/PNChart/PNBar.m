@@ -183,7 +183,6 @@
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
-    NSLog(@"stop");
     [self addValue];
 }
 

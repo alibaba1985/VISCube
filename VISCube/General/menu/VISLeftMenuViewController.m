@@ -8,9 +8,12 @@
 
 #import "VISLeftMenuViewController.h"
 #import "VISSourceManager.h"
-
+#import "UPDeviceInfo.h"
 
 @interface VISLeftMenuViewController ()
+{
+    CGFloat _tableCellRowHeight;
+}
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
 
@@ -22,8 +25,9 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
+    _tableCellRowHeight = [UPDeviceInfo isPad] ? 80 : 60;
     self.tableView = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * 6) / 2.0f, self.view.frame.size.width, 54 * 6) style:UITableViewStylePlain];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - _tableCellRowHeight * 6) / 2.0f, self.view.frame.size.width, _tableCellRowHeight * 6) style:UITableViewStylePlain];
         tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -59,7 +63,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 54;
+    return _tableCellRowHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -85,11 +89,13 @@
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
+        cell.textLabel.font = [UPDeviceInfo isPad] ? [UIFont fontWithName:@"HelveticaNeue" size:30] : cell.textLabel.font;
     }
     
     NSArray *titles = @[@"首页", @"卫仕管家", @"卫仕秘书", @"卫仕商城", @"卫仕魔方", @"卫仕中心"];
     NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconSettings", @"IconProfile"];
     cell.textLabel.text = titles[indexPath.row];
+    
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     return cell;

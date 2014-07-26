@@ -36,8 +36,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationController.navigationBar.translucent = NO;
     _viewMaxWidth = [UPDeviceInfo screenSize].width;
     _viewMaxHeight = [UPDeviceInfo screenSize].height - 64;
     self.contentScrollView = [self createScrollView];

@@ -15,9 +15,9 @@
 
 + (NSString *)pathForFile:(NSString *)file;
 
-+ (NSString *)readFile:(NSString *)file byKey:(NSString *)key;
++ (id)readFile:(NSString *)file byKey:(NSString *)key;
 
-+ (NSString *)writeFile:(NSString *)file byKey:(NSString *)key;
++ (void)writeFile:(NSString *)file withValue:(id)value withKey:(NSString *)key;
 
 + (void)deleteFile:(NSString *)file;
 
