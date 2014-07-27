@@ -15,12 +15,11 @@
     UIActivityIndicatorView *_loadingIndicator;
 }
 
-@property(nonatomic, retain)NSString *barTitle;
-@property(nonatomic, retain)NSURL *webViewUrl;
-
+@property(nonatomic, strong)NSString *barTitle;
+@property(nonatomic, strong)NSURL *webViewUrl;
+@property(nonatomic)BOOL shouldShowMenu;
 
 - (id)initWithUrl:(NSURL *)url barTitle:(NSString *)title;
-
 
 
 @end

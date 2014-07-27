@@ -9,6 +9,7 @@
 #import "VISDevice.h"
 #import "VISConsts.h"
 #import "VISViewCreator.h"
+#import "UPDeviceInfo.h"
 
 #define kMargin 6
 
@@ -106,8 +107,8 @@
     imageView.frame = CGRectMake(imageX, y, imageSize, imageSize);
     [_actionButton addSubview:imageView];
     y = CGRectGetHeight(self.frame)/2 + kMargin;
-    
-    CGFloat labelHeight = (CGRectGetHeight(self.frame)/2 - kMargin*3)/2;
+    y = [UPDeviceInfo isPad] ? y+kMargin : y;
+    CGFloat labelHeight = [UPDeviceInfo isPad] ? 24 : 20;
     // add name
     CGRect nameFrame = CGRectMake(kMargin, y, CGRectGetWidth(self.frame) - kMargin*2, labelHeight);
     VISLabel *nameLabel = [VISViewCreator middleTruncatingLabelWithFrame:nameFrame
@@ -116,6 +117,7 @@
                        textColor:[UIColor blackColor]];
     [_actionButton addSubview:nameLabel];
     y += kMargin*2 + labelHeight;
+    y = [UPDeviceInfo isPad] ? y : y-kMargin;
     // add location
     CGRect locationFrame = CGRectMake(kMargin, y, CGRectGetWidth(self.frame) - kMargin*2, labelHeight);
     VISLabel *locationLabel = [VISViewCreator middleTruncatingLabelWithFrame:locationFrame

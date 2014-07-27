@@ -39,7 +39,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	// Do any additional setup after loading the view.
-
+    self.title = self.barTitle;
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.viewMaxWidth, self.viewMaxHeight)];
     _webView.delegate = self;
     _webView.backgroundColor = [UIColor whiteColor];
@@ -66,6 +66,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)showMenuItem
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(presentLeftMenuViewController:)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (_shouldShowMenu) {
+        [self showMenuItem];
+    }
+}
+
+
 
 
 

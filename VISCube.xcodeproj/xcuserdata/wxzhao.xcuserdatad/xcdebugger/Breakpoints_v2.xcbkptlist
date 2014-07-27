@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VISCube/General/Controllers/Butler/VISButlerViewController.m"
-            timestampString = "428070891.727471"
+            filePath = "VISCube/General/Controllers/Butler/VISDeviceDetailViewController.m"
+            timestampString = "428071024.189686"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-didSelectedDevice:info:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VISCube/General/Controllers/Butler/VISDeviceDetailViewController.m"
-            timestampString = "428071024.189686"
+            filePath = "VISCube/General/Views/VISDevice.m"
+            timestampString = "428163070.532723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-parseLocalInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

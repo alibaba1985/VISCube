@@ -12,6 +12,9 @@
 #import "VISHomeViewController.h"
 #import "VISLeftMenuViewController.h"
 #import "VISButlerViewController.h"
+#import "VISSecretaryViewController.h"
+#import "VISAccountCenterViewController.h"
+#import "VISWebViewController.h"
 #import "VISNavigationBar.h"
 #import "VISSourceManager.h"
 
@@ -79,7 +82,28 @@
     butler.viewControllers = [[NSArray alloc] initWithObjects:root, nil];
     [array addObject:butler];
     
-    //
+    // add Secretary
+    VISSecretaryViewController *secretary = [[VISSecretaryViewController alloc] init];
+    VISNavigationController *secretaryNC = [[VISNavigationController alloc] initWithRootViewController:secretary];
+    [array addObject:secretaryNC];
+    
+    // add Merchant
+    VISWebViewController *mechant = [[VISWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.jd.com"] barTitle:@"卫仕电商"];
+    mechant.shouldShowMenu = YES;
+    VISNavigationController *merchantNC = [[VISNavigationController alloc] initWithRootViewController:mechant];
+    [array addObject:merchantNC];
+    
+    // add BBS
+    VISWebViewController *bbs = [[VISWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.autohome.com.cn/"] barTitle:@"卫仕魔方"];
+    bbs.shouldShowMenu = YES;
+    VISNavigationController *bbsNC = [[VISNavigationController alloc] initWithRootViewController:bbs];
+    [array addObject:bbsNC];
+    
+    // add Account Center
+    VISAccountCenterViewController *account = [[VISAccountCenterViewController alloc] init];
+    VISNavigationController *accountNC = [[VISNavigationController alloc] initWithRootViewController:account];
+    [array addObject:accountNC];
+    
     
     [VISSourceManager currentSource].menuViewControllers = [NSArray arrayWithArray:array];
 }

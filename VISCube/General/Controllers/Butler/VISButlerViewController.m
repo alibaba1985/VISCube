@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"卫仕管家";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self

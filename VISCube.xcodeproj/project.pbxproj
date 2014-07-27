@@ -62,6 +62,8 @@
 		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
 		0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC01B196D53730075AB71 /* Balloon@2x.png */; };
 		0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */; };
+		0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */; };
+		0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */; };
 		0FCB81C61980A5C7000962A4 /* VISPartnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */; };
 		0FCB81CA1980B021000962A4 /* XLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81C91980B021000962A4 /* XLCycleScrollView.m */; };
 		0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB81D91980D51D000962A4 /* VISAdverCell.m */; };
@@ -196,6 +198,10 @@
 		0FAFC01B196D53730075AB71 /* Balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon@2x.png"; sourceTree = "<group>"; };
 		0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceDetailViewController.h; sourceTree = "<group>"; };
 		0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDeviceDetailViewController.m; sourceTree = "<group>"; };
+		0FC8A6B319852C0A00292DED /* VISAccountCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAccountCenterViewController.h; sourceTree = "<group>"; };
+		0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAccountCenterViewController.m; sourceTree = "<group>"; };
+		0FC8A6B619852FA800292DED /* VISSecretaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISSecretaryViewController.h; sourceTree = "<group>"; };
+		0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISSecretaryViewController.m; sourceTree = "<group>"; };
 		0FCB81C41980A5C7000962A4 /* VISPartnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISPartnerCell.h; sourceTree = "<group>"; };
 		0FCB81C51980A5C7000962A4 /* VISPartnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISPartnerCell.m; sourceTree = "<group>"; };
 		0FCB81C81980B021000962A4 /* XLCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCycleScrollView.h; sourceTree = "<group>"; };
@@ -453,6 +459,8 @@
 		0FA4259E196A78D100D85399 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				0FC8A6B319852C0A00292DED /* VISAccountCenterViewController.h */,
+				0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */,
 				0FA4259F196A79E000D85399 /* VISLoginViewController.h */,
 				0FA425A0196A79E000D85399 /* VISLoginViewController.m */,
 			);
@@ -504,6 +512,8 @@
 		0FA425B4196BFE0A00D85399 /* Secretary */ = {
 			isa = PBXGroup;
 			children = (
+				0FC8A6B619852FA800292DED /* VISSecretaryViewController.h */,
+				0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */,
 			);
 			path = Secretary;
 			sourceTree = "<group>";
@@ -881,9 +891,11 @@
 				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
+				0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */,
 				0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */,
 				0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */,
 				0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */,
+				0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,9 +48,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row > 1) {
-        return;
-    }
     UIViewController *viewController = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:indexPath.row];
     
     [self.sideMenuViewController setContentViewController:viewController
