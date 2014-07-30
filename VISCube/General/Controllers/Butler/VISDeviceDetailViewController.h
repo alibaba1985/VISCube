@@ -8,7 +8,15 @@
 
 #import "VISBaseViewController.h"
 
+@protocol VISDetailDeviceDelegate <NSObject>
+
+- (void)didChangeDeviceDetail:(NSDictionary *)details;
+
+@end
+
 @interface VISDeviceDetailViewController : VISBaseViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property(nonatomic)id<VISDetailDeviceDelegate> detailDelegate;
 
 - (id)initWithDeviceDetails:(NSDictionary *)details;
 

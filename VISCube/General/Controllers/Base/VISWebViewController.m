@@ -67,18 +67,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showMenuItem
-{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     if (_shouldShowMenu) {
-        [self showMenuItem];
+        [self addNavigationMenuItem];
     }
 }
 

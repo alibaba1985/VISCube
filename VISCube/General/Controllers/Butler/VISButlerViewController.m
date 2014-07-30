@@ -7,7 +7,6 @@
 //
 
 #import "VISButlerViewController.h"
-#import "VISDeviceDetailViewController.h"
 #import "UPDeviceInfo.h"
 #import "UPFile.h"
 
@@ -20,6 +19,10 @@
 }
 
 - (void)addDevices;
+
+- (void)addNewDeviceAction;
+
+- (void)addRightBarItem;
 
 @end
 
@@ -39,10 +42,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"卫仕管家";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
+    [self addNavigationMenuItem];
+    [self addRightBarItem];
+    
     self.contentScrollView.delegate = self;
     [self addDevices];
 }
@@ -63,6 +65,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)addRightBarItem
+{
+    UIImage *image = [UIImage imageNamed:@"Add"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(0, 0, image.size.width/2, image.size.height/2);
+    [button addTarget:self action:@selector(addNewDeviceAction) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:image forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+}
 
 - (void)addDevices
 {
@@ -95,6 +108,14 @@
     self.contentScrollView.contentSize = CGSizeMake(self.contentScrollView.frame.size.width, y + margin + deviceSize);
 }
 
+
+- (void)addNewDeviceAction
+{
+    VISAddDeviceViewController *add = [[VISAddDeviceViewController alloc] init];
+    add.deviceDelegate = self;
+    [self.navigationController pushViewController:add animated:YES];
+}
+
 #pragma mark - UIScrollViewDelegate
 
 
@@ -110,7 +131,23 @@
 - (void)didSelectedDevice:(VISDevice *)device info:(NSDictionary *)info
 {
     VISDeviceDetailViewController *d = [[VISDeviceDetailViewController alloc] initWithDeviceDetails:info];
+    d.detailDelegate = self;
     [self.navigationController pushViewController:d animated:YES];
+}
+
+
+#pragma mark - VISDetailDeviceDelegate
+
+- (void)didChangeDeviceDetail:(NSDictionary *)details
+{
+    
+}
+
+#pragma mark - VISAddDeviceDelegate
+
+- (void)didAddDeviceWithDeviceInfo:(NSDictionary *)deviceInfo
+{
+    
 }
 
 

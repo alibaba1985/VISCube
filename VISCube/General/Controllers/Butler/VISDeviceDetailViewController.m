@@ -9,6 +9,9 @@
 #import "VISDeviceDetailViewController.h"
 #import "UPDeviceInfo.h"
 
+#define kImageSize 112
+#define kImageCellSize 172
+
 @interface VISDeviceDetailViewController ()
 {
     NSDictionary *_deviceDetails;
@@ -49,24 +52,19 @@
     // Do any additional setup after loading the view.
     self.title = @"设备详情";
     _titles = @[@"设备名称:", @"设备位置:", @"设备状态:", @"启用时间:", @"工作时间:", @"总耗电量:", @"总耗电费:"];
-    CGFloat y = 30;
-    CGFloat imageSize = 112;
-    UIImage *image = [UIImage imageNamed:[_deviceDetails objectForKey:kDeviceImage]];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake((self.viewMaxWidth - imageSize)/2, y, imageSize, imageSize);
-    [self.view addSubview:imageView];
     
-    y += (30 + imageSize);
+    CGFloat y = 0;
     
-    _cellNumber = _deviceDetails.allKeys.count-1;
+    _cellNumber = _deviceDetails.allKeys.count;
     _tableCellRowHeight = [UPDeviceInfo isPad] ? 60 : 44;
-    CGFloat tableHeight = (_cellNumber*_tableCellRowHeight>(self.viewMaxHeight - 60 - imageSize)) ? self.viewMaxHeight-y : _cellNumber*_tableCellRowHeight;
+    BOOL isSizeBeyondBounds = (kImageCellSize + (_cellNumber-1)*_tableCellRowHeight) > self.viewMaxHeight;
+    CGFloat tableHeight = isSizeBeyondBounds ? self.viewMaxHeight : (kImageCellSize + (_cellNumber-1)*_tableCellRowHeight);
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, y, self.viewMaxWidth, tableHeight) style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = [UIColor clearColor];
-        tableView.userInteractionEnabled = (tableHeight == self.viewMaxHeight-y) ? YES : NO;
+        tableView.userInteractionEnabled = NO;
         tableView;
     });
     [self.view addSubview:self.tableView];
@@ -104,7 +102,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return _tableCellRowHeight;
+    return (indexPath.row == 0) ? kImageCellSize : _tableCellRowHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -121,13 +119,13 @@
 {
     NSString *content = nil;
     switch (row) {
-        case 0:
+        case 1:
             content = [_deviceDetails objectForKey:kDeviceName];
             break;
-        case 1:
+        case 2:
             content = [_deviceDetails objectForKey:kDeviceLocation];
             break;
-        case 2:
+        case 3:
         {
             NSString *status = [_deviceDetails objectForKey:kDeviceStatus];
             if ([status isEqualToString:kValue0]) {
@@ -139,16 +137,16 @@
             }
         }
             break;
-        case 3:
+        case 4:
             content = [_deviceDetails objectForKey:kDeviceStartTime];
             break;
-        case 4:
+        case 5:
             content = [_deviceDetails objectForKey:kDeviceActiveTime];
             break;
-        case 5:
+        case 6:
             content = [_deviceDetails objectForKey:kDeviceTotalPower];
             break;
-        case 6:
+        case 7:
             content = [_deviceDetails objectForKey:kDeviceTotalMoney];
             break;
         
@@ -160,13 +158,13 @@
     return content;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UIView *)createInfoCellAtRow:(NSInteger)row
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    NSInteger row = [indexPath row];
+    UIView *cell = [[UIView alloc] init];
+    cell.backgroundColor = [UIColor clearColor];
     
     NSString *content = [self contentAtRow:row];
-    NSString *title = [_titles objectAtIndex:row];
+    NSString *title = [_titles objectAtIndex:row-1];
     
     CGFloat margin = [UPDeviceInfo isPad] ? 20 : 10;
     CGFloat labelHeight = [UPDeviceInfo isPad] ? 26 : 20;
@@ -174,21 +172,46 @@
     CGFloat titleWidth = [UPDeviceInfo isPad] ? 120 : 100;
     CGRect titleFrame = CGRectMake(margin, y, titleWidth, labelHeight);
     VISLabel *titleLabel = [VISViewCreator wrapLabelWithFrame:titleFrame
-                            text:title
-                            font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
-                       textColor:[UIColor blackColor]];
+                                                         text:title
+                                                         font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
+                                                    textColor:[UIColor blackColor]];
     
     titleLabel.verticalAlignment = VISVerticalAlignmentMiddle;
-    [cell.contentView addSubview:titleLabel];
+    [cell addSubview:titleLabel];
     
-    CGRect contentFrame = CGRectMake(margin+titleWidth, y, CGRectGetWidth(tableView.frame)-margin-titleWidth, labelHeight);
+    CGRect contentFrame = CGRectMake(margin+titleWidth, y, self.viewMaxWidth-margin-titleWidth, labelHeight);
     VISLabel *contentLabel = [VISViewCreator
-                wrapLabelWithFrame:contentFrame
+                              wrapLabelWithFrame:contentFrame
                               text:content
                               font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
-                         textColor:[UIColor blackColor]];
+                              textColor:[UIColor blackColor]];
     contentLabel.verticalAlignment = VISVerticalAlignmentMiddle;
-    [cell.contentView addSubview:contentLabel];
+    [cell addSubview:contentLabel];
+    
+    return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    NSInteger row = [indexPath row];
+    
+    if (row == 0) {
+        CGFloat y = 30;
+        CGFloat imageSize = 112;
+        UIImage *image = [UIImage imageNamed:[_deviceDetails objectForKey:kDeviceImage]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake((self.viewMaxWidth - imageSize)/2, y, imageSize, imageSize);
+        [cell.contentView addSubview:imageView];
+        cell.contentView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+        cell.userInteractionEnabled = NO;
+    }else{
+        UIView *view = [self createInfoCellAtRow:row];
+        view.frame = CGRectMake(0, 0, self.viewMaxWidth, _tableCellRowHeight);
+        [cell.contentView addSubview:view];
+    }
+    
+    
     
     return cell;
 }

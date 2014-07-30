@@ -20,4 +20,7 @@
 @property (nonatomic, readonly) CGFloat viewMaxWidth;
 @property (nonatomic, readonly) CGFloat viewMaxHeight;
 
+
+- (void)addNavigationMenuItem;
+
 @end

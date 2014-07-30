@@ -97,10 +97,7 @@
     self.contentScrollView.contentSize = size;
     self.contentScrollView.delegate = self;
     self.title = @"首页";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
+    [self addNavigationMenuItem];
     
     
 }

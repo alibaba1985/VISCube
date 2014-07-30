@@ -54,9 +54,9 @@
 	<array>
 		<dict>
 			<key>image</key>
-			<string>1.png</string>
+			<string>Camera.png</string>
 			<key>name</key>
-			<string>客厅灯</string>
+			<string>客厅监控</string>
 			<key>location</key>
 			<string>客厅</string>
 			<key>status</key>

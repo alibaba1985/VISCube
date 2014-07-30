@@ -28,10 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"卫仕秘书";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
+    [self addNavigationMenuItem];
 }
 
 - (void)didReceiveMemoryWarning

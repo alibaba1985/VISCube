@@ -51,6 +51,18 @@
 		0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425BD196C090600D85399 /* UIImage+ImageEffects.m */; };
 		0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA425C3196C12BA00D85399 /* VISRootViewController.m */; };
 		0FA425C9196C149300D85399 /* HomeBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA425C8196C149300D85399 /* HomeBG.jpg */; };
+		0FA6B527198782F5000A8100 /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B526198782F5000A8100 /* Menu.png */; };
+		0FA6B529198782FF000A8100 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B528198782FF000A8100 /* Camera.png */; };
+		0FA6B5311987830F000A8100 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B52B1987830F000A8100 /* cloud.png */; };
+		0FA6B5321987830F000A8100 /* edit_delfromhome.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B52C1987830F000A8100 /* edit_delfromhome.png */; };
+		0FA6B5331987830F000A8100 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B52D1987830F000A8100 /* help.png */; };
+		0FA6B5341987830F000A8100 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B52E1987830F000A8100 /* about.png */; };
+		0FA6B5351987830F000A8100 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B52F1987830F000A8100 /* setting.png */; };
+		0FA6B5361987830F000A8100 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B5301987830F000A8100 /* user.png */; };
+		0FA6B53C19878BDF000A8100 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B53A19878BDF000A8100 /* Add.png */; };
+		0FA6B54419879A15000A8100 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B54319879A15000A8100 /* next.png */; };
+		0FA6B5471987A7DB000A8100 /* find_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B5451987A7DB000A8100 /* find_large.png */; };
+		0FA6B5481987A7DB000A8100 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B5461987A7DB000A8100 /* find.png */; };
 		0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */; };
 		0FAB2A46197692E40077DBFD /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3B197692E40077DBFD /* PNBar.m */; };
 		0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3D197692E40077DBFD /* PNBarChart.m */; };
@@ -95,6 +107,7 @@
 		0FCB823019810097000962A4 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB822819810097000962A4 /* 7.png */; };
 		0FCB823119810097000962A4 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB822919810097000962A4 /* 6.png */; };
 		0FCB823419812027000962A4 /* UPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB823319812027000962A4 /* UPFile.m */; };
+		0FD8ABBD1985E6D800D56336 /* VISAddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8ABBC1985E6D800D56336 /* VISAddDeviceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +190,18 @@
 		0FA425C2196C12BA00D85399 /* VISRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISRootViewController.h; sourceTree = "<group>"; };
 		0FA425C3196C12BA00D85399 /* VISRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISRootViewController.m; sourceTree = "<group>"; };
 		0FA425C8196C149300D85399 /* HomeBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HomeBG.jpg; sourceTree = "<group>"; };
+		0FA6B526198782F5000A8100 /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
+		0FA6B528198782FF000A8100 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		0FA6B52B1987830F000A8100 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		0FA6B52C1987830F000A8100 /* edit_delfromhome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_delfromhome.png; sourceTree = "<group>"; };
+		0FA6B52D1987830F000A8100 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		0FA6B52E1987830F000A8100 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		0FA6B52F1987830F000A8100 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		0FA6B5301987830F000A8100 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		0FA6B53A19878BDF000A8100 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
+		0FA6B54319879A15000A8100 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		0FA6B5451987A7DB000A8100 /* find_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find_large.png; sourceTree = "<group>"; };
+		0FA6B5461987A7DB000A8100 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
 		0FA6C7A0196F784D005127E1 /* UPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPDeviceInfo.h; sourceTree = "<group>"; };
 		0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDeviceInfo.m; sourceTree = "<group>"; };
 		0FA6C7A7196F7A84005127E1 /* UPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
@@ -239,6 +264,8 @@
 		0FCB822919810097000962A4 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		0FCB823219812027000962A4 /* UPFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPFile.h; sourceTree = "<group>"; };
 		0FCB823319812027000962A4 /* UPFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPFile.m; sourceTree = "<group>"; };
+		0FD8ABBB1985E6D800D56336 /* VISAddDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAddDeviceViewController.h; sourceTree = "<group>"; };
+		0FD8ABBC1985E6D800D56336 /* VISAddDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAddDeviceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,6 +514,8 @@
 				0FCB81EF1980EC91000962A4 /* VISButlerViewController.m */,
 				0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */,
 				0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */,
+				0FD8ABBB1985E6D800D56336 /* VISAddDeviceViewController.h */,
+				0FD8ABBC1985E6D800D56336 /* VISAddDeviceViewController.m */,
 			);
 			path = Butler;
 			sourceTree = "<group>";
@@ -546,6 +575,8 @@
 		0FA425C6196C149300D85399 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0FA6B53819878BDF000A8100 /* Butler */,
+				0FA6B52A1987830F000A8100 /* Center */,
 				0FCB81DB1980DE92000962A4 /* Adver */,
 				0FCB81CB1980D2D0000962A4 /* Device */,
 				0F84EDDF197D3991001B336B /* Alert */,
@@ -558,6 +589,7 @@
 		0FA425C7196C149300D85399 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0FA6B526198782F5000A8100 /* Menu.png */,
 				0F8B71BD197F8DB3008D0C23 /* 06.jpg */,
 				0F8B71B1197F827E008D0C23 /* 01bg_image.png */,
 				0F0A9BD0197E454C00E3C0E1 /* AlphaBG.jpg */,
@@ -567,6 +599,30 @@
 				0FA425C8196C149300D85399 /* HomeBG.jpg */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0FA6B52A1987830F000A8100 /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				0FA6B54319879A15000A8100 /* next.png */,
+				0FA6B52B1987830F000A8100 /* cloud.png */,
+				0FA6B52C1987830F000A8100 /* edit_delfromhome.png */,
+				0FA6B52D1987830F000A8100 /* help.png */,
+				0FA6B52E1987830F000A8100 /* about.png */,
+				0FA6B52F1987830F000A8100 /* setting.png */,
+				0FA6B5301987830F000A8100 /* user.png */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		0FA6B53819878BDF000A8100 /* Butler */ = {
+			isa = PBXGroup;
+			children = (
+				0FA6B5451987A7DB000A8100 /* find_large.png */,
+				0FA6B5461987A7DB000A8100 /* find.png */,
+				0FA6B53A19878BDF000A8100 /* Add.png */,
+			);
+			path = Butler;
 			sourceTree = "<group>";
 		};
 		0FA6C79F196F784D005127E1 /* Helper */ = {
@@ -710,6 +766,7 @@
 		0FCB822119810097000962A4 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				0FA6B528198782FF000A8100 /* Camera.png */,
 				0FCB822219810097000962A4 /* 11.png */,
 				0FCB822319810097000962A4 /* 12.png */,
 				0FCB822419810097000962A4 /* 13.png */,
@@ -800,24 +857,33 @@
 			files = (
 				0FCB81E31980DE92000962A4 /* ad02.jpg in Resources */,
 				0FA4253A196A689700D85399 /* InfoPlist.strings in Resources */,
+				0FA6B529198782FF000A8100 /* Camera.png in Resources */,
+				0FA6B54419879A15000A8100 /* next.png in Resources */,
 				0FCB82161980FC84000962A4 /* light_yellow.jpg in Resources */,
 				0FCB82131980FC84000962A4 /* close_off.png in Resources */,
+				0FA6B5481987A7DB000A8100 /* find.png in Resources */,
 				0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */,
 				0FCB823119810097000962A4 /* 6.png in Resources */,
 				0FCB82111980FC84000962A4 /* 4.png in Resources */,
 				0FA42542196A689700D85399 /* Images.xcassets in Resources */,
 				0FCB820E1980FC84000962A4 /* 1.png in Resources */,
 				0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */,
+				0FA6B5471987A7DB000A8100 /* find_large.png in Resources */,
 				0FCB822C19810097000962A4 /* 13.png in Resources */,
 				0FCB82121980FC84000962A4 /* 5.png in Resources */,
 				0FCB82101980FC84000962A4 /* 3.png in Resources */,
+				0FA6B5361987830F000A8100 /* user.png in Resources */,
 				0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */,
+				0FA6B5311987830F000A8100 /* cloud.png in Resources */,
 				0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */,
 				0F54F169197239A900217BE2 /* IconEmpty@2x.png in Resources */,
+				0FA6B53C19878BDF000A8100 /* Add.png in Resources */,
 				0F54F168197239A900217BE2 /* IconCalendar@2x.png in Resources */,
 				0FCB822D19810097000962A4 /* 10.png in Resources */,
+				0FA6B5331987830F000A8100 /* help.png in Resources */,
 				0FCB82201980FE0C000962A4 /* LocalDatas.plist in Resources */,
 				0FCB823019810097000962A4 /* 7.png in Resources */,
+				0FA6B5321987830F000A8100 /* edit_delfromhome.png in Resources */,
 				0FCB82151980FC84000962A4 /* light_red.jpg in Resources */,
 				0FCB822A19810097000962A4 /* 11.png in Resources */,
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
@@ -830,12 +896,15 @@
 				0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */,
 				0FCB822B19810097000962A4 /* 12.png in Resources */,
 				0FCB81E21980DE92000962A4 /* ad01.jpg in Resources */,
+				0FA6B527198782F5000A8100 /* Menu.png in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
+				0FA6B5351987830F000A8100 /* setting.png in Resources */,
 				0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */,
 				0FCB822F19810097000962A4 /* 8.png in Resources */,
 				0FCB82141980FC84000962A4 /* light_off.png in Resources */,
 				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,
 				0FCB82171980FC84000962A4 /* open_on.png in Resources */,
+				0FA6B5341987830F000A8100 /* about.png in Resources */,
 				0FCB820F1980FC84000962A4 /* 2.png in Resources */,
 				0F0A9BC5197E0CE500E3C0E1 /* Manager.jpg in Resources */,
 				0FCB81E41980DE92000962A4 /* ad03.jpg in Resources */,
@@ -890,6 +959,7 @@
 				0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */,
 				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
+				0FD8ABBD1985E6D800D56336 /* VISAddDeviceViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
 				0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */,
 				0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */,

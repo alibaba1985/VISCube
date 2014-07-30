@@ -47,37 +47,37 @@
 {
     [super viewDidLoad];
     self.title = @"卫仕中心";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
+    [self addNavigationMenuItem];
     
+    /**
+     账户管理
+     智慧中心
+     数据同步
+     关于我们
+     帮助
+     
+     */
     
     // Do any additional setup after loading the view.
-    _titles = @[@"设备名称:", @"设备位置:", @"设备状态:", @"启用时间:", @"工作时间:", @"总耗电量:", @"总耗电费:"];
-    CGFloat y = 30;
-    CGFloat imageSize = 112;
-    UIImage *image = [UIImage imageNamed:[_deviceDetails objectForKey:kDeviceImage]];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = CGRectMake((self.viewMaxWidth - imageSize)/2, y, imageSize, imageSize);
-    [self.view addSubview:imageView];
-    
-    y += (30 + imageSize);
-    
-    _cellNumber = _deviceDetails.allKeys.count-1;
-    _tableCellRowHeight = [UPDeviceInfo isPad] ? 60 : 44;
-    CGFloat tableHeight = (_cellNumber*_tableCellRowHeight>(self.viewMaxHeight - 60 - imageSize)) ? self.viewMaxHeight-y : _cellNumber*_tableCellRowHeight;
+    _cellNumber = 5;
+    _tableCellRowHeight = [UPDeviceInfo isPad] ? 80 : 60;
+    CGFloat tableHeight = _tableCellRowHeight * _cellNumber;
+    CGFloat y = (self.viewMaxHeight - tableHeight) / 2;
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, y, self.viewMaxWidth, tableHeight) style:UITableViewStylePlain];
+        tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
         tableView.delegate = self;
         tableView.dataSource = self;
+        tableView.opaque = NO;
         tableView.backgroundColor = [UIColor clearColor];
-        tableView.userInteractionEnabled = (tableHeight == self.viewMaxHeight-y) ? YES : NO;
+        tableView.backgroundView = nil;
+        //tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.bounces = NO;
         tableView;
     });
     [self.view addSubview:self.tableView];
     
-    
+     
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,7 +102,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark -
@@ -123,81 +123,80 @@
     return _cellNumber;
 }
 
-- (NSString *)contentAtRow:(NSInteger)row
+- (UITableViewCell *)cellWithImage:(UIImage *)image title:(NSString *)title
 {
-    NSString *content = nil;
-    switch (row) {
+    CGFloat margin = [UPDeviceInfo isPad] ? 20 : 10;
+    CGFloat x = margin;
+    CGFloat height = 27;
+    CGFloat y = (_tableCellRowHeight - height) / 2;
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    // add head image
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(x, y, height, height);
+    [cell.contentView addSubview:imageView];
+    
+    // add title
+    x = margin*2 + height;
+    CGFloat fontSize = [UPDeviceInfo isPad] ? 24 : 18;
+    CGRect titleFrame = CGRectMake(x, y, self.viewMaxWidth-x, height);
+    VISLabel *titleLabel = [VISViewCreator wrapLabelWithFrame:titleFrame
+                                                         text:title
+                                                         font:
+                            [UIFont fontWithName:@"HelveticaNeue" size:fontSize]
+                                                    textColor:[UIColor blackColor]];
+    
+    titleLabel.verticalAlignment = VISVerticalAlignmentMiddle;
+    [cell.contentView addSubview:titleLabel];
+    
+    // add next
+    UIImage *next = [UIImage imageNamed:@"next"];
+    CGFloat nextHeight = next.size.height/3;
+    CGFloat nextWidth = next.size.width/3;
+    y = (_tableCellRowHeight-nextHeight)/2;
+    imageView = [[UIImageView alloc] initWithImage:next];
+    imageView.frame = CGRectMake(self.viewMaxWidth - margin - nextWidth, y, nextWidth, nextHeight);
+    [cell.contentView addSubview:imageView];
+    
+    
+    return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIImage *image = nil;
+    NSString *title = nil;
+    switch (indexPath.row) {
         case 0:
-            content = [_deviceDetails objectForKey:kDeviceName];
+            image = [UIImage imageNamed:@"user"];
+            title = @"user******007";
             break;
         case 1:
-            content = [_deviceDetails objectForKey:kDeviceLocation];
+            image = [UIImage imageNamed:@"edit_delfromhome"];
+            title = @"设备中心";
             break;
         case 2:
-        {
-            NSString *status = [_deviceDetails objectForKey:kDeviceStatus];
-            if ([status isEqualToString:kValue0]) {
-                content = @"已开启";
-            }else if ([status isEqualToString:kValue1]){
-                content = @"已关闭";
-            }else if ([status isEqualToString:kValue2]){
-                content = @"已损坏";
-            }
-        }
+            image = [UIImage imageNamed:@"cloud"];
+            title = @"同步数据";
             break;
         case 3:
-            content = [_deviceDetails objectForKey:kDeviceStartTime];
+            image = [UIImage imageNamed:@"about"];
+            title = @"关于我们";
             break;
         case 4:
-            content = [_deviceDetails objectForKey:kDeviceActiveTime];
+            image = [UIImage imageNamed:@"help"];
+            title = @"使用帮助";
             break;
-        case 5:
-            content = [_deviceDetails objectForKey:kDeviceTotalPower];
-            break;
-        case 6:
-            content = [_deviceDetails objectForKey:kDeviceTotalMoney];
-            break;
-        
             
         default:
             break;
     }
     
-    return content;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    NSInteger row = [indexPath row];
-    
-    NSString *content = [self contentAtRow:row];
-    NSString *title = [_titles objectAtIndex:row];
-    
-    CGFloat margin = [UPDeviceInfo isPad] ? 20 : 10;
-    CGFloat labelHeight = [UPDeviceInfo isPad] ? 26 : 20;
-    CGFloat y = (_tableCellRowHeight-labelHeight)/2;
-    CGFloat titleWidth = [UPDeviceInfo isPad] ? 120 : 100;
-    CGRect titleFrame = CGRectMake(margin, y, titleWidth, labelHeight);
-    VISLabel *titleLabel = [VISViewCreator wrapLabelWithFrame:titleFrame
-                            text:title
-                            font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
-                       textColor:[UIColor blackColor]];
-    
-    titleLabel.verticalAlignment = VISVerticalAlignmentMiddle;
-    [cell.contentView addSubview:titleLabel];
-    
-    CGRect contentFrame = CGRectMake(margin+titleWidth, y, CGRectGetWidth(tableView.frame)-margin-titleWidth, labelHeight);
-    VISLabel *contentLabel = [VISViewCreator
-                wrapLabelWithFrame:contentFrame
-                              text:content
-                              font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
-                         textColor:[UIColor blackColor]];
-    contentLabel.verticalAlignment = VISVerticalAlignmentMiddle;
-    [cell.contentView addSubview:contentLabel];
+    UITableViewCell *cell = [self cellWithImage:image title:title];
     
     return cell;
 }
+
 
 
 @end
