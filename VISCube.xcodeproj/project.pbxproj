@@ -20,6 +20,7 @@
 		0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F165197239A900217BE2 /* IconProfile@2x.png */; };
 		0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F166197239A900217BE2 /* IconSettings@2x.png */; };
 		0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F54F167197239A900217BE2 /* MenuBackground@2x.png */; };
+		0F5FE6E519890DBC00F4ADC1 /* VISAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */; };
 		0F84EDE2197D3991001B336B /* RedAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE0197D3991001B336B /* RedAlert.png */; };
 		0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE1197D3991001B336B /* YellowAlert.png */; };
 		0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* VISDevice.m */; };
@@ -138,6 +139,8 @@
 		0F54F165197239A900217BE2 /* IconProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconProfile@2x.png"; sourceTree = "<group>"; };
 		0F54F166197239A900217BE2 /* IconSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconSettings@2x.png"; sourceTree = "<group>"; };
 		0F54F167197239A900217BE2 /* MenuBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuBackground@2x.png"; sourceTree = "<group>"; };
+		0F5FE6E319890DBC00F4ADC1 /* VISAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAccountViewController.h; sourceTree = "<group>"; };
+		0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAccountViewController.m; sourceTree = "<group>"; };
 		0F84EDDC197D3630001B336B /* VISColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISColors.h; sourceTree = "<group>"; };
 		0F84EDE0197D3991001B336B /* RedAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedAlert.png; sourceTree = "<group>"; };
 		0F84EDE1197D3991001B336B /* YellowAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowAlert.png; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 				0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */,
 				0FA4259F196A79E000D85399 /* VISLoginViewController.h */,
 				0FA425A0196A79E000D85399 /* VISLoginViewController.m */,
+				0F5FE6E319890DBC00F4ADC1 /* VISAccountViewController.h */,
+				0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -960,6 +965,7 @@
 				0F0A9BC9197E2CD000E3C0E1 /* CPKenburnsView.m in Sources */,
 				0FA4259A196A71E300D85399 /* VISBaseViewController.m in Sources */,
 				0FD8ABBD1985E6D800D56336 /* VISAddDeviceViewController.m in Sources */,
+				0F5FE6E519890DBC00F4ADC1 /* VISAccountViewController.m in Sources */,
 				0FA425AF196BF58B00D85399 /* RESideMenu.m in Sources */,
 				0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */,
 				0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */,

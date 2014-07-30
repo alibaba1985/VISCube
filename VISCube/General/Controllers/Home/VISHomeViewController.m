@@ -99,7 +99,6 @@
     self.title = @"首页";
     [self addNavigationMenuItem];
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
