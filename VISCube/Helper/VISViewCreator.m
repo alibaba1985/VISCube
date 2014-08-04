@@ -48,4 +48,9 @@
     return label;
 }
 
++ (UIFont *)defaultFontWithSize:(CGFloat)size
+{
+    return [UIFont fontWithName:@"HelveticaNeue" size:size];
+}
+
 @end

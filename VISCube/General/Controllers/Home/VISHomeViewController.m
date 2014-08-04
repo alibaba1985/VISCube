@@ -19,6 +19,9 @@
 #define kAutoScrollAnchor 160
 #define kLabelHeight 30
 
+#define kRankSize 60
+#define kRankMaring 20
+
 @interface VISHomeViewController ()
 {
     UIImageView *_fixedBackground;
@@ -47,6 +50,7 @@
 
 - (void)addMainInfo;
 
+- (void)addRanks;
 
 - (void)addWeekKWH;
 
@@ -88,6 +92,8 @@
     _commonHeight = [UPDeviceInfo isPad] ? 400 : 200;
     [self addFixedBackground];
     [self addChangeableBackground];
+    
+    [self addRanks];
     [self addMainInfo];
     [self addWeekKWH];
     [self addAdvertismentView];
@@ -123,6 +129,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)addRanks
+{
+    CGFloat x = self.viewMaxWidth - kRankMaring - kRankSize;
+    CGFloat y = _changeableOriginalY - kRankMaring - kRankSize;
+    CGRect frame = CGRectMake(x, y, kRankSize, kRankSize);
+    
+    UIView *rank = [[UIView alloc] initWithFrame:frame];
+    rank.backgroundColor = [UIColor clearColor];
+    rank.layer.cornerRadius = 2;
+    [self.contentScrollView addSubview:rank];
+    
+    UIImageView *view = [[UIImageView alloc] initWithFrame:rank.bounds];
+    view.backgroundColor = [UIColor clearColor];
+    view.image = [UIImage imageNamed:@"01bg_image"];
+    [rank addSubview:view];
+    
+    CGRect titleFrame = CGRectMake(0, 0, 60, 20);
+    VISLabel *title = [VISViewCreator middleTruncatingLabelWithFrame:titleFrame text:@"用电排名" font:[VISViewCreator defaultFontWithSize:12] textColor:[UIColor whiteColor]];
+    [rank addSubview:title];
+    
+    CGRect rankFrame = CGRectMake(0, 20, 60, 40);
+    VISLabel *rankNumber = [VISViewCreator middleTruncatingLabelWithFrame:rankFrame text:@"128" font:[VISViewCreator defaultFontWithSize:20] textColor:[UIColor whiteColor]];
+    [rank addSubview:rankNumber];
+    
+    
+}
 
 - (void)strokeAnimation
 {
@@ -414,7 +447,7 @@
     return 5;
 }
 
-- (UIView *)superView:(XLCycleScrollView *)superView pageAtIndex:(NSInteger)index
+- (UIView *)scrollView:(XLCycleScrollView *)scrollView pageAtIndex:(NSInteger)index
 {
     NSString *imageName = nil;
     
@@ -444,7 +477,7 @@
     
     UIImage *image = [UIImage imageNamed:imageName];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    imageView.frame = superView.bounds;
+    imageView.frame = scrollView.bounds;
     imageView.backgroundColor = [UIColor clearColor];
     
     return imageView;

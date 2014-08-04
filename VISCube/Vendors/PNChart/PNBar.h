@@ -17,9 +17,7 @@
 
 @property (nonatomic) CGFloat absoluteGrade;
 
-@property (nonatomic) float grade;
-
-@property (nonatomic,strong) CAShapeLayer * chartLine;
+@property (nonatomic) CGFloat grade;
 
 @property (nonatomic, strong) UIColor * barColor;
 
@@ -27,7 +25,8 @@
 
 @property (nonatomic, strong) PNChartLabel *bottomLabel;
 
-- (id)initWithFrame:(CGRect)frame content:(NSDictionary *)content;
+
+- (id)initWithFrame:(CGRect)frame content:(NSDictionary *)content index:(NSInteger)index;
 
 - (void)hideBar;
 

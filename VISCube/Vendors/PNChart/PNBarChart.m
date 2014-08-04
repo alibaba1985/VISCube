@@ -42,16 +42,12 @@
 
 - (void)stokeChartAnimation
 {
-    for (PNBar *bar in _barCharts) {
-        [bar showBar];
-    }
+    [_barCharts makeObjectsPerformSelector:@selector(showBar)];
 }
 
 - (void)hideAllBars
 {
-    for (PNBar *bar in _barCharts) {
-        [bar hideBar];
-    }
+    [_barCharts makeObjectsPerformSelector:@selector(hideBar)];
 }
 
 - (void)findMaxValue
@@ -86,7 +82,7 @@
         CGFloat grade = value / _yValueMax;
         
         CGRect barFrame = CGRectMake(_chartMarginAndWidth/2+_chartMarginAndWidth*2*index, 0, _chartMarginAndWidth*2, CGRectGetHeight(self.frame));
-        bar = [[PNBar alloc] initWithFrame:barFrame content:content];
+        bar = [[PNBar alloc] initWithFrame:barFrame content:content index:index];
 		bar.barColor = _strokeColor;
 		bar.absoluteGrade = grade;
 		[self addSubview:bar];

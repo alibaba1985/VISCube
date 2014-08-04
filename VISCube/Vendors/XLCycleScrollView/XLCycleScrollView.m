@@ -96,9 +96,9 @@
     
     [_curViews removeAllObjects];
     
-    [_curViews addObject:[_datasource superView:self pageAtIndex:pre]];
-    [_curViews addObject:[_datasource superView:self pageAtIndex:page]];
-    [_curViews addObject:[_datasource superView:self pageAtIndex:last]];
+    [_curViews addObject:[_datasource scrollView:self pageAtIndex:pre]];
+    [_curViews addObject:[_datasource scrollView:self pageAtIndex:page]];
+    [_curViews addObject:[_datasource scrollView:self pageAtIndex:last]];
 }
 
 - (NSInteger)validPageValue:(NSInteger)value {

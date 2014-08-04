@@ -22,5 +22,6 @@
                                         font:(UIFont *)font
                                    textColor:(UIColor *)color;
 
++ (UIFont *)defaultFontWithSize:(CGFloat)size;
 
 @end

@@ -44,6 +44,6 @@
 
 @required
 - (NSInteger)numberOfPages;
-- (UIView *)superView:(XLCycleScrollView *)superView pageAtIndex:(NSInteger)index;
+- (UIView *)scrollView:(XLCycleScrollView *)scrollView pageAtIndex:(NSInteger)index;
 
 @end

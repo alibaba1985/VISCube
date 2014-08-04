@@ -18,5 +18,6 @@
 
 -(id)initWithFrame:(CGRect)frame color:(UIColor *) color;
 
+-(id)initWithFrame:(CGRect)frame color:(UIColor *) color dotted:(BOOL)dotted;
 
 @end
