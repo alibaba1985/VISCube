@@ -14,9 +14,11 @@
 #import "VISButlerViewController.h"
 #import "VISSecretaryViewController.h"
 #import "VISAccountCenterViewController.h"
+#import "VISPreShowViewController.h"
 #import "VISWebViewController.h"
 #import "VISNavigationBar.h"
 #import "VISSourceManager.h"
+
 
 @implementation WLAppDelegate
 @synthesize rootViewControler;
@@ -30,7 +32,8 @@
     //
     [self createMenuViewControllers];
     //
-    [self createMenu];
+    //[self createMenu];
+    [self createPrePage];
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -126,6 +129,11 @@
     sideMenuViewController.panGestureEnabled = NO;
 }
 
+- (void)createPrePage
+{
+    VISPreShowViewController *prePage = [[VISPreShowViewController alloc] init];
+    self.window.rootViewController = prePage;
+}
 
 
 #pragma mark - RESideMenuDelegate

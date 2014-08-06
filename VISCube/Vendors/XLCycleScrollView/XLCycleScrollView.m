@@ -135,9 +135,10 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView
+{
     int x = aScrollView.contentOffset.x;
-    
+
     //往下翻一张
     if(x >= (2*self.frame.size.width)) {
         _curPage = [self validPageValue:_curPage+1];
@@ -151,8 +152,8 @@
     }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)aScrollView {
-    
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)aScrollView
+{
     [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0) animated:YES];
     
 }

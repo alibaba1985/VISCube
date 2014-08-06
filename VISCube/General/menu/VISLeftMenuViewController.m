@@ -13,6 +13,8 @@
 @interface VISLeftMenuViewController ()
 {
     CGFloat _tableCellRowHeight;
+    NSArray *_icons;
+    NSArray *_titles;
 }
 
 @property (strong, readwrite, nonatomic) UITableView *tableView;
@@ -25,6 +27,10 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
+    
+    _titles = @[@"首页", @"卫仕管家", @"卫仕秘书", @"卫仕商城", @"卫仕社区", @"卫仕中心"];
+    _icons = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconSettings", @"IconProfile"];
+    
     _tableCellRowHeight = [UPDeviceInfo isPad] ? 80 : 60;
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - _tableCellRowHeight * 6) / 2.0f, self.view.frame.size.width, _tableCellRowHeight * 6) style:UITableViewStylePlain];
@@ -82,18 +88,15 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
-        cell.textLabel.font = [UPDeviceInfo isPad] ? [UIFont fontWithName:@"HelveticaNeue" size:30] : cell.textLabel.font;
+        CGFloat fontSize = [UPDeviceInfo isPad] ? 30 : 21;
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:fontSize];
     }
     
-    NSArray *titles = @[@"首页", @"卫仕管家", @"卫仕秘书", @"卫仕商城", @"卫仕魔方", @"卫仕中心"];
-    NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconSettings", @"IconProfile"];
-    cell.textLabel.text = titles[indexPath.row];
-    
-    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
+    cell.textLabel.text = _titles[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
     
     return cell;
 }

@@ -8,6 +8,6 @@
 
 #import "VISBaseViewController.h"
 
-@interface VISLoginViewController : VISBaseViewController
+@interface VISLoginViewController : VISBaseViewController<UITextFieldDelegate>
 
 @end

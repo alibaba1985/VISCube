@@ -138,7 +138,8 @@
     
     UIView *rank = [[UIView alloc] initWithFrame:frame];
     rank.backgroundColor = [UIColor clearColor];
-    rank.layer.cornerRadius = 2;
+    rank.layer.cornerRadius = 3;
+    rank.clipsToBounds = YES;
     [self.contentScrollView addSubview:rank];
     
     UIImageView *view = [[UIImageView alloc] initWithFrame:rank.bounds];

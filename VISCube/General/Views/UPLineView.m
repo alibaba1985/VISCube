@@ -29,7 +29,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.lineColor = color;
-        [self resetLayer];
 	}
     return self;
 }

@@ -19,5 +19,7 @@
 
 - (void)createMenu;
 
+- (void)createPrePage;
+
 
 @end

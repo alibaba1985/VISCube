@@ -8,10 +8,14 @@
 
 #import "VISBaseViewController.h"
 
+
 @interface VISBaseViewController ()
 {
     CGFloat _viewMaxWidth;
     CGFloat _viewMaxHeight;
+    
+    CPToast *_toast;
+    UIAlertView *_alert;
 }
 
 - (UIScrollView *)createScrollView;
@@ -68,7 +72,6 @@
 {
     CGRect frame = [UIScreen mainScreen].bounds;
     frame.size.height = self.viewMaxHeight;
-    NSLog(@"%@", NSStringFromCGRect(frame));
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame];
     scrollView.showsHorizontalScrollIndicator = NO;
@@ -101,6 +104,37 @@
                                                                             action:@selector(presentLeftMenuViewController:)];
      
      */
+}
+
+#pragma mark - Dialog
+
+- (void)showToastMessage:(NSString *)message
+{
+    [self dismissLoading];
+    CPToast *toast = [[CPToast alloc] initWithMessage:message onView:self.view];
+    [toast show];
+}
+
+- (void)showAlertMessage:(NSString *)message
+{
+    [self dismissLoading];
+    _alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil];
+    [_alert show];
+}
+
+- (void)showLoadingWithMessage:(NSString *)message
+{
+    _toast = [[CPToast alloc] initWithLoadingMessage:message onView:self.view];
+    [_toast show];
+}
+
+
+- (void)dismissLoading
+{
+    if (_toast != nil) {
+        [_toast dismiss];
+        _toast = nil;
+    }
 }
 
 @end

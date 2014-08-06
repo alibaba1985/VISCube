@@ -289,5 +289,9 @@
 	</array>
 	<key>DayData</key>
 	<array/>
+	<key>FirstSetup</key>
+	<string>YES</string>
+	<key>Loginned</key>
+	<string>NO</string>
 </dict>
 </plist>

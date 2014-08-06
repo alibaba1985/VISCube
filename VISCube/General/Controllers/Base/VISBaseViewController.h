@@ -13,6 +13,8 @@
 #import "VISColors.h"
 #import "VISViewCreator.h"
 #import "VISConsts.h"
+#import "CPToast.h"
+
 
 @interface VISBaseViewController : UIViewController
 
@@ -22,5 +24,14 @@
 
 
 - (void)addNavigationMenuItem;
+
+
+- (void)showToastMessage:(NSString *)message;
+
+- (void)showAlertMessage:(NSString *)message;
+
+- (void)showLoadingWithMessage:(NSString *)message;
+
+- (void)dismissLoading;
 
 @end

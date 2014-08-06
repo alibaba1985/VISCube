@@ -70,10 +70,18 @@
 		0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A41197692E40077DBFD /* PNChartLabel.m */; };
 		0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A43197692E40077DBFD /* PNColor.m */; };
 		0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A45197692E40077DBFD /* PNLineChart.m */; };
+		0FAE09EC199202130099B518 /* PreBG_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09E6199202130099B518 /* PreBG_01.jpg */; };
+		0FAE09EE199202130099B518 /* PreBG_03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09E8199202130099B518 /* PreBG_03.jpg */; };
+		0FAE09EF199202130099B518 /* PreBG_04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09E9199202130099B518 /* PreBG_04.jpg */; };
+		0FAE09F1199220220099B518 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09F0199220220099B518 /* btn.png */; };
+		0FAE09F4199238160099B518 /* CPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAE09F3199238160099B518 /* CPToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0FAE09F619924AA60099B518 /* pwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09F519924AA60099B518 /* pwd.png */; };
 		0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */; };
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
 		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
 		0FAFC01C196D53730075AB71 /* Balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC01B196D53730075AB71 /* Balloon@2x.png */; };
+		0FB5F6C51990F0B300A57C2F /* VISRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5F6C41990F0B300A57C2F /* VISRegisterViewController.m */; };
+		0FB5F6C81990F0E600A57C2F /* VISPreShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */; };
 		0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */; };
 		0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */; };
 		0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */; };
@@ -218,12 +226,23 @@
 		0FAB2A43197692E40077DBFD /* PNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNColor.m; sourceTree = "<group>"; };
 		0FAB2A44197692E40077DBFD /* PNLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNLineChart.h; sourceTree = "<group>"; };
 		0FAB2A45197692E40077DBFD /* PNLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNLineChart.m; sourceTree = "<group>"; };
+		0FAE09E6199202130099B518 /* PreBG_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PreBG_01.jpg; sourceTree = "<group>"; };
+		0FAE09E8199202130099B518 /* PreBG_03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PreBG_03.jpg; sourceTree = "<group>"; };
+		0FAE09E9199202130099B518 /* PreBG_04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PreBG_04.jpg; sourceTree = "<group>"; };
+		0FAE09F0199220220099B518 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		0FAE09F2199238160099B518 /* CPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPToast.h; sourceTree = "<group>"; };
+		0FAE09F3199238160099B518 /* CPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPToast.m; sourceTree = "<group>"; };
+		0FAE09F519924AA60099B518 /* pwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pwd.png; sourceTree = "<group>"; };
 		0FAFC011196D1C890075AB71 /* VISLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISLeftMenuViewController.h; sourceTree = "<group>"; };
 		0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISLeftMenuViewController.m; sourceTree = "<group>"; };
 		0FAFC015196D1DC60075AB71 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
 		0FAFC018196D1E440075AB71 /* VISSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISSourceManager.h; sourceTree = "<group>"; };
 		0FAFC019196D1E440075AB71 /* VISSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISSourceManager.m; sourceTree = "<group>"; };
 		0FAFC01B196D53730075AB71 /* Balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Balloon@2x.png"; sourceTree = "<group>"; };
+		0FB5F6C31990F0B300A57C2F /* VISRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISRegisterViewController.h; sourceTree = "<group>"; };
+		0FB5F6C41990F0B300A57C2F /* VISRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISRegisterViewController.m; sourceTree = "<group>"; };
+		0FB5F6C61990F0E600A57C2F /* VISPreShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISPreShowViewController.h; sourceTree = "<group>"; };
+		0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISPreShowViewController.m; sourceTree = "<group>"; };
 		0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceDetailViewController.h; sourceTree = "<group>"; };
 		0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDeviceDetailViewController.m; sourceTree = "<group>"; };
 		0FC8A6B319852C0A00292DED /* VISAccountCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAccountCenterViewController.h; sourceTree = "<group>"; };
@@ -475,6 +494,8 @@
 		0FA42591196A6F7300D85399 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0FAE09F2199238160099B518 /* CPToast.h */,
+				0FAE09F3199238160099B518 /* CPToast.m */,
 				0FCB81C01980A4FC000962A4 /* Home */,
 				0F0A9BD8197E808600E3C0E1 /* UPLineView.h */,
 				0F0A9BD9197E808600E3C0E1 /* UPLineView.m */,
@@ -495,6 +516,10 @@
 				0FA425A0196A79E000D85399 /* VISLoginViewController.m */,
 				0F5FE6E319890DBC00F4ADC1 /* VISAccountViewController.h */,
 				0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */,
+				0FB5F6C31990F0B300A57C2F /* VISRegisterViewController.h */,
+				0FB5F6C41990F0B300A57C2F /* VISRegisterViewController.m */,
+				0FB5F6C61990F0E600A57C2F /* VISPreShowViewController.h */,
+				0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -580,6 +605,7 @@
 		0FA425C6196C149300D85399 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0FAE09E3199202130099B518 /* Others */,
 				0FA6B53819878BDF000A8100 /* Butler */,
 				0FA6B52A1987830F000A8100 /* Center */,
 				0FCB81DB1980DE92000962A4 /* Adver */,
@@ -609,6 +635,7 @@
 		0FA6B52A1987830F000A8100 /* Center */ = {
 			isa = PBXGroup;
 			children = (
+				0FAE09F519924AA60099B518 /* pwd.png */,
 				0FA6B54319879A15000A8100 /* next.png */,
 				0FA6B52B1987830F000A8100 /* cloud.png */,
 				0FA6B52C1987830F000A8100 /* edit_delfromhome.png */,
@@ -668,6 +695,17 @@
 				0FAB2A45197692E40077DBFD /* PNLineChart.m */,
 			);
 			path = PNChart;
+			sourceTree = "<group>";
+		};
+		0FAE09E3199202130099B518 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				0FAE09F0199220220099B518 /* btn.png */,
+				0FAE09E6199202130099B518 /* PreBG_01.jpg */,
+				0FAE09E8199202130099B518 /* PreBG_03.jpg */,
+				0FAE09E9199202130099B518 /* PreBG_04.jpg */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		0FAFC014196D1DC60075AB71 /* Menu */ = {
@@ -871,8 +909,10 @@
 				0FCB823119810097000962A4 /* 6.png in Resources */,
 				0FCB82111980FC84000962A4 /* 4.png in Resources */,
 				0FA42542196A689700D85399 /* Images.xcassets in Resources */,
+				0FAE09EF199202130099B518 /* PreBG_04.jpg in Resources */,
 				0FCB820E1980FC84000962A4 /* 1.png in Resources */,
 				0F54F16D197239A900217BE2 /* MenuBackground@2x.png in Resources */,
+				0FAE09EE199202130099B518 /* PreBG_03.jpg in Resources */,
 				0FA6B5471987A7DB000A8100 /* find_large.png in Resources */,
 				0FCB822C19810097000962A4 /* 13.png in Resources */,
 				0FCB82121980FC84000962A4 /* 5.png in Resources */,
@@ -901,7 +941,10 @@
 				0F0A9BCB197E2DB300E3C0E1 /* 1.jpg in Resources */,
 				0FCB822B19810097000962A4 /* 12.png in Resources */,
 				0FCB81E21980DE92000962A4 /* ad01.jpg in Resources */,
+				0FAE09EC199202130099B518 /* PreBG_01.jpg in Resources */,
 				0FA6B527198782F5000A8100 /* Menu.png in Resources */,
+				0FAE09F619924AA60099B518 /* pwd.png in Resources */,
+				0FAE09F1199220220099B518 /* btn.png in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
 				0FA6B5351987830F000A8100 /* setting.png in Resources */,
 				0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */,
@@ -935,8 +978,10 @@
 			files = (
 				0FA425B0196BF58B00D85399 /* UIViewController+RESideMenu.m in Sources */,
 				0FAB2A4A197692E40077DBFD /* PNColor.m in Sources */,
+				0FAE09F4199238160099B518 /* CPToast.m in Sources */,
 				0FCB81F01980EC91000962A4 /* VISButlerViewController.m in Sources */,
 				0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */,
+				0FB5F6C51990F0B300A57C2F /* VISRegisterViewController.m in Sources */,
 				0F0A9BD4197E561E00E3C0E1 /* VISViewCreator.m in Sources */,
 				0FCB81C61980A5C7000962A4 /* VISPartnerCell.m in Sources */,
 				0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */,
@@ -971,6 +1016,7 @@
 				0FCB81DA1980D51D000962A4 /* VISAdverCell.m in Sources */,
 				0FA425AE196BF58B00D85399 /* RECommonFunctions.m in Sources */,
 				0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */,
+				0FB5F6C81990F0E600A57C2F /* VISPreShowViewController.m in Sources */,
 				0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

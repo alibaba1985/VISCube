@@ -25,6 +25,7 @@
 @property (nonatomic,readonly) UIScrollView *scrollView;
 @property (nonatomic,readonly) UIPageControl *pageControl;
 @property (nonatomic,assign) NSInteger currentPage;
+
 @property (nonatomic,assign,setter = setDataource:) id<XLCycleScrollViewDatasource> datasource;
 @property (nonatomic,assign,setter = setDelegate:) id<XLCycleScrollViewDelegate> delegate;
 
