@@ -24,4 +24,13 @@
 
 + (UIFont *)defaultFontWithSize:(CGFloat)size;
 
+
++ (UIColor *)underLineNormalColor;
+
++ (UIColor *)underLineDownColor;
+
++ (void)makeShadowLayerForView:(UIView *)view;
+
++ (void)makeNormalLayerForView:(UIView *)view;
+
 @end

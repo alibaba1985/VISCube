@@ -111,7 +111,8 @@
 - (void)showToastMessage:(NSString *)message
 {
     [self dismissLoading];
-    CPToast *toast = [[CPToast alloc] initWithMessage:message onView:self.view];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    CPToast *toast = [[CPToast alloc] initWithMessage:message onView:window];
     [toast show];
 }
 
@@ -124,7 +125,8 @@
 
 - (void)showLoadingWithMessage:(NSString *)message
 {
-    _toast = [[CPToast alloc] initWithLoadingMessage:message onView:self.view];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    _toast = [[CPToast alloc] initWithLoadingMessage:message onView:window];
     [_toast show];
 }
 

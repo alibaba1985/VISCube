@@ -14,10 +14,12 @@
 #import "VISButlerViewController.h"
 #import "VISSecretaryViewController.h"
 #import "VISAccountCenterViewController.h"
+#import "VISLoginViewController.h"
 #import "VISPreShowViewController.h"
 #import "VISWebViewController.h"
 #import "VISNavigationBar.h"
 #import "VISSourceManager.h"
+#import "UPFile.h"
 
 
 @implementation WLAppDelegate
@@ -32,7 +34,7 @@
     //
     [self createMenuViewControllers];
     //
-    //[self createMenu];
+    [self createMenu];
     [self createPrePage];
 
     self.window.backgroundColor = [UIColor whiteColor];
@@ -116,7 +118,6 @@
     UIViewController *home = [[VISSourceManager currentSource].menuViewControllers objectAtIndex:0];
     VISLeftMenuViewController *left = [[VISLeftMenuViewController alloc] init];
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:home leftMenuViewController:left rightMenuViewController:nil];
-    self.window.rootViewController = sideMenuViewController;
     
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
     sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
@@ -127,12 +128,31 @@
     sideMenuViewController.contentViewShadowRadius = 12;
     sideMenuViewController.contentViewShadowEnabled = YES;
     sideMenuViewController.panGestureEnabled = NO;
+    
+    [VISSourceManager currentSource].sideMenuViewController = sideMenuViewController;
 }
 
 - (void)createPrePage
 {
-    VISPreShowViewController *prePage = [[VISPreShowViewController alloc] init];
-    self.window.rootViewController = prePage;
+    
+    NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
+    NSString *loginned = [UPFile readFile:path forKey:kLoginned];
+    
+    if ([loginned isEqualToString:kValueYES]) {
+        self.window.rootViewController = [VISSourceManager currentSource].sideMenuViewController;
+    }
+    else
+    {
+        VISLoginViewController *login = [[VISLoginViewController alloc] init];
+        VISNavigationController *n = [[VISNavigationController alloc] initWithRootViewController:login];
+        NSString *firstSetup = [UPFile readFile:path forKey:kFirstSetup];
+        if (firstSetup == nil || [firstSetup isEqualToString:kValueYES]) {
+            VISPreShowViewController *prePage = [[VISPreShowViewController alloc] init];
+            [n pushViewController:prePage animated:NO];
+        }
+        self.window.rootViewController = n;
+    }
+    
 }
 
 

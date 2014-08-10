@@ -9,6 +9,7 @@
 #import "VISAddDeviceViewController.h"
 
 
+
 @interface VISAddDeviceViewController ()
 
 @end
@@ -33,7 +34,7 @@
     UIImage *image = [UIImage imageNamed:imageName];
     CGFloat imageWidth = image.size.width/2;
     CGFloat imageHeight = image.size.height/2;
-    NSString *title = @"正在搜寻设备...";
+    NSString *title = @"正在搜寻设备";
     CGFloat fontSize = [UPDeviceInfo isPad] ? 24 : 18;
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:fontSize];
     CGSize titleSize = [title sizeWithAttributes:@{NSFontAttributeName:font}];
@@ -41,7 +42,7 @@
     //
     
     
-    CGFloat margin = (self.viewMaxWidth - imageWidth - imageMargin - titleSize.width)/2;
+    CGFloat margin = (self.viewMaxWidth - imageWidth - imageMargin - titleSize.width - fontSize)/2;
     CGFloat x = margin;
     CGFloat y = [UPDeviceInfo isPad] ? 50 : 20;
     CGFloat bgHeight = 50;
@@ -64,13 +65,22 @@
     
     CGRect titleFrame = CGRectMake(x, y, 300, imageHeight);
     VISLabel *titleLabel = [VISViewCreator wrapLabelWithFrame:titleFrame
-                                                         text:@"正在搜寻设备..."
+                                                         text:@"正在搜寻设备"
                                                          font:font
                             
                                                     textColor:[UIColor blackColor]];
     
     titleLabel.verticalAlignment = VISVerticalAlignmentMiddle;
     [bgView addSubview:titleLabel];
+    
+    x += titleSize.width + 5;
+    
+    CGRect indicatorFrame = CGRectMake(x, (bgHeight-fontSize + 5)/2, fontSize-2.5, fontSize-2.5);
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.frame = indicatorFrame;
+    [indicator startAnimating];
+    [bgView addSubview:indicator];
+    
     
 }
 

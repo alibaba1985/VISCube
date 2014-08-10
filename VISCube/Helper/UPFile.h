@@ -13,15 +13,15 @@
 
 // string file // plist
 
-+ (NSString *)pathForFile:(NSString *)file;
++ (NSString *)pathForFile:(NSString *)file writable:(BOOL)writable;
 
-+ (id)readFile:(NSString *)file byKey:(NSString *)key;
++ (id)readFile:(NSString *)filePath forKey:(NSString *)key;
 
-+ (void)writeFile:(NSString *)file withValue:(id)value withKey:(NSString *)key;
++ (void)writeFile:(NSString *)filePath withValue:(id)value forKey:(NSString *)key;
 
-+ (void)deleteFile:(NSString *)file;
++ (void)deleteFile:(NSString *)filePath;
 
-+ (void)deleteFile:(NSString *)file byKey:(NSString *)key atIndex:(NSInteger)index;
++ (void)deleteFile:(NSString *)filePath forKey:(NSString *)key atIndex:(NSInteger)index;
 
 
 @end

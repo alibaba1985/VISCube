@@ -79,7 +79,8 @@
 
 - (void)addDevices
 {
-    _devices = [NSArray arrayWithArray:[UPFile readFile:kFileName byKey:@"Devices"]];
+    NSString *path = [UPFile pathForFile:kFileName writable:NO];
+    _devices = [NSArray arrayWithArray:[UPFile readFile:path forKey:@"Devices"]];
     _deviceCollection = [NSMutableArray array];
     NSInteger index = 0;
     

@@ -6,8 +6,9 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "VISBaseViewController.h"
+#import "VISTableViewController.h"
+#import "XLCycleScrollView.h"
 
-@interface VISSecretaryViewController : VISBaseViewController
+@interface VISSecretaryViewController : VISTableViewController<XLCycleScrollViewDatasource,XLCycleScrollViewDelegate>
 
 @end

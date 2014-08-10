@@ -11,8 +11,6 @@
 
 @implementation VISSourceManager
 
-@synthesize menuViewControllers;
-
 + (instancetype)currentSource
 {
     static VISSourceManager *_source = nil;

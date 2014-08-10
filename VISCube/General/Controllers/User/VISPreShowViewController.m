@@ -9,7 +9,7 @@
 #import "VISPreShowViewController.h"
 #import "VISViewCreator.h"
 #import "VISLoginViewController.h"
-
+#import "UPFile.h"
 
 @interface VISPreShowViewController ()
 {
@@ -53,6 +53,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 /*
@@ -142,9 +148,18 @@
 
 - (void)startAction
 {
-    VISLoginViewController *login = [[VISLoginViewController alloc] init];
-    [self presentViewController:login animated:YES completion:nil];
-    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    //[self.view removeFromSuperview];
+    __block VISPreShowViewController *weakSelf = self;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        weakSelf.view.alpha = 0.5;
+        weakSelf.view.transform = CGAffineTransformMakeScale(2.0, 2.0);
+    }completion:^(BOOL finished){
+        [weakSelf.navigationController setNavigationBarHidden:NO];
+        [weakSelf.navigationController popViewControllerAnimated:NO];
+        NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
+        [UPFile writeFile:path withValue:kValueNO forKey:kFirstSetup];
+    }];
 }
 
 
@@ -263,10 +278,6 @@
 #pragma mark - UISrollViewDelegate
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {

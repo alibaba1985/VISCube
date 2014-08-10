@@ -13,6 +13,7 @@
 #import "CPKenburnsView.h"
 #import "UPLineView.h"
 #import "VISWebViewController.h"
+#import "VISRankViewController.h"
 #import "UPFile.h"
 
 
@@ -107,10 +108,10 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-
+    [super viewWillAppear:animated];
+    [self strokeAnimation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,6 +130,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)rankTap:(UITapGestureRecognizer *)gesture
+{
+    VISRankViewController *rank = [[VISRankViewController alloc] init];
+    [self.navigationController pushViewController:rank animated:YES];
+}
 
 - (void)addRanks
 {
@@ -155,7 +162,8 @@
     VISLabel *rankNumber = [VISViewCreator middleTruncatingLabelWithFrame:rankFrame text:@"128" font:[VISViewCreator defaultFontWithSize:20] textColor:[UIColor whiteColor]];
     [rank addSubview:rankNumber];
     
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rankTap:)];
+    [rank addGestureRecognizer:tap];
 }
 
 - (void)strokeAnimation
@@ -243,7 +251,8 @@
 
 - (NSArray *)createBars
 {
-    NSArray *bars = [NSArray arrayWithArray:[UPFile readFile:kFileName byKey:@"MonthMoney"]];;
+    NSString *path = [UPFile pathForFile:kFileName writable:NO];
+    NSArray *bars = [NSArray arrayWithArray:[UPFile readFile:path forKey:@"MonthMoney"]];;
     return bars;
 }
 

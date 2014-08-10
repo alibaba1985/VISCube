@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"注册";
+    _loadingMessage = @"正在玩儿命注册...";
+    [_mainButton setTitle:@"注    册" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +48,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Override
+
+- (void)addHelpInfos
+{
+    
+}
+
+- (void)gotoNextPage
+{
+    [self showToastMessage:@"注册成功！\n请登录。"];
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
 
 @end

@@ -14,6 +14,7 @@
 #import "VISViewCreator.h"
 #import "VISConsts.h"
 #import "CPToast.h"
+#import "VISSourceManager.h"
 
 
 @interface VISBaseViewController : UIViewController

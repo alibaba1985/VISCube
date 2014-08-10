@@ -14,7 +14,7 @@
 #define kWidth     260
 #define kLoadingHeight 160
 #define kFontSize  20
-#define kDelay     3
+#define kDelay     2.5
 #define kBGAlpha   0.3
 #define kBGCornerRadius 3;
 #define kGoldenPoint 0.42
@@ -31,6 +31,7 @@
     UILabel *_titleLabel;
     CGPoint _center;
     BOOL _loading;
+    BOOL _isShowwingToastMessage;
 }
 @property(nonatomic, assign)CGPoint realCenter;
 @property(nonatomic, assign)UIView *realSuperView;
@@ -44,6 +45,8 @@
 - (void)hide;
 
 - (CGSize)calcuateMessageSize:(NSString *)message;
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer;
 
 @end
 
@@ -134,6 +137,12 @@
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
         self.realSuperView = view;
+        _isShowwingToastMessage = YES;
+        // add tap
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self
+                                             action:@selector(handleTap:)];
+        [self addGestureRecognizer:singleTap];
         
         // add content
         CGRect contentFrame = CGRectZero;
@@ -218,7 +227,7 @@
         }];
 
     }
-    else
+    else if (_isShowwingToastMessage)
     {
         [self animationWithDuration:kSystemAnimationDuration endAction:@selector(didShowToastOnCenter) target:self block:^{
             weakSelf.alpha = 1;
@@ -246,5 +255,10 @@
     // Drawing code
 }
 */
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer
+{
+    [self dismiss];
+}
 
 @end

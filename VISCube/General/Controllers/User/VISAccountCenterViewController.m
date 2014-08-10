@@ -8,6 +8,7 @@
 
 #import "VISAccountCenterViewController.h"
 #import "UPDeviceInfo.h"
+#import "UPFile.h"
 
 @interface VISAccountCenterViewController ()
 {
@@ -103,6 +104,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:
+        
+            
+            break;
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark -
@@ -168,8 +190,13 @@
     NSString *title = nil;
     switch (indexPath.row) {
         case 0:
+        {
+            NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
+            NSString *name = [UPFile readFile:path forKey:kUserName];
             image = [UIImage imageNamed:@"user"];
-            title = @"user******007";
+            title = name;
+        }
+            
             break;
         case 1:
             image = [UIImage imageNamed:@"edit_delfromhome"];

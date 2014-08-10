@@ -63,11 +63,10 @@
     }
 
     CGContextSetStrokeColorWithColor(context, [self.lineColor CGColor]);
-    CGContextSetLineWidth(context, rect.size.width);
-    CGContextMoveToPoint(context, rect.origin.x, rect.origin.y);
-    CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height);
+    CGContextSetLineWidth(context, CGRectGetWidth(rect));
+    CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect));
+    CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect));
     CGContextStrokePath(context);
-    CGContextClosePath(context);
 }
 
 

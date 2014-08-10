@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "VISBaseViewController.h"
+#import "VISLoginViewController.h"
 
-@interface VISRegisterViewController : VISBaseViewController
+@interface VISRegisterViewController : VISLoginViewController
 
 @end

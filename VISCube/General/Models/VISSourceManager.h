@@ -18,9 +18,11 @@
  *
  *
  */
+@class RESideMenu;
 @interface VISSourceManager : NSObject
 /** 侧边栏content viewControllers **/
 @property (nonatomic, strong) NSArray *menuViewControllers;
+@property (nonatomic, strong) RESideMenu *sideMenuViewController;
 
 + (instancetype)currentSource;
 

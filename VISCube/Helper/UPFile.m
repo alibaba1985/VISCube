@@ -10,34 +10,41 @@
 
 @implementation UPFile
 
-+ (NSString *)pathForFile:(NSString *)file
++ (NSString *)pathForFile:(NSString *)file writable:(BOOL)writable
 {
-    NSString *path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
+    NSString *path = nil;
+    if (writable) {
+        NSString * docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
+        path = [docPath stringByAppendingPathComponent:file];
+    }
+    else
+    {
+        path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
+    }
     
     return path;
 }
 
-+ (id)readFile:(NSString *)file byKey:(NSString *)key
++ (id)readFile:(NSString *)filePath forKey:(NSString *)key
 {
     id value = nil;
-    NSString *path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        NSMutableDictionary* file = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSMutableDictionary* file = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
         value = ([file objectForKey:key] != nil) ? [file objectForKey:key] : nil;
     }
     
     return value;
 }
 
-+ (void)writeFile:(NSString *)file withValue:(id)value withKey:(NSString *)key
++ (void)writeFile:(NSString *)filePath withValue:(id)value forKey:(NSString *)key
 {
-    NSString *path = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:file];
-    BOOL fileExist = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    BOOL fileExist = [[NSFileManager defaultManager] fileExistsAtPath:filePath];
     NSMutableDictionary *fileDictionary = fileExist ?
-        [NSMutableDictionary dictionaryWithContentsOfFile:path] :
+        [NSMutableDictionary dictionaryWithContentsOfFile:filePath] :
         [NSMutableDictionary dictionary];
     [fileDictionary setObject:value forKey:key];
-    [fileDictionary writeToFile:path atomically:YES];
+    [fileDictionary writeToFile:filePath atomically:YES];
 }
 
 + (void)deleteFile:(NSString *)file
@@ -45,7 +52,7 @@
     
 }
 
-+ (void)deleteFile:(NSString *)file byKey:(NSString *)key atIndex:(NSInteger)index
++ (void)deleteFile:(NSString *)file forKey:(NSString *)key atIndex:(NSInteger)index
 {
     
 }

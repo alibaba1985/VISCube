@@ -6,7 +6,18 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#pragma mark- Status
+#pragma mark - File Name
+
+#define kLocalFileName @"LocalDatas.plist"
+
+#define kLoginned @"Loginned"
+#define kFirstSetup @"FirstSetup"
+#define kUserName @"UserName"
+
+#define kValueYES @"YES"
+#define kValueNO @"NO"
+
+#pragma mark - Status
 
 #define kValue0 @"0"
 #define kValue1 @"1"
