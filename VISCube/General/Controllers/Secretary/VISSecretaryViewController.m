@@ -8,6 +8,10 @@
 
 #import "VISSecretaryViewController.h"
 #import "VISWebViewController.h"
+#import "VISRankViewController.h"
+#import "VISStatisticViewController.h"
+#import "VISOptimizerViewController.h"
+#import "VISStatusViewController.h"
 
 
 @interface VISSecretaryViewController ()
@@ -67,23 +71,27 @@
     switch (indexPath.row) {
         case 0:
         {
-            
+            VISStatisticViewController *statisticVC = [[VISStatisticViewController alloc] init];
+            [self.navigationController pushViewController:statisticVC animated:YES];
         }
             
             break;
         case 1:
         {
-            
+            VISRankViewController *rankVC = [[VISRankViewController alloc] init];
+            [self.navigationController pushViewController:rankVC animated:YES];
         }
             break;
         case 2:
         {
-            
+            VISOptimizerViewController *optimizerVC = [[VISOptimizerViewController alloc] init];
+            [self.navigationController pushViewController:optimizerVC animated:YES];
         }
             break;
         case 3:
         {
-            
+            VISStatusViewController *statusVC = [[VISStatusViewController alloc] init];
+            [self.navigationController pushViewController:statusVC animated:YES];
         }
             break;
         case 4:

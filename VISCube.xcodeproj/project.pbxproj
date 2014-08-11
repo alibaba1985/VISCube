@@ -121,6 +121,9 @@
 		0FCB823419812027000962A4 /* UPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCB823319812027000962A4 /* UPFile.m */; };
 		0FD14796199477EC00D61377 /* VISResetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD14795199477EC00D61377 /* VISResetPwdViewController.m */; };
 		0FD8ABBD1985E6D800D56336 /* VISAddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8ABBC1985E6D800D56336 /* VISAddDeviceViewController.m */; };
+		0FFF8A121998BBD60021DD47 /* VISStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF8A111998BBD60021DD47 /* VISStatisticViewController.m */; };
+		0FFF8A151998BCE80021DD47 /* VISOptimizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF8A141998BCE80021DD47 /* VISOptimizerViewController.m */; };
+		0FFF8A181998BD510021DD47 /* VISStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF8A171998BD510021DD47 /* VISStatusViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +303,12 @@
 		0FD14795199477EC00D61377 /* VISResetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISResetPwdViewController.m; sourceTree = "<group>"; };
 		0FD8ABBB1985E6D800D56336 /* VISAddDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAddDeviceViewController.h; sourceTree = "<group>"; };
 		0FD8ABBC1985E6D800D56336 /* VISAddDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAddDeviceViewController.m; sourceTree = "<group>"; };
+		0FFF8A101998BBD60021DD47 /* VISStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISStatisticViewController.h; sourceTree = "<group>"; };
+		0FFF8A111998BBD60021DD47 /* VISStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISStatisticViewController.m; sourceTree = "<group>"; };
+		0FFF8A131998BCE80021DD47 /* VISOptimizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISOptimizerViewController.h; sourceTree = "<group>"; };
+		0FFF8A141998BCE80021DD47 /* VISOptimizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISOptimizerViewController.m; sourceTree = "<group>"; };
+		0FFF8A161998BD510021DD47 /* VISStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISStatusViewController.h; sourceTree = "<group>"; };
+		0FFF8A171998BD510021DD47 /* VISStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISStatusViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +602,12 @@
 				0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */,
 				0FB564E2199765A0004E9AA5 /* VISRankViewController.h */,
 				0FB564E3199765A0004E9AA5 /* VISRankViewController.m */,
+				0FFF8A101998BBD60021DD47 /* VISStatisticViewController.h */,
+				0FFF8A111998BBD60021DD47 /* VISStatisticViewController.m */,
+				0FFF8A131998BCE80021DD47 /* VISOptimizerViewController.h */,
+				0FFF8A141998BCE80021DD47 /* VISOptimizerViewController.m */,
+				0FFF8A161998BD510021DD47 /* VISStatusViewController.h */,
+				0FFF8A171998BD510021DD47 /* VISStatusViewController.m */,
 			);
 			path = Secretary;
 			sourceTree = "<group>";
@@ -1007,11 +1022,13 @@
 				0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */,
 				0FA4253C196A689700D85399 /* main.m in Sources */,
 				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
+				0FFF8A151998BCE80021DD47 /* VISOptimizerViewController.m in Sources */,
 				0FA425B8196BFE5500D85399 /* VISHomeViewController.m in Sources */,
 				0FCB823419812027000962A4 /* UPFile.m in Sources */,
 				0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */,
 				0FAB2A46197692E40077DBFD /* PNBar.m in Sources */,
 				0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */,
+				0FFF8A121998BBD60021DD47 /* VISStatisticViewController.m in Sources */,
 				0FA4258C196A6BE900D85399 /* MKNetworkEngine.m in Sources */,
 				0FA4258D196A6BE900D85399 /* MKNetworkOperation.m in Sources */,
 				0FA42597196A71CC00D85399 /* VISNavigationBar.m in Sources */,
@@ -1026,6 +1043,7 @@
 				0F0A9BDA197E808600E3C0E1 /* UPLineView.m in Sources */,
 				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
+				0FFF8A181998BD510021DD47 /* VISStatusViewController.m in Sources */,
 				0FA42594196A71A600D85399 /* VISNavigationController.m in Sources */,
 				0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */,
 				0FA425C0196C090600D85399 /* UIImage+ImageEffects.m in Sources */,
