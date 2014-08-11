@@ -83,7 +83,7 @@
 {
     static NSString *reuseIdentifier = @"rankCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    NSString *rank = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
+    NSString *rank = [NSString stringWithFormat:@"%ld", (long)(indexPath.row + 1)];
     CGFloat rankTag = 100;
     
     if (cell == nil) {

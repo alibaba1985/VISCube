@@ -83,6 +83,7 @@
         
         CGRect barFrame = CGRectMake(_chartMarginAndWidth/2+_chartMarginAndWidth*2*index, 0, _chartMarginAndWidth*2, CGRectGetHeight(self.frame));
         bar = [[PNBar alloc] initWithFrame:barFrame content:content index:index];
+        bar.barDelayDuration = self.barDelayDuration;
 		bar.barColor = _strokeColor;
 		bar.absoluteGrade = grade;
 		[self addSubview:bar];

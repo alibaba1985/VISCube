@@ -34,6 +34,7 @@
     CGFloat _changeableOriginalY;
     CGFloat _yOffset;
     CGFloat _commonHeight;
+    CGFloat _scrollViewOffset;
     
     BOOL _barChartHasShown;
     
@@ -113,6 +114,8 @@
     [super viewWillAppear:animated];
     [self strokeAnimation];
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -440,7 +443,7 @@
         [scrollView scrollRectToVisible:rect animated:YES];
         
     }
-    
+    _scrollViewOffset = offset;
     [self handleBarChartAnimationWithOffset:offset];
 }
 

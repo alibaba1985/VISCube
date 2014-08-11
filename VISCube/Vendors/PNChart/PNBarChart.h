@@ -25,11 +25,13 @@
 
 @property (nonatomic, strong) UIColor * strokeColor;
 
+@property(nonatomic)CGFloat barDelayDuration;
 
 - (id)initWithFrame:(CGRect)frame bars:(NSArray *)bars;
 
 - (void)stokeChartAnimation;
 
 - (void)hideAllBars;
+
 
 @end

@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) PNChartLabel *bottomLabel;
 
+@property(nonatomic)CGFloat barDelayDuration;
+
 
 - (id)initWithFrame:(CGRect)frame content:(NSDictionary *)content index:(NSInteger)index;
 

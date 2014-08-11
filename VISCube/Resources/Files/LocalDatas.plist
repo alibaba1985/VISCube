@@ -8,47 +8,53 @@
 			<key>label</key>
 			<string>1月</string>
 			<key>value</key>
-			<string>150</string>
+			<string>150.00</string>
 		</dict>
 		<dict>
 			<key>label</key>
 			<string>2月</string>
 			<key>value</key>
-			<string>80</string>
+			<string>80.90</string>
 		</dict>
 		<dict>
 			<key>label</key>
 			<string>3月</string>
 			<key>value</key>
-			<string>120</string>
+			<string>120.88</string>
 		</dict>
 		<dict>
 			<key>label</key>
 			<string>4月</string>
 			<key>value</key>
-			<string>180</string>
+			<string>180.90</string>
 		</dict>
 		<dict>
 			<key>label</key>
 			<string>5月</string>
 			<key>value</key>
-			<string>60</string>
+			<string>60.30</string>
 		</dict>
 		<dict>
 			<key>label</key>
 			<string>6月</string>
 			<key>value</key>
-			<string>30</string>
+			<string>30.11</string>
 		</dict>
 	</array>
-	<key>WeekData</key>
+	<key>YearMoney</key>
 	<array>
-		<dict/>
-		<dict/>
-		<dict/>
-		<dict/>
-		<dict/>
-		<dict/>
+		<dict>
+			<key>label</key>
+			<string>2013</string>
+			<key>value</key>
+			<string>1312.60</string>
+		</dict>
+		<dict>
+			<key>label</key>
+			<string>2014</string>
+			<key>value</key>
+			<string>589.99</string>
+		</dict>
 	</array>
 	<key>Devices</key>
 	<array>
@@ -56,6 +62,8 @@
 			<key>image</key>
 			<string>Camera.png</string>
 			<key>name</key>
+			<string>客厅监控</string>
+			<key>label</key>
 			<string>客厅监控</string>
 			<key>location</key>
 			<string>客厅</string>
@@ -69,11 +77,15 @@
 			<string>60.00KWH</string>
 			<key>totalmoney</key>
 			<string>30.00元</string>
+			<key>value</key>
+			<string>30.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>2.png</string>
 			<key>name</key>
+			<string>厨房灯</string>
+			<key>label</key>
 			<string>厨房灯</string>
 			<key>location</key>
 			<string>厨房</string>
@@ -84,14 +96,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>30.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>15.00元</string>
+			<key>value</key>
+			<string>15.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>3.png</string>
 			<key>name</key>
+			<string>卫生间照明灯</string>
+			<key>label</key>
 			<string>卫生间照明灯</string>
 			<key>location</key>
 			<string>卫生间</string>
@@ -100,16 +116,20 @@
 			<key>starttime</key>
 			<string>2014/06/30</string>
 			<key>activetime</key>
-			<string>120H</string>
+			<string>40H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>80.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>40.00元</string>
+			<key>value</key>
+			<string>40.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>4.png</string>
 			<key>name</key>
+			<string>书房灯</string>
+			<key>label</key>
 			<string>书房灯</string>
 			<key>location</key>
 			<string>书房</string>
@@ -120,14 +140,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>90.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>45.00元</string>
+			<key>value</key>
+			<string>45.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>5.png</string>
 			<key>name</key>
+			<string>主卧灯</string>
+			<key>label</key>
 			<string>主卧灯</string>
 			<key>location</key>
 			<string>主卧</string>
@@ -138,14 +162,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>200.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>100.00元</string>
+			<key>value</key>
+			<string>100.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>6.png</string>
 			<key>name</key>
+			<string>走廊声控</string>
+			<key>label</key>
 			<string>走廊声控</string>
 			<key>location</key>
 			<string>走廊</string>
@@ -156,14 +184,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>20.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>10.00元</string>
+			<key>value</key>
+			<string>10.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>7.png</string>
 			<key>name</key>
+			<string>厨房插座</string>
+			<key>label</key>
 			<string>厨房插座</string>
 			<key>location</key>
 			<string>厨房</string>
@@ -174,14 +206,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>240.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>120.00元</string>
+			<key>value</key>
+			<string>120.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>8.png</string>
 			<key>name</key>
+			<string>电饭锅</string>
+			<key>label</key>
 			<string>电饭锅</string>
 			<key>location</key>
 			<string>厨房</string>
@@ -192,14 +228,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>150.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>75.00元</string>
+			<key>value</key>
+			<string>75.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>9.png</string>
 			<key>name</key>
+			<string>加湿器</string>
+			<key>label</key>
 			<string>加湿器</string>
 			<key>location</key>
 			<string>主卧</string>
@@ -213,11 +253,15 @@
 			<string>60.00KWH</string>
 			<key>totalmoney</key>
 			<string>30.00元</string>
+			<key>value</key>
+			<string>30.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>10.png</string>
 			<key>name</key>
+			<string>电视机</string>
+			<key>label</key>
 			<string>电视机</string>
 			<key>location</key>
 			<string>客厅</string>
@@ -228,14 +272,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>300.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>150.00元</string>
+			<key>value</key>
+			<string>150.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>11.png</string>
 			<key>name</key>
+			<string>空调</string>
+			<key>label</key>
 			<string>空调</string>
 			<key>location</key>
 			<string>客厅</string>
@@ -246,14 +294,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>400.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>200.00元</string>
+			<key>value</key>
+			<string>200.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>12.png</string>
 			<key>name</key>
+			<string>微波炉</string>
+			<key>label</key>
 			<string>微波炉</string>
 			<key>location</key>
 			<string>厨房</string>
@@ -264,14 +316,18 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>100.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>50.00元</string>
+			<key>value</key>
+			<string>50.00</string>
 		</dict>
 		<dict>
 			<key>image</key>
 			<string>13.png</string>
 			<key>name</key>
+			<string>电水壶</string>
+			<key>label</key>
 			<string>电水壶</string>
 			<key>location</key>
 			<string>厨房</string>
@@ -282,9 +338,11 @@
 			<key>activetime</key>
 			<string>120H</string>
 			<key>totalpower</key>
-			<string>60.00KWH</string>
+			<string>70.00KWH</string>
 			<key>totalmoney</key>
-			<string>30.00元</string>
+			<string>35.00元</string>
+			<key>value</key>
+			<string>35.00</string>
 		</dict>
 	</array>
 	<key>DayData</key>

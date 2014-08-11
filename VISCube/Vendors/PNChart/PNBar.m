@@ -10,7 +10,7 @@
 #import "PNColor.h"
 #import "PNChartLabel.h"
 
-#define kLabelHeight 18
+#define kLabelHeight 30
 
 #define kAnimationDelayDuration 0.15
 #define kStraightAnimationDuration 0.25
@@ -82,7 +82,8 @@
 
 - (void)startAnimation
 {
-    [self performSelector:@selector(startStraightAnimation) withObject:nil afterDelay:_animationDalay];
+    CGFloat delay = (self.barDelayDuration == 0) ? _animationDalay : self.barDelayDuration;
+    [self performSelector:@selector(startStraightAnimation) withObject:nil afterDelay:delay];
 }
 
 - (void)startStraightAnimation

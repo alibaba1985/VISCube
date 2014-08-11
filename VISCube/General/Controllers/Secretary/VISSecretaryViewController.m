@@ -68,7 +68,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case 0:
         {
             VISStatisticViewController *statisticVC = [[VISStatisticViewController alloc] init];
@@ -117,7 +117,7 @@
     }
     else if (indexPath.section == 4)
     {
-        height = 200;
+        height = [UPDeviceInfo isPad] ? 300 : 200;
     }
 
     
@@ -204,7 +204,7 @@
             break;
         case 4:
         {
-            CGRect adContentFrame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), 200);
+            CGRect adContentFrame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), [UPDeviceInfo isPad] ? 300 : 200);
             XLCycleScrollView *csView = [[XLCycleScrollView alloc] initWithFrame:adContentFrame];
             csView.backgroundColor = [UIColor clearColor];
             csView.delegate = self;
