@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"能耗排名";
+    self.title = @"月度排名";
     self.tableView = [self tableViewWithStyle:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
 }

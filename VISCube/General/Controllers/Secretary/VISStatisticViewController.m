@@ -37,7 +37,6 @@
     self.title = @"用电统计";
     _rowHeight = [UPDeviceInfo isPad] ? 400 : 200;
     self.tableView = [self tableViewWithStyle:UITableViewStyleGrouped];
-    
     [self.view addSubview:self.tableView];
     
     _barViews = [[NSMutableArray alloc] init];
@@ -92,7 +91,7 @@
 {
     PNBarChart *barChart = [[PNBarChart alloc] initWithFrame:frame bars:bars];
     barChart.backgroundColor = [UIColor clearColor];
-    barChart.barDelayDuration = 0.15;
+    //barChart.barDelayDuration = 0.15;
     [barChart strokeChart];
     return barChart;
 }
@@ -136,10 +135,12 @@
     cell.userInteractionEnabled = NO;
     CGRect barFrame = CGRectZero;
     NSArray *bars = nil;
+    CGFloat delay = 0.15;
     switch (indexPath.section) {
         case 0:
             barFrame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), _rowHeight);
             bars = [self monthBars];
+            delay = 0.2;
             break;
         case 1:
             barFrame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), _rowHeight);
@@ -148,6 +149,7 @@
         case 2:
             barFrame = CGRectMake(0, 0, CGRectGetWidth(tableView.frame), _rowHeight);
             bars = [self devicesBars];
+            delay = 0.08;
             break;
             
         default:
@@ -157,6 +159,7 @@
     
     
     PNBarChart *barChart = [self barViewWithFrame:barFrame Bars:bars];
+    barChart.barDelayDuration = delay;
     [cell.contentView addSubview:barChart];
     [_barViews addObject:barChart];
     [barChart stokeChartAnimation];

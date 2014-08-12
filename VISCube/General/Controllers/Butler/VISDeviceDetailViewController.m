@@ -55,7 +55,7 @@
     
     CGFloat y = 0;
     
-    _cellNumber = _deviceDetails.allKeys.count;
+    _cellNumber = _deviceDetails.allKeys.count - 3;
     _tableCellRowHeight = [UPDeviceInfo isPad] ? 60 : 44;
     BOOL isSizeBeyondBounds = (kImageCellSize + (_cellNumber-1)*_tableCellRowHeight) > self.viewMaxHeight;
     CGFloat tableHeight = isSizeBeyondBounds ? self.viewMaxHeight : (kImageCellSize + (_cellNumber-1)*_tableCellRowHeight);

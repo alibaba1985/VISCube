@@ -26,6 +26,7 @@
 
 #pragma mark - Device
 
+#define kIMEI @"imei"
 #define kDeviceName @"name"
 #define kDeviceLocation @"location"
 #define kDeviceStatus @"status"

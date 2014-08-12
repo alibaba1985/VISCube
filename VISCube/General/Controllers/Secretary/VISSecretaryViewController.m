@@ -194,7 +194,7 @@
         {
             NSAttributedString *text = [self textWithPrefix:@"" colorString:@"客厅空调" sufixString:@"连续工作12.30小时，耗电21.00KWH"];
             cell.textLabel.attributedText = text;
-            cell.detailTextLabel.text = @"设备总数：8\n工作数：3";
+            cell.detailTextLabel.text = @"设备总数：13\n工作数：10";
             cell.textLabel.lineBreakMode = NSLineBreakByCharWrapping;
             cell.textLabel.numberOfLines = 0;
             

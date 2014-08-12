@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 liwang. All rights reserved.
 //
 
-#import "VISBaseViewController.h"
+#import "VISTableViewController.h"
 
-@interface VISStatusViewController : VISBaseViewController
+@interface VISStatusViewController : VISTableViewController
 
 @end

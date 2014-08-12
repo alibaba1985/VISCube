@@ -65,6 +65,9 @@
 
 - (CGSize)calcuateMessageSize:(NSString *)message
 {
+    if (message == nil) {
+        return CGSizeZero;
+    }
     UIFont *font = [UIFont systemFontOfSize:kFontSize];
     NSStringDrawingOptions option = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
     CGRect rect = [message boundingRectWithSize:CGSizeMake((kWidth-2*kTopMargin), 500)
@@ -94,7 +97,9 @@
         // add content
         CGRect contentFrame = CGRectZero;
         CGSize size = [self calcuateMessageSize:message];
-        contentFrame.size = CGSizeMake(kTopMargin*2 + size.width, kTopMargin*3 + size.height + kIndicatorSize);
+        CGFloat height = kTopMargin*3 + size.height + kIndicatorSize;
+        CGFloat width = CGSizeEqualToSize(size, CGSizeZero) ? height : (kTopMargin*2 + size.width);
+        contentFrame.size = CGSizeMake(width, height);
         _contentView = [[UIView alloc] initWithFrame:contentFrame];
         _contentView.backgroundColor = [UIColor blackColor];
         _contentView.layer.cornerRadius = kBGCornerRadius;
