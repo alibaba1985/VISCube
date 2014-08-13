@@ -23,6 +23,7 @@
 /** 侧边栏content viewControllers **/
 @property (nonatomic, strong) NSArray *menuViewControllers;
 @property (nonatomic, strong) RESideMenu *sideMenuViewController;
+@property(nonatomic, strong)NSMutableArray *allDevices;
 
 + (instancetype)currentSource;
 

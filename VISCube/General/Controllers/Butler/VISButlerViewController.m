@@ -55,6 +55,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    for (UIView *view in self.contentScrollView.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    [self addDevices];
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -77,10 +89,33 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
+- (void)sortDevices
+{
+    NSMutableArray *tempDevices = [VISSourceManager currentSource].allDevices;
+    NSMutableArray *newDevices = [NSMutableArray array];
+    NSUInteger index = 0;
+    
+    for (NSDictionary *item in tempDevices) {
+        if ([[item objectForKey:kDeviceStatus] isEqualToString:kValue2]) {
+            [newDevices insertObject:item atIndex:0];
+            index++;
+        }
+        else if ([[item objectForKey:kDeviceStatus] isEqualToString:kValue0])
+        {
+            [newDevices insertObject:item atIndex:index];
+        }
+        else
+        {
+            [newDevices addObject:item];
+        }
+    }
+    
+    self.devices = [NSArray arrayWithArray:newDevices];
+}
+
 - (void)addDevices
 {
-    NSString *path = [UPFile pathForFile:kFileName writable:YES];
-    _devices = [NSArray arrayWithArray:[UPFile readFile:path forKey:@"Devices"]];
+    [self sortDevices];
     _deviceCollection = [NSMutableArray array];
     NSInteger index = 0;
     

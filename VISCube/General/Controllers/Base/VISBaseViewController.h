@@ -16,6 +16,8 @@
 #import "CPToast.h"
 #import "VISSourceManager.h"
 
+#define kSourceManager [VISSourceManager currentSource]
+
 
 @interface VISBaseViewController : UIViewController
 

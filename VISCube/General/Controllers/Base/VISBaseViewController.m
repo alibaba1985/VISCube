@@ -114,6 +114,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CPToast *toast = [[CPToast alloc] initWithMessage:message onView:window];
     [toast show];
+    
 }
 
 - (void)showAlertMessage:(NSString *)message

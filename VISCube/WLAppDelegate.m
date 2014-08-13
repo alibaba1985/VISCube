@@ -138,6 +138,12 @@
     NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
     NSString *loginned = [UPFile readFile:path forKey:kLoginned];
     
+    // prepare data
+    
+    NSString *apath = [UPFile pathForFile:kLocalFileName writable:NO];
+    NSArray *devices = [UPFile readFile:apath forKey:@"Devices"];
+    [VISSourceManager currentSource].allDevices = [NSMutableArray arrayWithArray:devices];
+    
     if ([loginned isEqualToString:kValueYES]) {
         self.window.rootViewController = [VISSourceManager currentSource].sideMenuViewController;
     }

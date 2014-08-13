@@ -104,10 +104,6 @@
     NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
     [UPFile writeFile:path withValue:kValueYES forKey:kLoginned];
     
-    NSString *apath = [UPFile pathForFile:kLocalFileName writable:NO];
-    NSArray *devices = [UPFile readFile:apath forKey:@"Devices"];
-    [UPFile writeFile:path withValue:devices forKey:@"Devices"];
-    
     for (UITextField *textField in _textFields) {
         if ([textField.placeholder isEqualToString:_namePlaceHolder]) {
             [UPFile writeFile:path withValue:textField.text forKey:kUserName];

@@ -88,7 +88,7 @@
     self.allDevices = [NSMutableArray arrayWithArray:[UPFile readFile:path forKey:@"Devices"]];
     self.activeDevices = [[NSMutableArray alloc] init];
     
-    for (NSDictionary *item in self.allDevices) {
+    for (NSDictionary *item in kSourceManager.allDevices) {
         if ([[item objectForKey:kDeviceStatus] isEqualToString:kValue0]) {
             CGFloat hour = [[item objectForKey:kDeviceActiveTime] floatValue];
             NSInteger insertIndex = [self findInsertIndexByHour:hour];
@@ -120,54 +120,38 @@
     return 1;
 }
 
-- (NSInteger)rowsNumber
-{
-    NSInteger number = 0;
-    
-    NSString *path = [UPFile pathForFile:kFileName writable:YES];
-    NSArray *bars = [NSArray arrayWithArray:[UPFile readFile:path forKey:@"Devices"]];
-    for (NSDictionary *item in bars) {
-        if ([[item objectForKey:kDeviceStatus] isEqualToString:kValue0]) {
-            number++;
-        }
-    }
-    
-    return number;
-    
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
     return self.activeDevices.count;
 }
 
+- (void)switchDidEnd
+{
+    [self.tableView reloadData];
+    [self dismissLoading];
+}
+
 - (void)switchAction:(UISwitch *)switcher
 {
-    [self showLoadingWithMessage:@"正在发送请求..."];
+    [self showLoadingWithMessage:@"正在关闭设备..."];
     
     if (!switcher.isOn)
     {
         NSMutableDictionary *device = [NSMutableDictionary dictionaryWithDictionary:[self.activeDevices objectAtIndex:switcher.tag]];
         [device setObject:kValue1 forKey:kDeviceStatus];
-        for (NSInteger i = 0 ; i<self.allDevices.count; i++ ) {
-            NSDictionary *item = [self.activeDevices objectAtIndex:i];
+        for (NSInteger i = 0 ; i<kSourceManager.allDevices.count; i++ ) {
+            NSDictionary *item = [kSourceManager.allDevices objectAtIndex:i];
             if ([[device objectForKey:kIMEI] isEqual:[item objectForKey:kIMEI]]) {
-                [self.allDevices replaceObjectAtIndex:i withObject:device];
-                NSString *path = [UPFile pathForFile:kFileName writable:YES];
-                [UPFile writeFile:path withValue:self.allDevices forKey:@"Devices"];
+                [kSourceManager.allDevices replaceObjectAtIndex:i withObject:device];
                 break;
             }
         }
         
         [self.activeDevices removeObjectAtIndex:switcher.tag];
-        [self.tableView reloadData];
+        [self performSelector:@selector(switchDidEnd) withObject:nil afterDelay:1.5];
         
     }
-    
-    [self dismissLoading];
-
-    
-    
     
 }
 

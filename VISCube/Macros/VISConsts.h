@@ -19,9 +19,9 @@
 
 #pragma mark - Status
 
-#define kValue0 @"0"
-#define kValue1 @"1"
-#define kValue2 @"2"
+#define kValue0 @"0" // on
+#define kValue1 @"1" // off
+#define kValue2 @"2" // error
 
 
 #pragma mark - Device
