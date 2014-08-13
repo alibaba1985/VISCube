@@ -37,4 +37,15 @@
 
 - (void)dismissLoading;
 
+// observe
+
+- (UIView *)createAlertIndicator;
+- (void)removeAlertIndicator;
+
+- (void)addDeviceAlertObserve;
+
+- (void)addAlertIndicatorOnMenuBar;
+
+- (void)addLightAnimationToView:(UIView *)view;
+
 @end

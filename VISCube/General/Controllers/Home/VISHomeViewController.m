@@ -94,7 +94,6 @@
     _commonHeight = [UPDeviceInfo isPad] ? 400 : 200;
     [self addFixedBackground];
     [self addChangeableBackground];
-    
     [self addRanks];
     [self addMainInfo];
     [self addWeekKWH];
@@ -106,6 +105,7 @@
     self.contentScrollView.delegate = self;
     self.title = @"首页";
     [self addNavigationMenuItem];
+    [self addDeviceAlertObserve];
     
 }
 
@@ -115,7 +115,14 @@
     [self strokeAnimation];
 }
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self addDeviceAlertObserve];
+    if ([kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
+        [self addAlertIndicatorOnMenuBar];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

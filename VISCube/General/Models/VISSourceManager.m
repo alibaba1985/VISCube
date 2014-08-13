@@ -7,6 +7,7 @@
 //
 
 #import "VISSourceManager.h"
+#import "VISConsts.h"
 
 
 @implementation VISSourceManager
@@ -23,7 +24,16 @@
     return _source;
 }
 
-
+- (void)checkDeviceStatus
+{
+    self.deviceAlertStatus = @"00";
+    for (NSDictionary *item in self.allDevices) {
+        if ([[item objectForKey:kDeviceStatus] isEqual:kValue2]) {
+            self.deviceAlertStatus = @"01";
+            break;
+        }
+    }
+}
 
 
 

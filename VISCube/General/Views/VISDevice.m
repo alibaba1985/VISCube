@@ -35,6 +35,10 @@
 
 - (void)touchDragInAction;
 
+- (void)addLightAnimationToView:(UIView *)view;
+
+- (BOOL)addDeviceStatusIndicator;
+
 @end
 
 @implementation VISDevice
@@ -99,12 +103,20 @@
     
     [self addSubview:_actionButton];
     
+    // add status indicator
+    BOOL badDevice = [self addDeviceStatusIndicator];
+    self.deviceImage = badDevice ? [UIImage imageNamed:@"RedAlert"] : self.deviceImage;
     // add image
     CGFloat y = kMargin;
     CGFloat imageSize = CGRectGetHeight(self.frame)/2-2*kMargin;
     CGFloat imageX = (CGRectGetWidth(self.frame) - imageSize) / 2;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.deviceImage];
     imageView.frame = CGRectMake(imageX, y, imageSize, imageSize);
+    
+    if (badDevice) {
+        [self addLightAnimationToView:imageView];
+    }
+    
     [_actionButton addSubview:imageView];
     y = CGRectGetHeight(self.frame)/2 + kMargin;
     y = [UPDeviceInfo isPad] ? y+kMargin : y;
@@ -127,22 +139,48 @@
     [_actionButton addSubview:locationLabel];
     
     
-    // add status indicator
+    
+}
+
+- (void)addLightAnimationToView:(UIView *)view
+{
+    view.alpha = 1;
+    [UIView animateWithDuration:1 animations:^{
+        view.alpha = 0;
+    }completion:^(BOOL finished) {
+        [self addLightAnimationToView:view];
+    }];
+}
+
+- (BOOL)addDeviceStatusIndicator
+{
+    BOOL badDevice = NO;
     NSString *imageName = nil;
     if ([self.deviceStatus isEqualToString:kValue0]) {
         imageName = @"open_on.png";
     }else if ([self.deviceStatus isEqualToString:kValue1]){
         imageName = @"close_off.png";
     }else if ([self.deviceStatus isEqualToString:kValue2]){
-        imageName = @"light_yellow.jpg";
+        badDevice = YES;
     }
     
     if (imageName != nil) {
         UIImage *statusImage = [UIImage imageNamed:imageName];
         UIImageView *statusImageView = [[UIImageView alloc] initWithImage:statusImage];
         statusImageView.frame = CGRectMake(CGRectGetWidth(self.frame)-kMargin-20, kMargin, 20, 10);
+        if (badDevice) {
+            statusImageView.frame = CGRectMake(CGRectGetWidth(self.frame)-kMargin-30, kMargin, 30, 30);
+            [self addLightAnimationToView:statusImageView];
+        }
+        else
+        {
+            
+        }
+        
+        
         [_actionButton addSubview:statusImageView];
     }
+    return badDevice;
 }
 
 /*

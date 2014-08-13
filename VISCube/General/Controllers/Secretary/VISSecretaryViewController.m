@@ -51,6 +51,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self addDeviceAlertObserve];
+    if ([kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
+        [self addAlertIndicatorOnMenuBar];
+    }
+}
+
 /*
 #pragma mark - Navigation
 

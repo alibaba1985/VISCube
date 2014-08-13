@@ -15,6 +15,8 @@
 #define kButtonHeight 44
 #define kButtonWidth 260
 
+#define kErrorInfo @"电压异常"
+
 
 @interface VISDeviceDetailViewController ()
 {
@@ -22,6 +24,8 @@
     UIButton *_actionButton;
     NSMutableDictionary *_deviceDetails;
     CGFloat _tableCellRowHeight;
+    CGFloat _buttonCellRowHeight;
+    
     NSInteger _cellNumber;
     NSArray *_titles;
     BOOL _isDeviceOn;
@@ -57,7 +61,8 @@
         _deviceDetails = [NSMutableDictionary dictionaryWithDictionary:details];
         NSString *imei = [_deviceDetails objectForKey:kIMEI];
         _isCamera = [imei hasPrefix:@"10"];
-        if (_isCamera) {
+        _isDeviceOn = ![[_deviceDetails objectForKey:kDeviceStatus] isEqual:kValue1];
+        if (_isCamera && _isDeviceOn) {
             [self initCameraView];
         }
     }
@@ -71,19 +76,19 @@
     self.title = @"设备详情";
     _titles = @[@"设备名称:", @"设备位置:", @"设备状态:", @"启用时间:", @"工作时间:", @"总耗电量:", @"总耗电费:"];
     
-    _isDeviceOn = [[_deviceDetails objectForKey:kDeviceStatus] isEqual:kValue0];
     CGFloat y = 0;
     
     _cellNumber = _deviceDetails.allKeys.count - 2;
     _tableCellRowHeight = [UPDeviceInfo isPad] ? 60 : 44;
-    BOOL isSizeBeyondBounds = ([self cellHeightByCalcuate] + (_cellNumber-1)*_tableCellRowHeight) > self.viewMaxHeight;
-    CGFloat tableHeight = isSizeBeyondBounds ? self.viewMaxHeight : (kImageCellSize + (_cellNumber-1)*_tableCellRowHeight);
+    _buttonCellRowHeight = kMargin*2 + kButtonHeight;
+    BOOL isSizeBeyondBounds = ([self cellHeightByCalcuate] + (_cellNumber-2)*_tableCellRowHeight + _buttonCellRowHeight) > self.viewMaxHeight;
+    CGFloat tableHeight = isSizeBeyondBounds ? self.viewMaxHeight : (kImageCellSize + (_cellNumber-2)*_tableCellRowHeight + _buttonCellRowHeight);
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, y, self.viewMaxWidth, tableHeight) style:UITableViewStylePlain];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = [UIColor clearColor];
-        tableView.userInteractionEnabled = isSizeBeyondBounds;
+        tableView.scrollEnabled = isSizeBeyondBounds;
         tableView;
     });
     [self.view addSubview:self.tableView];
@@ -95,6 +100,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [_movieVC stop];
 }
 
 /*
@@ -110,8 +123,8 @@
 
 - (void)initCameraView
 {
-    CGRect cameraFrame = CGRectMake(0, 0, [UPDeviceInfo screenSize].width, [UPDeviceInfo screenSize].width );
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"camera" ofType:@"mp4"];
+    CGRect cameraFrame = CGRectMake(0, 0, [UPDeviceInfo screenSize].width, [UPDeviceInfo screenSize].width*2/3 );
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Camera01" ofType:@"mp4"];
     
     //视频URL
     NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
@@ -121,7 +134,10 @@
     [_movieVC.view setFrame:cameraFrame];
     _movieVC.movieSourceType = MPMovieSourceTypeFile;
     _movieVC.repeatMode = MPMovieRepeatModeOne;
-    [_movieVC setScalingMode:MPMovieScalingModeAspectFill];
+    //[_movieVC setScalingMode:MPMovieScalingModeAspectFill];
+    UIView *bgView = [[UIView alloc] initWithFrame:_movieVC.backgroundView.bounds];
+    bgView.backgroundColor = self.view.backgroundColor;
+    [_movieVC.backgroundView addSubview:bgView];
     
     _movieVC.controlStyle = MPMovieControlStyleNone;
     
@@ -142,7 +158,7 @@
 
 - (CGFloat)cellHeightByCalcuate
 {
-    return _isCamera ? self.viewMaxWidth : kImageCellSize;
+    return (_isCamera && _isDeviceOn) ? self.viewMaxWidth*2/3 : kImageCellSize;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -187,7 +203,7 @@
             }else if ([status isEqualToString:kValue1]){
                 content = @"已关闭";
             }else if ([status isEqualToString:kValue2]){
-                content = @"已损坏";
+                content = kErrorInfo;
             }
         }
             break;
@@ -234,11 +250,12 @@
     [cell addSubview:titleLabel];
     
     CGRect contentFrame = CGRectMake(margin+titleWidth, y, self.viewMaxWidth-margin-titleWidth, labelHeight);
+    UIColor *color = [content isEqualToString:kErrorInfo] ? [UIColor redColor] : [UIColor blackColor];
     VISLabel *contentLabel = [VISViewCreator
                               wrapLabelWithFrame:contentFrame
                               text:content
                               font:[UIFont fontWithName:@"HelveticaNeue" size:labelHeight-2]
-                              textColor:[UIColor blackColor]];
+                              textColor:color];
     contentLabel.verticalAlignment = VISVerticalAlignmentMiddle;
     [cell addSubview:contentLabel];
     
@@ -258,9 +275,38 @@
     }
 }
 
+- (void)resetCamera
+{
+    BOOL isSizeBeyondBounds = ([self cellHeightByCalcuate] + (_cellNumber-2)*_tableCellRowHeight + _buttonCellRowHeight) > self.viewMaxHeight;
+    CGFloat tableHeight = isSizeBeyondBounds ? self.viewMaxHeight : (kImageCellSize + (_cellNumber-2)*_tableCellRowHeight + _buttonCellRowHeight);
+    CGRect frame = self.tableView.frame;
+    frame.size.height = tableHeight;
+    self.tableView.frame = frame;
+    self.tableView.scrollEnabled = isSizeBeyondBounds;
+    if (_movieVC) {
+        if (_isDeviceOn) {
+            [_movieVC play];
+        }
+        else
+        {
+            [_movieVC stop];
+        }
+    }
+    else
+    {
+        [self initCameraView];
+    }
+}
+
 - (void)turnoffDevice
 {
     [self makeActionButtonState];
+    [kSourceManager checkDeviceStatus];
+    if (_isCamera) {
+        [self resetCamera];
+    }
+
+    [self.tableView reloadData];
     [self dismissLoading];
 }
 
@@ -299,7 +345,7 @@
     NSInteger row = [indexPath row];
     cell.userInteractionEnabled = NO;
     if (row == 0) {
-        if (_isCamera) {
+        if (_isCamera && _isDeviceOn) {
             [cell.contentView addSubview:_movieVC.view];
         }
         else

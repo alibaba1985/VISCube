@@ -47,6 +47,15 @@
     [self.view addSubview:self.tableView];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self addDeviceAlertObserve];
+    if ([kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
+        [self addAlertIndicatorOnMenuBar];
+    }
+}
 #pragma mark -
 #pragma mark UITableView Delegate
 
@@ -79,24 +88,32 @@
     return 6;
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    CGFloat fontSize = [UPDeviceInfo isPad] ? 30 : 21;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
-        CGFloat fontSize = [UPDeviceInfo isPad] ? 30 : 21;
+        
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:fontSize];
     }
     
     cell.textLabel.text = _titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
+    
+    if (indexPath.row == 1 && [kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
+        UIView *indicator = [self createAlertIndicator];
+        indicator.frame = CGRectMake(7.2*fontSize, (_tableCellRowHeight-fontSize)/2, fontSize, fontSize);
+        [cell.contentView addSubview:indicator];
+    }
     
     return cell;
 }

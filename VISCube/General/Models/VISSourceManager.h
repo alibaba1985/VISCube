@@ -24,8 +24,11 @@
 @property (nonatomic, strong) NSArray *menuViewControllers;
 @property (nonatomic, strong) RESideMenu *sideMenuViewController;
 @property(nonatomic, strong)NSMutableArray *allDevices;
+@property(nonatomic)NSString *deviceAlertStatus;//00-ok 01-error
 
 + (instancetype)currentSource;
+
+- (void)checkDeviceStatus;
 
 
 @end

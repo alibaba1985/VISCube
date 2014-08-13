@@ -58,6 +58,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
     
     [self showLoadingWithMessage:@"更新中..."];
     
@@ -68,6 +69,8 @@
     [self addDevices];
     
 }
+
+
 
 /*
 #pragma mark - Navigation

@@ -24,9 +24,7 @@
 		0F5FE6E519890DBC00F4ADC1 /* VISAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */; };
 		0F7042A1199B3DBB00F15C49 /* turnoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7042A0199B3DBB00F15C49 /* turnoff.png */; };
 		0F7042A3199B463B00F15C49 /* turnon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7042A2199B463B00F15C49 /* turnon.png */; };
-		0F7042A6199B4F9C00F15C49 /* camera.mpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F7042A5199B4F9C00F15C49 /* camera.mpg */; };
 		0F7042AA199B503600F15C49 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7042A9199B503600F15C49 /* MediaPlayer.framework */; };
-		0F7042AC199B59A700F15C49 /* camera.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0F7042AB199B59A700F15C49 /* camera.mp4 */; };
 		0F84EDE2197D3991001B336B /* RedAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE0197D3991001B336B /* RedAlert.png */; };
 		0F84EDE3197D3991001B336B /* YellowAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F84EDE1197D3991001B336B /* YellowAlert.png */; };
 		0F84EDE6197D39E5001B336B /* VISDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F84EDE5197D39E5001B336B /* VISDevice.m */; };
@@ -71,6 +69,7 @@
 		0FA6B5471987A7DB000A8100 /* find_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B5451987A7DB000A8100 /* find_large.png */; };
 		0FA6B5481987A7DB000A8100 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA6B5461987A7DB000A8100 /* find.png */; };
 		0FA6C7A4196F784D005127E1 /* UPDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */; };
+		0FA825F4199B93EB0060F64E /* Camera01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0FA825F3199B93EB0060F64E /* Camera01.mp4 */; };
 		0FAB2A46197692E40077DBFD /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3B197692E40077DBFD /* PNBar.m */; };
 		0FAB2A47197692E40077DBFD /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A3D197692E40077DBFD /* PNBarChart.m */; };
 		0FAB2A49197692E40077DBFD /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAB2A41197692E40077DBFD /* PNChartLabel.m */; };
@@ -165,10 +164,8 @@
 		0F5FE6E419890DBC00F4ADC1 /* VISAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAccountViewController.m; sourceTree = "<group>"; };
 		0F7042A0199B3DBB00F15C49 /* turnoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnoff.png; sourceTree = "<group>"; };
 		0F7042A2199B463B00F15C49 /* turnon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turnon.png; sourceTree = "<group>"; };
-		0F7042A5199B4F9C00F15C49 /* camera.mpg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = camera.mpg; sourceTree = "<group>"; };
 		0F7042A7199B4FE200F15C49 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0F7042A9199B503600F15C49 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		0F7042AB199B59A700F15C49 /* camera.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = camera.mp4; sourceTree = "<group>"; };
 		0F84EDDC197D3630001B336B /* VISColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISColors.h; sourceTree = "<group>"; };
 		0F84EDE0197D3991001B336B /* RedAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedAlert.png; sourceTree = "<group>"; };
 		0F84EDE1197D3991001B336B /* YellowAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowAlert.png; sourceTree = "<group>"; };
@@ -236,6 +233,7 @@
 		0FA6C7A0196F784D005127E1 /* UPDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPDeviceInfo.h; sourceTree = "<group>"; };
 		0FA6C7A1196F784D005127E1 /* UPDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPDeviceInfo.m; sourceTree = "<group>"; };
 		0FA6C7A7196F7A84005127E1 /* UPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
+		0FA825F3199B93EB0060F64E /* Camera01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Camera01.mp4; sourceTree = "<group>"; };
 		0FAB2A3A197692E40077DBFD /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		0FAB2A3B197692E40077DBFD /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		0FAB2A3C197692E40077DBFD /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -359,8 +357,7 @@
 		0F7042A4199B4F9C00F15C49 /* vedio */ = {
 			isa = PBXGroup;
 			children = (
-				0F7042AB199B59A700F15C49 /* camera.mp4 */,
-				0F7042A5199B4F9C00F15C49 /* camera.mpg */,
+				0FA825F3199B93EB0060F64E /* Camera01.mp4 */,
 			);
 			path = vedio;
 			sourceTree = "<group>";
@@ -966,6 +963,7 @@
 				0FCB82161980FC84000962A4 /* light_yellow.jpg in Resources */,
 				0FCB82131980FC84000962A4 /* close_off.png in Resources */,
 				0FA6B5481987A7DB000A8100 /* find.png in Resources */,
+				0FA825F4199B93EB0060F64E /* Camera01.mp4 in Resources */,
 				0F8B71BE197F8DB3008D0C23 /* 06.jpg in Resources */,
 				0FCB823119810097000962A4 /* 6.png in Resources */,
 				0FCB82111980FC84000962A4 /* 4.png in Resources */,
@@ -1009,9 +1007,7 @@
 				0FAE09F1199220220099B518 /* btn.png in Resources */,
 				0F54F16A197239A900217BE2 /* IconHome@2x.png in Resources */,
 				0FA6B5351987830F000A8100 /* setting.png in Resources */,
-				0F7042AC199B59A700F15C49 /* camera.mp4 in Resources */,
 				0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */,
-				0F7042A6199B4F9C00F15C49 /* camera.mpg in Resources */,
 				0FCB822F19810097000962A4 /* 8.png in Resources */,
 				0FCB82141980FC84000962A4 /* light_off.png in Resources */,
 				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,

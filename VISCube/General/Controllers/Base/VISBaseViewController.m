@@ -16,6 +16,9 @@
     
     CPToast *_toast;
     UIAlertView *_alert;
+    
+    UIButton *_menuButton;
+    UIImageView *_alertIndicator;
 }
 
 - (UIScrollView *)createScrollView;
@@ -55,6 +58,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 /*
 #pragma mark - Navigation
 
@@ -87,23 +92,12 @@
 - (void)addNavigationMenuItem
 {
     UIImage *image = [UIImage imageNamed:@"Menu.png"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, 0, image.size.width/2, image.size.height/2);
-    [button addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:image forState:UIControlStateNormal];
+    _menuButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _menuButton.frame = CGRectMake(0, 0, image.size.width/2, image.size.height/2);
+    [_menuButton addTarget:self action:@selector(presentLeftMenuViewController:) forControlEvents:UIControlEventTouchUpInside];
+    [_menuButton setImage:image forState:UIControlStateNormal];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
-    /*
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Menu.png"] style:UIBarButtonItemStylePlain target:self action:@selector(presentLeftMenuViewController:)];
-    
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"菜单"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(presentLeftMenuViewController:)];
-     
-     */
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_menuButton];
 }
 
 #pragma mark - Dialog
@@ -137,6 +131,65 @@
     if (_toast != nil) {
         [_toast dismiss];
         _toast = nil;
+    }
+}
+
+#pragma mark - DeviceAlertObserve
+
+- (UIView *)createAlertIndicator
+{
+    [self removeAlertIndicator];
+    UIImage *image = [UIImage imageNamed:@"RedAlert"];
+    _alertIndicator = [[UIImageView alloc] initWithImage:image];
+    [self addLightAnimationToView:_alertIndicator];
+    return _alertIndicator;
+}
+
+- (void)removeAlertIndicator
+{
+    if (_alertIndicator) {
+        [_alertIndicator removeFromSuperview];
+        _alertIndicator = nil;
+    }
+}
+
+- (void)addDeviceAlertObserve
+{
+    [kSourceManager addObserver:self forKeyPath:@"deviceAlertStatus" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)addAlertIndicatorOnMenuBar
+{
+    if (_alertIndicator) {
+        return;
+    }
+    CGFloat size = 16;
+    UIView *indicator = [self createAlertIndicator];
+    indicator.frame = CGRectMake(CGRectGetWidth(_menuButton.frame), -size/2, size, size);
+    [_menuButton addSubview:_alertIndicator];
+}
+
+- (void)addLightAnimationToView:(UIView *)view
+{
+    view.alpha = 1;
+    [UIView animateWithDuration:1 animations:^{
+        view.alpha = 0;
+    }completion:^(BOOL finished) {
+        [self addLightAnimationToView:view];
+    }];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"deviceAlertStatus"]) {
+        NSString *deviceAlertStatus = [change objectForKey:NSKeyValueChangeNewKey];
+        if ([deviceAlertStatus isEqualToString:@"00"]) {
+            [self removeAlertIndicator];
+        }
+        else if ([deviceAlertStatus isEqualToString:@"01"])
+        {
+            [self addAlertIndicatorOnMenuBar];
+        }
     }
 }
 
