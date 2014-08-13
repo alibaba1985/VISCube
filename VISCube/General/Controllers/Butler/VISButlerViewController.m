@@ -59,6 +59,8 @@
 {
     [super viewDidAppear:animated];
     
+    [self showLoadingWithMessage:@"更新中..."];
+    
     for (UIView *view in self.contentScrollView.subviews) {
         [view removeFromSuperview];
     }
@@ -142,6 +144,8 @@
     }
     
     self.contentScrollView.contentSize = CGSizeMake(self.contentScrollView.frame.size.width, y + margin + deviceSize);
+    
+    [self dismissLoading];
 }
 
 
