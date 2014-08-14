@@ -12,7 +12,6 @@
 
 @interface VISStatisticViewController ()
 {
-    CGFloat _rowHeight;
     NSArray *_titles;
     NSMutableArray *_barViews;
 }

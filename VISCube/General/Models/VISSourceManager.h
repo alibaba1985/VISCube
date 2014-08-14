@@ -30,5 +30,6 @@
 
 - (void)checkDeviceStatus;
 
+- (void)initAllDevices;
 
 @end

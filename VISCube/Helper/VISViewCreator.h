@@ -24,6 +24,8 @@
 
 + (UIFont *)defaultFontWithSize:(CGFloat)size;
 
++ (UIColor *)defaultColor;
+
 
 + (UIColor *)underLineNormalColor;
 

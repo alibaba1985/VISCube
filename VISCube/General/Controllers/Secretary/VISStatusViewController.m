@@ -10,9 +10,7 @@
 #import "UPFile.h"
 
 @interface VISStatusViewController ()
-{
-    CGFloat _rowHeight;
-}
+
 
 @property(nonatomic, strong)NSMutableArray *activeDevices;
 @property(nonatomic, strong)NSMutableArray *allDevices;

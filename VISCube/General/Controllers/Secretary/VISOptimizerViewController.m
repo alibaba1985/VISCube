@@ -11,7 +11,6 @@
 
 @interface VISOptimizerViewController ()
 {
-    CGFloat _rowHeight;
     BOOL _didOptimized;
 }
 
@@ -70,12 +69,9 @@
 - (void)findOptimizeDevice
 {
     self.optimizerArray = [[NSMutableArray alloc] init];
-    NSString *path = [UPFile pathForFile:kFileName writable:NO];
-    NSArray *array = [NSArray arrayWithArray:[UPFile readFile:path forKey:@"Devices"]];
-    
     NSString *stringValue = nil;
     CGFloat floatValue = 0;
-    for (NSDictionary *item in array) {
+    for (NSDictionary *item in kSourceManager.allDevices) {
         stringValue = [item objectForKey:kValue];
         floatValue = [stringValue floatValue];
         if (floatValue >= 100) {

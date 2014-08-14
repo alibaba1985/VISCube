@@ -7,6 +7,12 @@
 //
 
 #import "VISAccountCenterViewController.h"
+#import "VISUserInfoViewController.h"
+#import "VISDeviceCenterViewController.h"
+#import "VISCloudViewController.h"
+#import "VISAboutViewController.h"
+#import "VISWebViewController.h"
+
 #import "UPDeviceInfo.h"
 #import "UPFile.h"
 
@@ -115,19 +121,35 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
-        
-            
+        {
+            VISUserInfoViewController *vc = [[VISUserInfoViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 1:
-            
+        {
+            VISDeviceCenterViewController *vc = [[VISDeviceCenterViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 2:
-            
+        {
+            VISCloudViewController *vc = [[VISCloudViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 3:
-            
+        {
+            VISAboutViewController *vc = [[VISAboutViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 4:
+        {
+            VISWebViewController *vc = [[VISWebViewController alloc] initWithUrl:[NSURL URLWithString:@"http://www.baidu.com/"] barTitle:@"帮助"];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            
             
             break;
             
@@ -200,8 +222,7 @@
     switch (indexPath.row) {
         case 0:
         {
-            NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
-            NSString *name = [UPFile readFile:path forKey:kUserName];
+            NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
             image = [UIImage imageNamed:@"user"];
             title = name;
         }

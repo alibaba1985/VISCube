@@ -81,6 +81,7 @@
 		0FAE09F1199220220099B518 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09F0199220220099B518 /* btn.png */; };
 		0FAE09F4199238160099B518 /* CPToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAE09F3199238160099B518 /* CPToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FAE09F619924AA60099B518 /* pwd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAE09F519924AA60099B518 /* pwd.png */; };
+		0FAFB492199CAA48009E5FAB /* VISUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFB491199CAA48009E5FAB /* VISUserInfoViewController.m */; };
 		0FAFC013196D1C890075AB71 /* VISLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */; };
 		0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAFC015196D1DC60075AB71 /* Stars@2x.png */; };
 		0FAFC01A196D1E440075AB71 /* VISSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFC019196D1E440075AB71 /* VISSourceManager.m */; };
@@ -89,6 +90,9 @@
 		0FB564E4199765A0004E9AA5 /* VISRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB564E3199765A0004E9AA5 /* VISRankViewController.m */; };
 		0FB5F6C51990F0B300A57C2F /* VISRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5F6C41990F0B300A57C2F /* VISRegisterViewController.m */; };
 		0FB5F6C81990F0E600A57C2F /* VISPreShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */; };
+		0FC3EB76199CE2DE0018FBE9 /* VISDeviceCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EB75199CE2DE0018FBE9 /* VISDeviceCenterViewController.m */; };
+		0FC3EB79199CE2FA0018FBE9 /* VISCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EB78199CE2FA0018FBE9 /* VISCloudViewController.m */; };
+		0FC3EB7C199CE3390018FBE9 /* VISAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3EB7B199CE3390018FBE9 /* VISAboutViewController.m */; };
 		0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */; };
 		0FC8A6B519852C0A00292DED /* VISAccountCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B419852C0A00292DED /* VISAccountCenterViewController.m */; };
 		0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8A6B719852FA800292DED /* VISSecretaryViewController.m */; };
@@ -109,8 +113,6 @@
 		0FCB82111980FC84000962A4 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB81FF1980FC84000962A4 /* 4.png */; };
 		0FCB82121980FC84000962A4 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82001980FC84000962A4 /* 5.png */; };
 		0FCB82131980FC84000962A4 /* close_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82021980FC84000962A4 /* close_off.png */; };
-		0FCB82141980FC84000962A4 /* light_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82031980FC84000962A4 /* light_off.png */; };
-		0FCB82151980FC84000962A4 /* light_red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82041980FC84000962A4 /* light_red.jpg */; };
 		0FCB82161980FC84000962A4 /* light_yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82051980FC84000962A4 /* light_yellow.jpg */; };
 		0FCB82171980FC84000962A4 /* open_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB82061980FC84000962A4 /* open_on.png */; };
 		0FCB82201980FE0C000962A4 /* LocalDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FCB821F1980FE0C000962A4 /* LocalDatas.plist */; };
@@ -251,6 +253,8 @@
 		0FAE09F2199238160099B518 /* CPToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPToast.h; sourceTree = "<group>"; };
 		0FAE09F3199238160099B518 /* CPToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPToast.m; sourceTree = "<group>"; };
 		0FAE09F519924AA60099B518 /* pwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pwd.png; sourceTree = "<group>"; };
+		0FAFB490199CAA48009E5FAB /* VISUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISUserInfoViewController.h; sourceTree = "<group>"; };
+		0FAFB491199CAA48009E5FAB /* VISUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISUserInfoViewController.m; sourceTree = "<group>"; };
 		0FAFC011196D1C890075AB71 /* VISLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISLeftMenuViewController.h; sourceTree = "<group>"; };
 		0FAFC012196D1C890075AB71 /* VISLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISLeftMenuViewController.m; sourceTree = "<group>"; };
 		0FAFC015196D1DC60075AB71 /* Stars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stars@2x.png"; sourceTree = "<group>"; };
@@ -265,6 +269,12 @@
 		0FB5F6C41990F0B300A57C2F /* VISRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISRegisterViewController.m; sourceTree = "<group>"; };
 		0FB5F6C61990F0E600A57C2F /* VISPreShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISPreShowViewController.h; sourceTree = "<group>"; };
 		0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISPreShowViewController.m; sourceTree = "<group>"; };
+		0FC3EB74199CE2DE0018FBE9 /* VISDeviceCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceCenterViewController.h; sourceTree = "<group>"; };
+		0FC3EB75199CE2DE0018FBE9 /* VISDeviceCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDeviceCenterViewController.m; sourceTree = "<group>"; };
+		0FC3EB77199CE2FA0018FBE9 /* VISCloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCloudViewController.h; sourceTree = "<group>"; };
+		0FC3EB78199CE2FA0018FBE9 /* VISCloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCloudViewController.m; sourceTree = "<group>"; };
+		0FC3EB7A199CE3390018FBE9 /* VISAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAboutViewController.h; sourceTree = "<group>"; };
+		0FC3EB7B199CE3390018FBE9 /* VISAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISAboutViewController.m; sourceTree = "<group>"; };
 		0FC76E221983BC990062AE46 /* VISDeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISDeviceDetailViewController.h; sourceTree = "<group>"; };
 		0FC76E231983BC990062AE46 /* VISDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISDeviceDetailViewController.m; sourceTree = "<group>"; };
 		0FC8A6B319852C0A00292DED /* VISAccountCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISAccountCenterViewController.h; sourceTree = "<group>"; };
@@ -293,8 +303,6 @@
 		0FCB81FF1980FC84000962A4 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		0FCB82001980FC84000962A4 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		0FCB82021980FC84000962A4 /* close_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_off.png; sourceTree = "<group>"; };
-		0FCB82031980FC84000962A4 /* light_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_off.png; sourceTree = "<group>"; };
-		0FCB82041980FC84000962A4 /* light_red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_red.jpg; sourceTree = "<group>"; };
 		0FCB82051980FC84000962A4 /* light_yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light_yellow.jpg; sourceTree = "<group>"; };
 		0FCB82061980FC84000962A4 /* open_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_on.png; sourceTree = "<group>"; };
 		0FCB821F1980FE0C000962A4 /* LocalDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LocalDatas.plist; path = Files/LocalDatas.plist; sourceTree = "<group>"; };
@@ -567,6 +575,14 @@
 				0FB5F6C71990F0E600A57C2F /* VISPreShowViewController.m */,
 				0FD14794199477EC00D61377 /* VISResetPwdViewController.h */,
 				0FD14795199477EC00D61377 /* VISResetPwdViewController.m */,
+				0FAFB490199CAA48009E5FAB /* VISUserInfoViewController.h */,
+				0FAFB491199CAA48009E5FAB /* VISUserInfoViewController.m */,
+				0FC3EB74199CE2DE0018FBE9 /* VISDeviceCenterViewController.h */,
+				0FC3EB75199CE2DE0018FBE9 /* VISDeviceCenterViewController.m */,
+				0FC3EB77199CE2FA0018FBE9 /* VISCloudViewController.h */,
+				0FC3EB78199CE2FA0018FBE9 /* VISCloudViewController.m */,
+				0FC3EB7A199CE3390018FBE9 /* VISAboutViewController.h */,
+				0FC3EB7B199CE3390018FBE9 /* VISAboutViewController.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -848,8 +864,6 @@
 			isa = PBXGroup;
 			children = (
 				0FCB82021980FC84000962A4 /* close_off.png */,
-				0FCB82031980FC84000962A4 /* light_off.png */,
-				0FCB82041980FC84000962A4 /* light_red.jpg */,
 				0FCB82051980FC84000962A4 /* light_yellow.jpg */,
 				0FCB82061980FC84000962A4 /* open_on.png */,
 			);
@@ -989,7 +1003,6 @@
 				0FCB82201980FE0C000962A4 /* LocalDatas.plist in Resources */,
 				0FCB823019810097000962A4 /* 7.png in Resources */,
 				0FA6B5321987830F000A8100 /* edit_delfromhome.png in Resources */,
-				0FCB82151980FC84000962A4 /* light_red.jpg in Resources */,
 				0FCB822A19810097000962A4 /* 11.png in Resources */,
 				0FAFC016196D1DC60075AB71 /* Stars@2x.png in Resources */,
 				0F54F16B197239A900217BE2 /* IconProfile@2x.png in Resources */,
@@ -1009,7 +1022,6 @@
 				0FA6B5351987830F000A8100 /* setting.png in Resources */,
 				0FCB81E51980DE92000962A4 /* ad04.jpg in Resources */,
 				0FCB822F19810097000962A4 /* 8.png in Resources */,
-				0FCB82141980FC84000962A4 /* light_off.png in Resources */,
 				0F54F16C197239A900217BE2 /* IconSettings@2x.png in Resources */,
 				0FCB82171980FC84000962A4 /* open_on.png in Resources */,
 				0FA6B5341987830F000A8100 /* about.png in Resources */,
@@ -1049,6 +1061,7 @@
 				0FA4253C196A689700D85399 /* main.m in Sources */,
 				0FA425C4196C12BA00D85399 /* VISRootViewController.m in Sources */,
 				0FFF8A151998BCE80021DD47 /* VISOptimizerViewController.m in Sources */,
+				0FAFB492199CAA48009E5FAB /* VISUserInfoViewController.m in Sources */,
 				0FA425B8196BFE5500D85399 /* VISHomeViewController.m in Sources */,
 				0FCB823419812027000962A4 /* UPFile.m in Sources */,
 				0FC76E241983BC990062AE46 /* VISDeviceDetailViewController.m in Sources */,
@@ -1065,8 +1078,10 @@
 				0FA4258E196A6BE900D85399 /* Reachability.m in Sources */,
 				0FCB81EA1980E626000962A4 /* VISWebViewController.m in Sources */,
 				0FB564E4199765A0004E9AA5 /* VISRankViewController.m in Sources */,
+				0FC3EB7C199CE3390018FBE9 /* VISAboutViewController.m in Sources */,
 				0FCB81CA1980B021000962A4 /* XLCycleScrollView.m in Sources */,
 				0F0A9BDA197E808600E3C0E1 /* UPLineView.m in Sources */,
+				0FC3EB76199CE2DE0018FBE9 /* VISDeviceCenterViewController.m in Sources */,
 				0FAB2A4B197692E40077DBFD /* PNLineChart.m in Sources */,
 				0FA42540196A689700D85399 /* WLAppDelegate.m in Sources */,
 				0FFF8A181998BD510021DD47 /* VISStatusViewController.m in Sources */,
@@ -1086,6 +1101,7 @@
 				0FD14796199477EC00D61377 /* VISResetPwdViewController.m in Sources */,
 				0FB5F6C81990F0E600A57C2F /* VISPreShowViewController.m in Sources */,
 				0FC8A6B819852FA800292DED /* VISSecretaryViewController.m in Sources */,
+				0FC3EB79199CE2FA0018FBE9 /* VISCloudViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,15 @@
 
 #define kLocalFileName @"LocalDatas.plist"
 
+#define kUserB @"UserB"
 #define kLoginned @"Loginned"
 #define kFirstSetup @"FirstSetup"
 #define kUserName @"UserName"
 
 #define kValueYES @"YES"
 #define kValueNO @"NO"
+
+#define kCubeConnection @"CubeConnection"
 
 #pragma mark - Status
 

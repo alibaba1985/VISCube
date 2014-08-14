@@ -75,7 +75,7 @@
 
 - (void)gotoNextPage
 {
-    [self showToastMessage:@"设置成功！\n请登录。"];
+    [self showToastMessage:@"密码修改成功!"];
     [self.navigationController popViewControllerAnimated:YES];
     
 }

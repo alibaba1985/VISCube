@@ -20,8 +20,6 @@
 @interface VISLoginViewController ()
 {
     UITextField *_activeTextField;
-    
-    LoginBarBlock _barBlock;
     NSMutableArray *_textFields;
     BOOL _noPresentation;
 }
@@ -81,39 +79,47 @@
  
 */
 
-- (void)showBarButtonWithTitle:(NSString *)title block:(LoginBarBlock)block
+- (void)showModalBarButtonWithTitle:(NSString *)title
 {
     if (title) {
-        UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:nil];
+        UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(barAction)];
         self.navigationItem.leftBarButtonItem = leftBarItem;
     }
-    
-    _barBlock = block;
 }
 
 
 - (void)barAction
 {
-    if (_barBlock) {
-        _barBlock();
-    }
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)gotoNextPage
 {
-    NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
-    [UPFile writeFile:path withValue:kValueYES forKey:kLoginned];
+    BOOL isUserB = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserB] isEqualToString:kValueYES];
+    isUserB = self.reLogin ? !isUserB : isUserB;
+    NSString *userValue = (isUserB) ? kValueYES : kValueNO;
+    [[NSUserDefaults standardUserDefaults] setObject:userValue forKey:kUserB];
+    [[NSUserDefaults standardUserDefaults] setObject:kValueYES forKey:kLoginned];
+    [[NSUserDefaults standardUserDefaults] setObject:kValueYES forKey:kCubeConnection];
     
     for (UITextField *textField in _textFields) {
         if ([textField.placeholder isEqualToString:_namePlaceHolder]) {
-            [UPFile writeFile:path withValue:textField.text forKey:kUserName];
+            [[NSUserDefaults standardUserDefaults] setObject:textField.text forKey:kUserName];
             break;
         }
     }
     
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [UIApplication sharedApplication].keyWindow.rootViewController = [VISSourceManager currentSource].sideMenuViewController;
     
+    
+    [kSourceManager initAllDevices];
+    
     [self dismissLoading];
+    if (self.reLogin) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }
+    
 }
 
 - (void)mainAction:(id)sender

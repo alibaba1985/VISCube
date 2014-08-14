@@ -21,7 +21,6 @@
 #define kPadBorderWidth 1
 #define kPhoneBorderWidth 1
 
-typedef void(^LoginBarBlock)(void);
 
 @interface VISLoginViewController : VISBaseViewController<UITextFieldDelegate>
 {
@@ -35,7 +34,9 @@ typedef void(^LoginBarBlock)(void);
     UIButton *_mainButton;
 }
 
-- (void)showBarButtonWithTitle:(NSString *)title block:(LoginBarBlock)block;
+@property(nonatomic)BOOL reLogin;
+
+- (void)showModalBarButtonWithTitle:(NSString *)title;
 
 
 #pragma mark - Optional

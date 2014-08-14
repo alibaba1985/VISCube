@@ -157,8 +157,10 @@
     }completion:^(BOOL finished){
         [weakSelf.navigationController setNavigationBarHidden:NO];
         [weakSelf.navigationController popViewControllerAnimated:NO];
-        NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
-        [UPFile writeFile:path withValue:kValueNO forKey:kFirstSetup];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:kValueNO forKey:kFirstSetup];
+        [[NSUserDefaults standardUserDefaults] synchronize];;
+        
     }];
 }
 

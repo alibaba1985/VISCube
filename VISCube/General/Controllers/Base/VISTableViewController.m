@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    _rowHeight = [UPDeviceInfo isPad] ? 80 : 60;
     
 }
 

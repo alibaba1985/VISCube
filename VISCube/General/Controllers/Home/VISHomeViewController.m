@@ -434,6 +434,7 @@
         [scrollView scrollRectToVisible:rect animated:YES];
     }
     
+    [self handleBarChartAnimationWithOffset:scrollView.contentOffset.y];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

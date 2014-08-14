@@ -53,6 +53,11 @@
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
 }
 
++ (UIColor *)defaultColor
+{
+    return [UIColor colorWithRed:77.0/255.0 green:186.0/255.0 blue:122.0/255.0 alpha:1.0f];
+}
+
 
 + (UIColor *)underLineNormalColor
 {

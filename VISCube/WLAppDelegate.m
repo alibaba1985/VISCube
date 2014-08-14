@@ -134,17 +134,8 @@
 
 - (void)createPrePage
 {
-    
-    NSString *path = [UPFile pathForFile:kLocalFileName writable:YES];
-    NSString *loginned = [UPFile readFile:path forKey:kLoginned];
-    
-    // prepare data
-    
-    NSString *apath = [UPFile pathForFile:kLocalFileName writable:NO];
-    NSArray *devices = [UPFile readFile:apath forKey:@"Devices"];
-    [VISSourceManager currentSource].allDevices = [NSMutableArray arrayWithArray:devices];
-    [[VISSourceManager currentSource] checkDeviceStatus];
-    
+    [[VISSourceManager currentSource] initAllDevices];
+    NSString *loginned = [[NSUserDefaults standardUserDefaults] objectForKey:kLoginned];
     if ([loginned isEqualToString:kValueYES]) {
         self.window.rootViewController = [VISSourceManager currentSource].sideMenuViewController;
     }
@@ -152,7 +143,7 @@
     {
         VISLoginViewController *login = [[VISLoginViewController alloc] init];
         VISNavigationController *n = [[VISNavigationController alloc] initWithRootViewController:login];
-        NSString *firstSetup = [UPFile readFile:path forKey:kFirstSetup];
+        NSString *firstSetup = [[NSUserDefaults standardUserDefaults] objectForKey:kFirstSetup];
         if (firstSetup == nil || [firstSetup isEqualToString:kValueYES]) {
             VISPreShowViewController *prePage = [[VISPreShowViewController alloc] init];
             [n pushViewController:prePage animated:NO];

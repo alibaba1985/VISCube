@@ -9,7 +9,9 @@
 #import "VISBaseViewController.h"
 
 @interface VISTableViewController : VISBaseViewController<UITableViewDataSource,UITableViewDelegate>
-
+{
+    CGFloat _rowHeight;
+}
 @property(nonatomic, strong)UITableView *tableView;
 
 - (UITableView *)tableViewWithStyle:(UITableViewStyle)style;

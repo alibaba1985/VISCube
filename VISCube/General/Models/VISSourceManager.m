@@ -8,6 +8,7 @@
 
 #import "VISSourceManager.h"
 #import "VISConsts.h"
+#import "UPFile.h"
 
 
 @implementation VISSourceManager
@@ -22,6 +23,17 @@
     });
     
     return _source;
+}
+
+- (void)initAllDevices
+{
+    BOOL isUserB = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserB] isEqualToString:kValueYES];
+    // prepare data
+    NSString *devicesKey = isUserB ? @"BDevices" : @"Devices";
+    NSString *apath = [UPFile pathForFile:kLocalFileName writable:NO];
+    NSArray *devices = [UPFile readFile:apath forKey:devicesKey];
+    [VISSourceManager currentSource].allDevices = [NSMutableArray arrayWithArray:devices];
+    [[VISSourceManager currentSource] checkDeviceStatus];
 }
 
 - (void)checkDeviceStatus

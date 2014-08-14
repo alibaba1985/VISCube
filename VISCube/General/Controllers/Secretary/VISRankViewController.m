@@ -9,9 +9,7 @@
 #import "VISRankViewController.h"
 
 @interface VISRankViewController ()
-{
-    CGFloat _rowHeight;
-}
+
 
 @end
 
