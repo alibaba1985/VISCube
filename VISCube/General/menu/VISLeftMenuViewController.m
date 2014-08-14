@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
-    
+    [self addDeviceAlertObserve];
     _titles = @[@"首页", @"卫仕管家", @"卫仕秘书", @"卫仕商城", @"卫仕社区", @"卫仕中心"];
     _icons = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconSettings", @"IconProfile"];
     
@@ -51,10 +51,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self addDeviceAlertObserve];
-    if ([kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
-        [self addAlertIndicatorOnMenuBar];
-    }
+    
 }
 #pragma mark -
 #pragma mark UITableView Delegate
@@ -116,6 +113,20 @@
     }
     
     return cell;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"deviceAlertStatus"]) {
+        NSString *deviceAlertStatus = [change objectForKey:NSKeyValueChangeNewKey];
+        if ([deviceAlertStatus isEqualToString:@"00"]) {
+            [self removeAlertIndicator];
+        }
+        else if ([deviceAlertStatus isEqualToString:@"01"])
+        {
+            [self.tableView reloadData];
+        }
+    }
 }
 
 @end

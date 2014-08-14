@@ -100,6 +100,7 @@
     if ([kSourceManager.deviceAlertStatus isEqualToString:@"01"]) {
         [self addAlertIndicatorOnMenuBar];
     }
+    [self.tableView reloadData];
 }
 
 /*
